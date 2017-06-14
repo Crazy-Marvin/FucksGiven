@@ -17,7 +17,9 @@ allprojects {
         jcenter()
     }
 }
-
+ext {
+ //add version configuration here
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
