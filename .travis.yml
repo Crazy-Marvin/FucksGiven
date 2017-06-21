@@ -1,5 +1,6 @@
-language: android
-android:
+ language: android
+ java: oraclejdk8 # We need this if your sdk version is 24
+ android:
   components:
     - tools # to get the new `repository-11.xml`
     - tools # see https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
@@ -11,17 +12,5 @@ android:
     - extra-android-support
     - extra-android-m2repository
 
-# The SDK version used to compile your project
-- android-25
-
-
-# Specify at least one system image,
-# if you need to run emulator(s) during your tests
-- sys-img-armeabi-v7a-android-22
-- sys-img-armeabi-v7a-android-17
-
-before_install:
-- chmod +x gradlew
-
-script:
-  - ./gradlew assembleRelease --stacktrace
+ script:
+   - ./gradlew build
