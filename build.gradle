@@ -18,7 +18,16 @@ allprojects {
     }
 }
 ext {
- //add version configuration here
+    //add version configuration here
+    applicationId = "rocks.poopjournal.fucksgiven"
+    minSdk = 19
+    targetSdk = 25
+    buildTools = "25.0.2"
+    versionCode = 1
+    versionName = "1.0"
+
+    //libraries
+    supportLib = "25.1.0"
 }
 task clean(type: Delete) {
     delete rootProject.buildDir
