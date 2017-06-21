@@ -6,8 +6,11 @@ android:
     - platform-tools
     - build-tools-25.0.2
     - android-25
+
+    # Support library
+    - extra-android-support
     - extra-android-m2repository
 
 
 script:
-   - ./gradlew build connectedCheck
+- chmod +x ./gradlew
