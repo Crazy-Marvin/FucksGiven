@@ -1,0 +1,16 @@
+ language: android
+ java: oraclejdk8 # We need this if your sdk version is 24
+ android:
+  components:
+    - tools # to get the new `repository-11.xml`
+    - tools # see https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
+    - platform-tools
+    - build-tools-25.0.2
+    - android-25
+
+    # Support library
+    - extra-android-support
+    - extra-android-m2repository
+
+ script:
+   - ./gradlew build
