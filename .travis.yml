@@ -11,6 +11,7 @@
     # Support library
     - extra-android-support
     - extra-android-m2repository
-
+before_install:
+ - chmod +x gradlew
  script:
    - ./gradlew build
