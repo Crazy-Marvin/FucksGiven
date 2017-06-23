@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+<<<<<<< HEAD
 
 android {
     compileSdkVersion 25
@@ -13,6 +14,19 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
+=======
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.targetSdk
+    buildToolsVersion rootProject.buildTools
+    defaultConfig {
+        applicationId rootProject.applicationId
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+>>>>>>> 42f024181dfe2a31da01c9e3ecdc5175a1df8556
     }
     buildTypes {
         release {
@@ -29,6 +43,7 @@ allprojects {
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+<<<<<<< HEAD
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -40,6 +55,24 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+=======
+    //kotlin stdlib
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    //support libs
+    compile "com.android.support:appcompat-v7:$supportLib"
+    compile "com.android.support:cardview-v7:$supportLib"
+    compile "com.android.support:recyclerview-v7:$supportLib"
+    compile "com.android.support:design:$supportLib"
+    //butter knife
+    compile "com.jakewharton:butterknife:$butterKnife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnife"
+    //timber for logging
+    compile "com.jakewharton.timber:timber:$timber"
+    //otto event bus
+    compile "com.squareup:otto:$eventBus"
+    //app intro
+    compile "com.github.paolorotolo:appintro:$appIntro"
+>>>>>>> 42f024181dfe2a31da01c9e3ecdc5175a1df8556
 }
 repositories {
     mavenCentral()

@@ -1,24 +1,35 @@
- language: android
- java: oraclejdk8 # We need this if your sdk version is 24
- android:
-  components:
-    - tools # to get the new `repository-11.xml`
-    - tools # see https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
-    - platform-tools
-    - build-tools-25.0.2
-    - android-25
+language: android
+jdk: oraclejdk8
+sudo: false
 
-    # Support library
-    - extra-android-support
-    - extra-android-m2repository
-    
-    # Specify at least one system image,
-    # if you need to run emulator(s) during your tests
-    - sys-img-armeabi-v7a-android-22
-    - sys-img-armeabi-v7a-android-17
-    
-sudo: required
+android:
+    components:
+        - platform-tools
+        - tools
+        - extra-android-support
+        - extra-android-m2repository
+        - extra-google-m2repository
+        - extra-google-google_play_services
+        - build-tools-25.0.2
+        - android-25
+        - sys-img-armeabi-v7a-android-24 # 7.0
+    licenses:
+        - '.+'
+        - android-sdk-license-.+
+        - google-gdk-license-.+
 
+before_install:
+    - chmod +x gradlew
+
+before_script:
+    - echo no | android create avd --force -n test -t android-24 --abi armeabi-v7a
+    - emulator -avd test -no-audio -no-window &
+    - android-wait-for-emulator
+    - adb shell input keyevent 82 &
 
 script:
- - chmod +x gradlew
+    - ./gradlew build connectedCheck --stacktrace
+
+notifications:
+    on_success: change
+    on_failure: never
