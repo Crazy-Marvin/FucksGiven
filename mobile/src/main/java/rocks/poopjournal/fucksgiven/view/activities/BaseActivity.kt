@@ -82,15 +82,23 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     /**
-     * to add or replace a fragment within activity container
+     * to add fragment within activity container
      */
-    protected fun addReplaceFragment(@IdRes container: Int, fragment: Fragment, addFragment: Boolean, addToBackStack: Boolean) {
+    protected fun addFragment(@IdRes container: Int, fragment: Fragment, addToBackStack: Boolean) {
         val transaction = supportFragmentManager.beginTransaction()
-        if (addFragment) {
-            transaction.add(container, fragment, fragment.javaClass.simpleName)
-        } else {
-            transaction.replace(container, fragment, fragment.javaClass.simpleName)
+        transaction.add(container, fragment, fragment.javaClass.simpleName)
+        if (addToBackStack) {
+            transaction.addToBackStack(null)
         }
+        transaction.commit()
+    }
+
+    /**
+     * to replace a fragment within activity container
+     */
+    protected fun replaceFragment(@IdRes container: Int, fragment: Fragment, addToBackStack: Boolean) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(container, fragment, fragment.javaClass.simpleName)
         if (addToBackStack) {
             transaction.addToBackStack(null)
         }
