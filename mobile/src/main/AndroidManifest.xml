@@ -29,7 +29,7 @@
         <activity
             android:name=".view.activities.IntroActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/TransparentTheme"
+            android:theme="@style/IntroTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".view.activities.HomeActivity"

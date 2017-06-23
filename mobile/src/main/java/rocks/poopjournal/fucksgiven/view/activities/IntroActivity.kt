@@ -7,6 +7,9 @@ import android.support.v4.content.ContextCompat
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.AppIntroFragment
 import rocks.poopjournal.fucksgiven.R
+import rocks.poopjournal.fucksgiven.util.Constants
+import rocks.poopjournal.fucksgiven.util.PreferenceHelper
+import rocks.poopjournal.fucksgiven.util.PreferenceHelper.set
 
 class IntroActivity : AppIntro2() {
 
@@ -32,11 +35,14 @@ class IntroActivity : AppIntro2() {
                 R.drawable.ic_intro,
                 ContextCompat.getColor(this, R.color.md_blue_grey_500))
         )
+        showSkipButton(false)
     }
 
 
     override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
+        val prefs = PreferenceHelper.defaultPrefs(this)
+        prefs[Constants.Preferences.WAS_APP_OPENED] = true
         navigateToHome()
     }
 
