@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Fucks Given</string>
+<<<<<<< HEAD
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -9,4 +10,13 @@
     <string name="the_more_entries_you_have_the_more_useful_statistics_we_can_provide_you_can_use_charts_to_identify_patterns_in_your_life">The more entries you have, the more useful statistics we can provide. You can use charts to identify patterns in your life.</string>
     <string name="build_new_habits">Build new habits</string>
     <string name="once_you_recognize_patterns_you_can_work_on_replacing_old_unwanted_habits">Once you recognize patterns, you can work on replacing old unwanted habits!</string>
+=======
+    <string name="splash_app_version">v %s</string>
+    <string name="keep_a_diary">Keep a diary</string>
+    <string name="keep_a_diary_desc">Keep a personal diary, without writing down a single word!</string>
+    <string name="find_patterns">Find patterns</string>
+    <string name="find_patterns_desc">The more entries you have, the more useful statistics we can provide. You can use charts to identify patterns in your life.</string>
+    <string name="build_new_habits">Build new habits</string>
+    <string name="build_new_habits_desc">Once you recognize patterns, you can work on replacing old unwanted habits!</string>
+>>>>>>> 42f024181dfe2a31da01c9e3ecdc5175a1df8556
 </resources>
