@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Fucks Given</string>
+    <string name="splash_app_version">v %s</string>
+    <string name="keep_a_diary">Keep a diary</string>
+    <string name="keep_a_diary_desc">Keep a personal diary, without writing down a single word!</string>
+    <string name="find_patterns">Find patterns</string>
+    <string name="find_patterns_desc">The more entries you have, the more useful statistics we can provide. You can use charts to identify patterns in your life.</string>
+    <string name="build_new_habits">Build new habits</string>
+    <string name="build_new_habits_desc">Once you recognize patterns, you can work on replacing old unwanted habits!</string>
 </resources>
