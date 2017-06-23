@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import butterknife.ButterKnife
 import rocks.poopjournal.fucksgiven.view.listener.ItemClickListener
 
 /**
@@ -19,23 +18,22 @@ import rocks.poopjournal.fucksgiven.view.listener.ItemClickListener
  * base class for all recycler view adapters in app.<br></br>
  * sets click and long click listeners if specified.
 
- * @param <A> item model
- * *
- * @param <B> item view holder
+ * @param [S]  model
+ * @param [T] view holder
  */
-abstract class BaseRecyclerAdapter<A>(context: Context, val models: List<A>) : RecyclerView.Adapter<BaseRecyclerAdapter.BaseViewHolder>() {
+abstract class BaseRecyclerAdapter<S, T : RecyclerView.ViewHolder>(context: Context, val models: List<S>) : RecyclerView.Adapter<T>() {
 
-    var itemClickListener: ItemClickListener<A>? = null
+    var itemClickListener: ItemClickListener<S>? = null
     protected val inflater: LayoutInflater = LayoutInflater.from(context)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseRecyclerAdapter.BaseViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): T {
         val view = inflater.inflate(provideLayout(), parent, false)
         return generateViewHolder(view)
     }
 
 
     @CallSuper
-    override fun onBindViewHolder(holder: BaseRecyclerAdapter.BaseViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: T, position: Int) {
         val model = models[position]
         bind(holder, model)
         holder.itemView.setOnClickListener { itemClickListener?.onItemClicked(model) }
@@ -44,18 +42,12 @@ abstract class BaseRecyclerAdapter<A>(context: Context, val models: List<A>) : R
     @LayoutRes
     protected abstract fun provideLayout(): Int
 
-    protected abstract fun generateViewHolder(view: View): BaseRecyclerAdapter.BaseViewHolder
+    protected abstract fun generateViewHolder(view: View): T
 
-    protected abstract fun bind(holder: BaseRecyclerAdapter.BaseViewHolder, model: A)
+    protected abstract fun bind(holder: T, model: S)
 
     override fun getItemCount(): Int {
         return models.size
-    }
-
-    class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        init {
-            ButterKnife.bind(this, itemView)
-        }
     }
 
 } 

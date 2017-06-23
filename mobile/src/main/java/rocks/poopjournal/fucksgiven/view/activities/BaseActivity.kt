@@ -13,7 +13,6 @@ import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.inputmethod.InputMethodManager
-import butterknife.ButterKnife
 import rocks.poopjournal.fucksgiven.helper.BusProvider
 import rocks.poopjournal.fucksgiven.util.NetworkReceiver
 
@@ -33,7 +32,6 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(provideLayout())
-        ButterKnife.bind(this)
         init()
     }
 
@@ -48,9 +46,9 @@ abstract class BaseActivity : AppCompatActivity() {
 
     @CallSuper
     override fun onStop() {
-        super.onStop()
         bus.unregister(this)
         unregisterReceiver(networkReceiver)
+        super.onStop()
     }
 
     @CallSuper
@@ -63,7 +61,7 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * to hide keyboard programmatically
      */
-    protected fun hideKeyBoard() {
+    public fun hideKeyBoard() {
         if (currentFocus != null) {
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromInputMethod(currentFocus!!.windowToken, 0)
@@ -73,7 +71,7 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * to show a message in snake bar
      */
-    protected fun showMessage(error: String) {
+    public fun showMessage(error: String) {
         Snackbar.make(
                 findViewById(android.R.id.content),
                 error,
@@ -84,7 +82,7 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * to add fragment within activity container
      */
-    protected fun addFragment(@IdRes container: Int, fragment: Fragment, addToBackStack: Boolean) {
+    public fun addFragment(@IdRes container: Int, fragment: Fragment, addToBackStack: Boolean) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(container, fragment, fragment.javaClass.simpleName)
         if (addToBackStack) {
@@ -96,7 +94,7 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * to replace a fragment within activity container
      */
-    protected fun replaceFragment(@IdRes container: Int, fragment: Fragment, addToBackStack: Boolean) {
+    public fun replaceFragment(@IdRes container: Int, fragment: Fragment, addToBackStack: Boolean) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(container, fragment, fragment.javaClass.simpleName)
         if (addToBackStack) {

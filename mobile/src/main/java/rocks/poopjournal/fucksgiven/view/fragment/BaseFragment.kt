@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import butterknife.ButterKnife
+import rocks.poopjournal.fucksgiven.helper.BusProvider
 
 /**
  * Created by Fenil on 19-Feb-17.
@@ -17,9 +17,10 @@ import butterknife.ButterKnife
 
 abstract class BaseFragment : Fragment() {
 
+    protected val bus = BusProvider.instance.bus
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(provideLayout(), container, false)
-        ButterKnife.bind(this, view)
         return view
     }
 
@@ -28,6 +29,17 @@ abstract class BaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         init()
     }
+
+    override fun onStart() {
+        super.onStart()
+        bus.register(this)
+    }
+
+    override fun onStop() {
+        bus.unregister(this)
+        super.onStop()
+    }
+
 
     @CallSuper
     override fun onDestroyView() {
