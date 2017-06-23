@@ -1,7 +1,9 @@
 package rocks.poopjournal.fucksgiven.util
 
 /**
- * Created by Experiments on 26-Feb-17.
+ * Created by Fenil on 26-Feb-17.
+ * works as a differentiator of items.
+ * Each implementation will provide their identity it can be of any type.
  */
 
 interface Identity<T> {

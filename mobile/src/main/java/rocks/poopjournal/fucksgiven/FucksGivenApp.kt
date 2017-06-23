@@ -5,10 +5,14 @@ import android.app.Application
 import timber.log.Timber
 
 /**
- * Created by Experiments on 13-Mar-17.
+ * application class
  */
+class FucksGivenApp : Application() {
 
-class App : Application() {
+    companion object {
+        var instance: FucksGivenApp? = null
+            private set
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -21,11 +25,6 @@ class App : Application() {
     override fun onLowMemory() {
         super.onLowMemory()
         Timber.e("onLowMemory: ")
-    }
-
-    companion object {
-        var instance: App? = null
-            private set
     }
 
 }

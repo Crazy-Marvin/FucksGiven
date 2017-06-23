@@ -12,7 +12,7 @@ import butterknife.ButterKnife
 import rocks.poopjournal.fucksgiven.view.listener.ItemClickListener
 
 /**
- * Author : Experiments
+ * Author : Fenil
  * Date : 08-May-16
  *
  *
@@ -23,9 +23,9 @@ import rocks.poopjournal.fucksgiven.view.listener.ItemClickListener
  * *
  * @param <B> item view holder
  */
-abstract class BaseRecyclerAdapter<A>(protected val context: Context, val models: List<A>) : RecyclerView.Adapter<BaseRecyclerAdapter.BaseViewHolder>() {
+abstract class BaseRecyclerAdapter<A>(context: Context, val models: List<A>) : RecyclerView.Adapter<BaseRecyclerAdapter.BaseViewHolder>() {
 
-    public var itemClickListener: ItemClickListener<A>? = null
+    var itemClickListener: ItemClickListener<A>? = null
     protected val inflater: LayoutInflater = LayoutInflater.from(context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseRecyclerAdapter.BaseViewHolder {
@@ -52,9 +52,7 @@ abstract class BaseRecyclerAdapter<A>(protected val context: Context, val models
         return models.size
     }
 
-
     class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         init {
             ButterKnife.bind(this, itemView)
         }

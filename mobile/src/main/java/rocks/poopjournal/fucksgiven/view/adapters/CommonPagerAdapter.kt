@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
 /**
- * Author : Experiments
+ * Author : Fenil
  * Date : 09-Apr-16
  *
  *

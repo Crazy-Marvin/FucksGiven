@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.net.ConnectivityManager
-import rocks.poopjournal.fucksgiven.App
+import rocks.poopjournal.fucksgiven.FucksGivenApp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -50,7 +50,7 @@ object Utils {
 
     private val appPackageInfo: PackageInfo?
         get() {
-            val context = App.instance
+            val context = FucksGivenApp.instance
             try {
                 return context?.packageManager?.getPackageInfo(context.packageName, 0)
             } catch (e: PackageManager.NameNotFoundException) {

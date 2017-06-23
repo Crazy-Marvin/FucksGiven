@@ -4,6 +4,10 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 
+/**
+ * helper for shared prefs
+ * use assignment operator syntax for setting and getting key value pairs from shared prefs
+ */
 object PreferenceHelper {
 
     fun defaultPrefs(context: Context): SharedPreferences

@@ -20,6 +20,8 @@ import rocks.poopjournal.fucksgiven.util.NetworkReceiver
 
 /**
  * Created by Fenil on 21-Nov-16.
+ *
+ * base class of all activities
  */
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -58,6 +60,9 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * to hide keyboard programmatically
+     */
     protected fun hideKeyBoard() {
         if (currentFocus != null) {
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -65,6 +70,9 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * to show a message in snake bar
+     */
     protected fun showMessage(error: String) {
         Snackbar.make(
                 findViewById(android.R.id.content),
@@ -73,6 +81,9 @@ abstract class BaseActivity : AppCompatActivity() {
         ).show()
     }
 
+    /**
+     * to add or replace a fragment within activity container
+     */
     protected fun addReplaceFragment(@IdRes container: Int, fragment: Fragment, addFragment: Boolean, addToBackStack: Boolean) {
         val transaction = supportFragmentManager.beginTransaction()
         if (addFragment) {
@@ -87,11 +98,20 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * provided layout will be set in [setContentView]
+     */
     @LayoutRes
     protected abstract fun provideLayout(): Int
 
+    /**
+     * will be called in [onCreate]. do initialization stuff.
+     */
     protected abstract fun init()
 
+    /**
+     * will be called in [onDestroy]. release resources, callbacks and heavy objects
+     */
     @CallSuper
     protected open fun dispose() {
         mainThreadHandler.removeCallbacksAndMessages(null)
