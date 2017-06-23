@@ -27,7 +27,7 @@ ext {
     versionName = "1.0"
 
     //libraries
-    supportLib = "25.1.0"
+    supportLib = "25.3.1"
 }
 task clean(type: Delete) {
     delete rootProject.buildDir
