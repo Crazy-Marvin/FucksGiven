@@ -15,19 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".activity.activity.MainActivity">
-
-        </activity>
-        <activity android:name=".activity.activity.AppIntroActivity"
-                  >
-=======
         <activity
             android:name=".view.activities.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="stateAlwaysHidden">
->>>>>>> 42f024181dfe2a31da01c9e3ecdc5175a1df8556
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +29,7 @@
         <activity
             android:name=".view.activities.IntroActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/TransparentTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".view.activities.HomeActivity"

@@ -11,8 +11,9 @@ import rocks.poopjournal.fucksgiven.util.Utils
 
 class SplashActivity : BaseActivity() {
 
+
     @BindView(R.id.tvVersion)
-    internal var appVersion: TextView? = null
+    @JvmField var appVersion: TextView? = null
 
 
     override fun provideLayout(): Int {

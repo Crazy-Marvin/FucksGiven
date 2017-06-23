@@ -1,21 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-<<<<<<< HEAD
-
-android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
-    defaultConfig {
-        applicationId "rocks.poopjournal.fucksgiven"
-        minSdkVersion 19
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
-
-=======
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.targetSdk
@@ -26,7 +12,6 @@ android {
         targetSdkVersion rootProject.targetSdk
         versionCode rootProject.versionCode
         versionName rootProject.versionName
->>>>>>> 42f024181dfe2a31da01c9e3ecdc5175a1df8556
     }
     buildTypes {
         release {
@@ -35,27 +20,11 @@ android {
         }
     }
 }
-
-allprojects {
-    repositories {
-        maven { url 'https://jitpack.io' }
-    }
+kapt {
+    generateStubs = true
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-<<<<<<< HEAD
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    // wearApp project(':wear')
-    compile 'com.google.android.gms:play-services:11.0.1'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
-    compile 'com.github.apl-devs:appintro:v4.2.0'
-    compile 'com.android.support:support-v4:25.3.1'
-    testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-=======
     //kotlin stdlib
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
     //support libs
@@ -65,14 +34,13 @@ dependencies {
     compile "com.android.support:design:$supportLib"
     //butter knife
     compile "com.jakewharton:butterknife:$butterKnife"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnife"
+    kapt "com.jakewharton:butterknife-compiler:$butterKnife"
     //timber for logging
     compile "com.jakewharton.timber:timber:$timber"
     //otto event bus
     compile "com.squareup:otto:$eventBus"
     //app intro
     compile "com.github.paolorotolo:appintro:$appIntro"
->>>>>>> 42f024181dfe2a31da01c9e3ecdc5175a1df8556
 }
 repositories {
     mavenCentral()
