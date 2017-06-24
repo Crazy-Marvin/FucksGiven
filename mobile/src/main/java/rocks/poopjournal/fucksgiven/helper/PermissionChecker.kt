@@ -13,7 +13,6 @@ class PermissionChecker private constructor() {
 
     //avoiding direct instances. use factory method instead.
     companion object {
-
         fun create(): PermissionChecker {
             return PermissionChecker()
         }

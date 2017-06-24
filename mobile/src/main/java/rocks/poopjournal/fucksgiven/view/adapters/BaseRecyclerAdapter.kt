@@ -11,9 +11,6 @@ import android.view.ViewGroup
 import rocks.poopjournal.fucksgiven.view.listener.ItemClickListener
 
 /**
- * Author : Fenil
- * Date : 08-May-16
- *
  *
  * base class for all recycler view adapters in app.<br></br>
  * sets click and long click listeners if specified.

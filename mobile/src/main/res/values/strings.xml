@@ -7,4 +7,7 @@
     <string name="find_patterns_desc">The more entries you have, the more useful statistics we can provide. You can use charts to identify patterns in your life.</string>
     <string name="build_new_habits">Build new habits</string>
     <string name="build_new_habits_desc">Once you recognize patterns, you can work on replacing old unwanted habits!</string>
+    <string name="entries">Entries</string>
+    <string name="stats">Stats</string>
+    <string name="calendar">Calendar</string>
 </resources>

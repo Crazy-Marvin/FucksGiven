@@ -5,10 +5,6 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
 /**
- * Author : Fenil
- * Date : 09-Apr-16
- *
- *
  * common class for all view pager adapters
  * there are two overloaded constructors. one is without titles and other is with titles<br></br>
  * if titles are given; it will call [FragmentPagerAdapter.getPageTitle] to set title

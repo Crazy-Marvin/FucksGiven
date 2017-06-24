@@ -11,6 +11,8 @@ android {
         targetSdkVersion rootProject.targetSdk
         versionCode rootProject.versionCode
         versionName rootProject.versionName
+        vectorDrawables.useSupportLibrary true
+        setProperty("archivesBaseName", "build_$versionName")
     }
     buildTypes {
         release {
@@ -19,9 +21,7 @@ android {
         }
     }
 }
-kapt {
-    generateStubs = true
-}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //kotlin stdlib

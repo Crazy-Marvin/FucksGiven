@@ -8,9 +8,6 @@ import rocks.poopjournal.fucksgiven.FucksGivenApp
 import java.text.SimpleDateFormat
 import java.util.*
 
-/**
- * Created by Fenil on 21-Nov-16.
- */
 
 object Utils {
 
@@ -45,7 +42,7 @@ object Utils {
     fun isInternetAvailable(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetworkInfo = connectivityManager.activeNetworkInfo
-        return activeNetworkInfo.isAvailable && activeNetworkInfo.isConnected
+        return activeNetworkInfo != null && activeNetworkInfo.isAvailable && activeNetworkInfo.isConnected
     }
 
     private val appPackageInfo: PackageInfo?

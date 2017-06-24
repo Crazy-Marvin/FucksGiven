@@ -18,8 +18,6 @@ import rocks.poopjournal.fucksgiven.util.NetworkReceiver
 
 
 /**
- * Created by Fenil on 21-Nov-16.
- *
  * base class of all activities
  */
 

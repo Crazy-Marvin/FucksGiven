@@ -9,8 +9,6 @@ import rocks.poopjournal.fucksgiven.model.NetworkChangeEvent
 import rocks.poopjournal.fucksgiven.util.Utils.isInternetAvailable
 
 /**
- * Created by Fenil on 23-Jun-17.
- *
  * broadcast receiver for receiving connectivity changes
  * It will post [NetworkChangeEvent] whenever there connectivity state gets changed
  */

@@ -3,8 +3,6 @@ package rocks.poopjournal.fucksgiven.util
 import android.support.v7.util.DiffUtil
 
 /**
- * Created by Fenil on 26-Feb-17.
- *
  * to refresh list in efficient way while working with recyclerview
  * calculates only difference in payload using [Identity] and updates only those items which are changed
  */
