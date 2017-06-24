@@ -7,8 +7,11 @@ import rocks.poopjournal.fucksgiven.view.adapter.CommonPagerAdapter
 import rocks.poopjournal.fucksgiven.view.fragment.CalendarFragment
 import rocks.poopjournal.fucksgiven.view.fragment.EntriesFragment
 import rocks.poopjournal.fucksgiven.view.fragment.StatisticsFragment
+import java.util.*
 
 class HomeActivity : BaseActivity() {
+
+    lateinit var dateChangeListener: (month: Calendar) -> Unit
 
     override fun provideLayout(): Int {
         return R.layout.activity_home

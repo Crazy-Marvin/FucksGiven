@@ -19,7 +19,7 @@ import android.view.ViewGroup
 abstract class BaseRecyclerAdapter<S, T : RecyclerView.ViewHolder>(context: Context, val models: List<S>) : RecyclerView.Adapter<T>() {
 
     protected val inflater: LayoutInflater = LayoutInflater.from(context)
-    var itemClickListener: ((postion: Int, model: S) -> Unit)? = null
+    var itemClickListener: ((position: Int, model: S) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): T {
         val view = inflater.inflate(provideLayout(), parent, false)
@@ -31,7 +31,9 @@ abstract class BaseRecyclerAdapter<S, T : RecyclerView.ViewHolder>(context: Cont
     override fun onBindViewHolder(holder: T, position: Int) {
         val model = models[position]
         bind(holder, model)
-        holder.itemView.setOnClickListener { itemClickListener?.invoke(holder.adapterPosition, model) }
+        holder.itemView.setOnClickListener {
+            itemClickListener?.invoke(holder.adapterPosition, model)
+        }
     }
 
 

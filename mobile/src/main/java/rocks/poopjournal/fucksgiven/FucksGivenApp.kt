@@ -10,7 +10,7 @@ import timber.log.Timber
 class FucksGivenApp : Application() {
 
     companion object {
-        var instance: FucksGivenApp? = null
+        lateinit var instance: FucksGivenApp
             private set
     }
 

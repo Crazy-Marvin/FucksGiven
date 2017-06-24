@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MatchWidth"
-    android:orientation="vertical">
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWidth">
 
-    <TextView
-        android:id="@+id/tvTime"
-        style="@style/MatchWidth" />
-</LinearLayout>
+    <LinearLayout
+        style="@style/MatchParent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTime"
+            style="@style/MatchWidth" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

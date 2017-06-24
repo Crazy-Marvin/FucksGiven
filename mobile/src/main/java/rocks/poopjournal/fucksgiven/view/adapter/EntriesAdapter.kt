@@ -28,6 +28,7 @@ class EntriesAdapter(context: Context, models: List<Entry>)
         }
     }
 
-    fun showOptions(postion: Int) {
+    fun showOptions(position: Int) {
+
     }
 }

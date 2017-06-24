@@ -29,4 +29,5 @@
             android:padding="@dimen/margin_padding_size_small"
             app:srcCompat="@drawable/ic_keyboard_arrow_right_blue_grey_700_24dp" />
     </LinearLayout>
+
 </android.support.v7.widget.Toolbar>

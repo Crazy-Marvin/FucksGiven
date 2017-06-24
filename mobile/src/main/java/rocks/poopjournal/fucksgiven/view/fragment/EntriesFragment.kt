@@ -8,7 +8,7 @@ import rocks.poopjournal.fucksgiven.view.adapter.EntriesAdapter
 
 class EntriesFragment : BaseFragment() {
 
-    private var adapter: EntriesAdapter? = null
+    private lateinit var adapter: EntriesAdapter
 
     override fun provideLayout(): Int {
         return R.layout.fragmet_entries
@@ -17,12 +17,12 @@ class EntriesFragment : BaseFragment() {
     override fun init() {
         val entries = listOf<Entry>()
         adapter = EntriesAdapter(context, entries)
-        adapter!!.itemClickListener = { position, _ -> adapter!!.showOptions(position) }
+        adapter.itemClickListener = { position, _ -> adapter.showOptions(position) }
         rvEntries.adapter = adapter
     }
 
     override fun dispose() {
-        adapter?.itemClickListener = null
+        adapter.itemClickListener = null
         super.dispose()
     }
 

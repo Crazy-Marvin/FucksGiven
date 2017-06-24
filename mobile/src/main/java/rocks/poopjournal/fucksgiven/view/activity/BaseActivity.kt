@@ -60,10 +60,8 @@ abstract class BaseActivity : AppCompatActivity() {
      * to hide keyboard programmatically
      */
     public fun hideKeyBoard() {
-        if (currentFocus != null) {
-            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromInputMethod(currentFocus!!.windowToken, 0)
-        }
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromInputMethod(currentFocus?.windowToken, 0)
     }
 
     /**
