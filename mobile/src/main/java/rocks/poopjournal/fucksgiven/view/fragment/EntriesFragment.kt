@@ -8,7 +8,6 @@ import rocks.poopjournal.fucksgiven.view.adapter.EntriesAdapter
 
 class EntriesFragment : BaseFragment() {
 
-
     private var adapter: EntriesAdapter? = null
 
     override fun provideLayout(): Int {
