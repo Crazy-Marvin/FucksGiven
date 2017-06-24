@@ -3,4 +3,7 @@
     style="@style/MatchWidth"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tvTime"
+        style="@style/MatchWidth" />
 </LinearLayout>
