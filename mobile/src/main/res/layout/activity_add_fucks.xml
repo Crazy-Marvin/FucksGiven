@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="rocks.poopjournal.fucksgiven.view.activity.AddFucksActivity">
+
+    <TextView
+        android:id="@+id/tv_fuck_given"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FUCK GIVEN?"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:layout_marginTop="50dp"
+        android:textColor="@android:color/background_dark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_fuck_given"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/ic_date"
+                android:tint="#FFBB9FEF"
+                />
+            <EditText
+                android:id="@+id/edSetDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:onClick="onViewClicked"
+                android:drawableEnd="@android:drawable/arrow_down_float"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            >
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/ic_time"
+                android:tint="#FFBB9FEF"
+                />
+            <EditText
+                android:id="@+id/edSetTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:onClick="onViewClicked"
+                android:drawableEnd="@android:drawable/arrow_down_float"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_middle_finger"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"/>
+</RelativeLayout>

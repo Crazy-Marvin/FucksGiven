@@ -21,7 +21,7 @@ class HomeActivity : BaseActivity() {
 
     override fun init() {
         //setting up viewpager
-        val fragments = listOf(EntriesFragment(), CalendarFragment(), StatisticsFragment())
+        val fragments = listOf(EntriesFragment(), StatisticsFragment() ,CalendarFragment())
         val titles = listOf(getString(R.string.entries), getString(R.string.stats), getString(R.string.calendar))
         val adapter = CommonPagerAdapter(supportFragmentManager, fragments, titles)
         pagerHome.adapter = adapter

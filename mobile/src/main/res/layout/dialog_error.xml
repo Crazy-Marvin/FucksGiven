@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_app_intro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:id="@+id/tv_error_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        tools:text="This day is yet to come"
+        />
+    <TextView
+        android:id="@+id/tv_error_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        tools:text="This day is yet to come.pick a current or a past day"
+        />
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="end"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textColor="@android:color/holo_purple"
+        tools:text="Pick another date"
+        />
+</LinearLayout>
