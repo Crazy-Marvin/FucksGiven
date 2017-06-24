@@ -1,4 +1,4 @@
-package rocks.poopjournal.fucksgiven.view.adapters
+package rocks.poopjournal.fucksgiven.view.adapter
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager

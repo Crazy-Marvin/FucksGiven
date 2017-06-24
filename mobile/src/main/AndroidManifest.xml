@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.activities.SplashActivity"
+            android:name=".view.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="stateAlwaysHidden">
@@ -27,12 +27,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activities.IntroActivity"
+            android:name=".view.activity.IntroActivity"
             android:screenOrientation="portrait"
             android:theme="@style/IntroTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".view.activities.HomeActivity"
+            android:name=".view.activity.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden">

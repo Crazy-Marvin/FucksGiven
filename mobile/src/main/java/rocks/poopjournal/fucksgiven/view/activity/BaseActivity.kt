@@ -1,4 +1,4 @@
-package rocks.poopjournal.fucksgiven.view.activities
+package rocks.poopjournal.fucksgiven.view.activity
 
 import android.content.Context
 import android.content.IntentFilter
