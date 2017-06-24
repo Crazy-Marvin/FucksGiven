@@ -55,7 +55,7 @@ abstract class BaseFragment : Fragment() {
     protected abstract fun init()
 
 
-    protected fun dispose() {
+    protected open fun dispose() {
         mainThreadHandler.removeCallbacksAndMessages(null)
     }
 

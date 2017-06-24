@@ -3,7 +3,6 @@ package rocks.poopjournal.fucksgiven.view.adapter
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.TextView
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.model.Entry
 
@@ -24,9 +23,11 @@ class EntriesAdapter(context: Context, models: List<Entry>)
 
 
     class EntryHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        var tvTime: TextView? = null;
         init {
 
         }
+    }
+
+    fun showOptions(postion: Int) {
     }
 }

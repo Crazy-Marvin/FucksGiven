@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import rocks.poopjournal.fucksgiven.view.listener.ItemClickListener
-
 /**
  *
  * base class for all recycler view adapters in app.<br></br>
@@ -20,8 +18,8 @@ import rocks.poopjournal.fucksgiven.view.listener.ItemClickListener
  */
 abstract class BaseRecyclerAdapter<S, T : RecyclerView.ViewHolder>(context: Context, val models: List<S>) : RecyclerView.Adapter<T>() {
 
-    var itemClickListener: ItemClickListener<S>? = null
     protected val inflater: LayoutInflater = LayoutInflater.from(context)
+    var itemClickListener: ((postion: Int, model: S) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): T {
         val view = inflater.inflate(provideLayout(), parent, false)
@@ -33,8 +31,9 @@ abstract class BaseRecyclerAdapter<S, T : RecyclerView.ViewHolder>(context: Cont
     override fun onBindViewHolder(holder: T, position: Int) {
         val model = models[position]
         bind(holder, model)
-        holder.itemView.setOnClickListener { itemClickListener?.onItemClicked(model) }
+        holder.itemView.setOnClickListener { itemClickListener?.invoke(holder.adapterPosition, model) }
     }
+
 
     @LayoutRes
     protected abstract fun provideLayout(): Int
