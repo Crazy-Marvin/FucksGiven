@@ -10,13 +10,11 @@ import rocks.poopjournal.fucksgiven.view.fragment.StatisticsFragment
 
 class HomeActivity : BaseActivity() {
 
-
     override fun provideLayout(): Int {
         return R.layout.activity_home
     }
 
     override fun init() {
-
         //setting up viewpager
         val fragments = listOf(EntriesFragment(), CalendarFragment(), StatisticsFragment())
         val titles = listOf(getString(R.string.entries), getString(R.string.stats), getString(R.string.calendar))
