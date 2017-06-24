@@ -2,7 +2,9 @@ package rocks.poopjournal.fucksgiven.view.activity
 
 
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.layout_toolbar.*
 import rocks.poopjournal.fucksgiven.R
+import rocks.poopjournal.fucksgiven.model.MonthChangedEvent
 import rocks.poopjournal.fucksgiven.view.adapter.CommonPagerAdapter
 import rocks.poopjournal.fucksgiven.view.fragment.CalendarFragment
 import rocks.poopjournal.fucksgiven.view.fragment.EntriesFragment
@@ -11,7 +13,7 @@ import java.util.*
 
 class HomeActivity : BaseActivity() {
 
-    lateinit var dateChangeListener: (month: Calendar) -> Unit
+    public val monthCalendar: Calendar = Calendar.getInstance()
 
     override fun provideLayout(): Int {
         return R.layout.activity_home
@@ -24,6 +26,19 @@ class HomeActivity : BaseActivity() {
         val adapter = CommonPagerAdapter(supportFragmentManager, fragments, titles)
         pagerHome.adapter = adapter
         tabHome.setupWithViewPager(pagerHome)
+
+        ivLeft.setOnClickListener { onPreviousMonthClick() }
+        ivRight.setOnClickListener { onNextMonthClick() }
+    }
+
+    private fun onNextMonthClick() {
+        monthCalendar.add(Calendar.MONTH, 1)
+        bus.post(MonthChangedEvent(monthCalendar))
+    }
+
+    private fun onPreviousMonthClick() {
+        monthCalendar.add(Calendar.MONTH, -1)
+        bus.post(MonthChangedEvent(monthCalendar))
     }
 
 
