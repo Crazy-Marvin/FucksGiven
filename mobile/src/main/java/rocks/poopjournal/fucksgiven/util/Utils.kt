@@ -5,13 +5,12 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.net.ConnectivityManager
 import rocks.poopjournal.fucksgiven.FucksGivenApp
-import java.text.SimpleDateFormat
+import rocks.poopjournal.fucksgiven.helper.formatDateTime
 import java.util.*
 
 
 object Utils {
 
-    val DATE_FORMAT = "dd/MMM/yyyy hh:mm"
 
     fun generateRandomId(): String {
         val uniqueId = UUID.randomUUID().toString()
@@ -19,12 +18,7 @@ object Utils {
     }
 
     val currentTime: String
-        get() {
-            val mills = System.currentTimeMillis()
-            val date = Date(mills)
-            val simpleDateFormat = SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH)
-            return simpleDateFormat.format(date)
-        }
+        get() = Calendar.getInstance().formatDateTime(Constants.DateFormats.COMMON_DATE_TIME_FORMAT)
 
 
     val appVersionCode: Int

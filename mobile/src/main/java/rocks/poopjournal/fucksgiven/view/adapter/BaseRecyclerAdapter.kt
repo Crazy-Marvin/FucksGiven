@@ -36,7 +36,6 @@ abstract class BaseRecyclerAdapter<S, T : RecyclerView.ViewHolder>(context: Cont
         }
     }
 
-
     @LayoutRes
     protected abstract fun provideLayout(): Int
 
