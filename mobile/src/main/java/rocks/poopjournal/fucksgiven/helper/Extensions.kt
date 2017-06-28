@@ -1,10 +1,8 @@
 package rocks.poopjournal.fucksgiven.helper
 
 import android.app.Dialog
-import android.support.annotation.IdRes
 import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
-import android.view.View
 import kotlinx.android.synthetic.main.dialog_error.view.*
 import rocks.poopjournal.fucksgiven.R
 import java.text.SimpleDateFormat
@@ -48,10 +46,6 @@ fun Dialog.show(cancelable: Boolean) {
     show()
 }
 
-@Suppress("UNCHECKED_CAST")
-fun <T : View> View.findViewByID(@IdRes res: Int): Lazy<T> {
-    return lazy { findViewById(res) as T }
-}
 
 fun AlertDialog.Builder.showError(title: String, description: String, action: String, callback: () -> Unit) {
     val view = LayoutInflater.from(context).inflate(R.layout.dialog_error, null, false)
