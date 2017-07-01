@@ -17,4 +17,5 @@
     <string name="error_dialog_desc">Pick a current or a past day. If you are an actual time traveler we are terribly sorry.</string>
     <string name="error_dialog_title">This day is yet to come</string>
     <string name="today_date">Today, %s</string>
+    <string name="fuck_given">fuck given?</string>
 </resources>

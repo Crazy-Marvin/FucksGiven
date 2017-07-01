@@ -1,14 +1,15 @@
+apply plugin: 'com.android.library'
+
 buildscript {
     repositories {
         mavenCentral()
     }
 }
 
-apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion rootProject.targetSdk
+    buildToolsVersion rootProject.buildTools
 
     packagingOptions {
         exclude 'META-INF/LICENSE.txt'
@@ -19,13 +20,10 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
     }
 
     compileOptions {
@@ -45,6 +43,6 @@ android {
 }
 
 dependencies {
-    compile 'joda-time:joda-time:2.7'
-    compile 'com.android.support:support-v4:25.0.1'
+    compile "joda-time:joda-time:$jodaTime"
+    compile "com.android.support:support-v4:$supportLib"
 }

@@ -39,6 +39,4 @@ dependencies {
     compile "com.github.paolorotolo:appintro:$appIntro"
     compile project(':Calenderlibrary')
 }
-repositories {
-    mavenCentral()
-}
+
