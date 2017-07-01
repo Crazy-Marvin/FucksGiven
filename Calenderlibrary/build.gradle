@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 buildscript {
     repositories {
@@ -45,4 +47,6 @@ android {
 dependencies {
     compile "joda-time:joda-time:$jodaTime"
     compile "com.android.support:support-v4:$supportLib"
+    //kotlin stdlib
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
 }
