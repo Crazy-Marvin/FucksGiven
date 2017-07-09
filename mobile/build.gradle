@@ -38,6 +38,6 @@ dependencies {
     //app intro
     compile "com.github.paolorotolo:appintro:$appIntro"
     compile project(':Calenderlibrary')
-    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    compile 'com.github.PhilJay:MPAndroidChart:v2.0.9'
 }
 
