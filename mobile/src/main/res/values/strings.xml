@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">Fucks Given</string>
-    <string name="splash_app_version">v %s</string>
+    <string name="splash_app_version" translatable="false">v %s</string>
     <string name="keep_a_diary">Keep a diary</string>
     <string name="keep_a_diary_desc">Keep a personal diary, without writing down a single word!</string>
     <string name="find_patterns">Find patterns</string>
