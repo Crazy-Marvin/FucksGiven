@@ -1,8 +1,9 @@
 [main]
 host = https://www.transifex.com
 
-[survivalmanual.strings]
-file_filter = android/src/main/res/values-<lang>/strings.xml
-source_file = android/src/main/res/values/strings.xml
+[fucksgiven.strings]
+file_filter = mobile/src/main/res/values-<lang>/strings.xml
+source_file = mobile/src/main/res/values/strings.xml
 source_lang = en
 type = ANDROID
+
