@@ -2,7 +2,6 @@ package rocks.poopjournal.fucksgiven.view.fragment
 
 import android.content.Intent
 import android.view.View
-import kotlinx.android.synthetic.main.fragment_statiscs.*
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.view.activity.AddFucksActivity
 
@@ -17,7 +16,6 @@ class StatisticsFragment : BaseFragment(), View.OnClickListener {
     }
 
     override fun init() {
-
             fabAddAction.setOnClickListener(this)
     }
 }

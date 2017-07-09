@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MatchParent"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/MatchParent">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvEntries"
-        style="@style/MatchHeight" />
-</LinearLayout>
+        style="@style/MatchWidth"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabAddFuck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_white_24dp"
+        app:fabSize="normal"
+        />
+</RelativeLayout>

@@ -19,5 +19,7 @@ class Constants {
         const val DAY_DATE_MONTH_FORMAT = "EEEE, dd MMM"
         const val DATE_MONTH_FORMAT = "dd MMM"
         const val HOUR_MIN_FORMAT = "hh:mm a"
+        const val MONTH_YEAR_FORMAT = "MMM yyyy"
+        const val ENTRY_DATE_FORMAT = "EEEE d, MMM"
     }
 }

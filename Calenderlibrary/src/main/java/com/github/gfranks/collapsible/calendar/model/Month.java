@@ -32,7 +32,6 @@ public class Month extends RangeUnit {
         if (maxDate == null) {
             return true;
         } else {
-
             LocalDate to = getTo();
             int year = maxDate.getYear();
             int yearTo = to.getYear();

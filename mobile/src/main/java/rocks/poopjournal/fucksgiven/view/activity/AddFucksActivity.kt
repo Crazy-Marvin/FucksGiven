@@ -18,6 +18,7 @@ class AddFucksActivity : BaseActivity() {
     }
 
     override fun init() {
+        ivFuck.setOnClickListener { finish() }
         edSetDate.setOnClickListener { showDatePickerDialog() }
         edSetTime.setOnClickListener { showTimePickerDialog() }
     }

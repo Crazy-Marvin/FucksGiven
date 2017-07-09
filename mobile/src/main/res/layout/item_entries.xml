@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MatchWidth">
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchWidth"
+    android:layout_margin="8dp"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    app:cardBackgroundColor="@color/md_white_1000"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp"
+    app:contentPadding="8dp">
 
     <LinearLayout
         style="@style/MatchParent"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <TextView
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="16dp"
+            app:srcCompat="@drawable/ic_middle_finger"/>
+
+        <android.support.v7.widget.AppCompatTextView
             android:id="@+id/tvTime"
-            style="@style/MatchWidth" />
+            style="@style/MatchWidth"
+            android:textSize="18sp"/>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>
