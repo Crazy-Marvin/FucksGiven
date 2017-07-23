@@ -32,19 +32,20 @@ class HomeActivity : BaseActivity() {
         val fragments = listOf(EntriesFragment(), StatisticsFragment(), CalendarFragment())
         val titles = listOf(getString(R.string.entries), getString(R.string.stats), getString(R.string.calendar))
         val adapter = CommonPagerAdapter(supportFragmentManager, fragments, titles)
+        pagerHome.offscreenPageLimit = 1
         pagerHome.adapter = adapter
         tabHome.setupWithViewPager(pagerHome)
     }
 
     private fun onNextMonthClick() {
         monthCalendar.add(Calendar.MONTH, 1)
-        bus.post(MonthChangedEvent(monthCalendar))
+        bus.post(MonthChangedEvent(monthCalendar, false))
         refreshMonthText()
     }
 
     private fun onPreviousMonthClick() {
         monthCalendar.add(Calendar.MONTH, -1)
-        bus.post(MonthChangedEvent(monthCalendar))
+        bus.post(MonthChangedEvent(monthCalendar, true))
         refreshMonthText()
     }
 

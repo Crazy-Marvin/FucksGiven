@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-</selector>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/intro_bg_one"/>
+    <item android:drawable="@drawable/intro_two"/>
+    <item android:drawable="@drawable/next_two"/>
+</layer-list>

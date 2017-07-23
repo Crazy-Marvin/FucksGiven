@@ -10,6 +10,10 @@ class Constants {
         const val SPLASH_DELAY: Long = 2000
     }
 
+    object BundleExtras {
+        const val INDEX = "index"
+    }
+
     object Preferences {
         const val WAS_APP_OPENED: String = "was_app_opened"
     }

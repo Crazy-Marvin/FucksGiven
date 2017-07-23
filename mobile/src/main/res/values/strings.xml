@@ -18,4 +18,10 @@
     <string name="error_dialog_title">This day is yet to come</string>
     <string name="today_date">Today, %s</string>
     <string name="fuck_given">fuck given?</string>
+    <string name="identify_patterns">Identify Patterns</string>
+    <string name="with_an_increasing_number_of_entries_you_get_more_and_more_useful_statistics_about_the_fucks">With an increasing number of entries you get more and more useful statistics about the fucks you give. You can use the detailed statistics to find patterns in your life. If you do not like the found patterns you now have the possibility to change them</string>
+    <string name="track_what_matters">Track what matters</string>
+    <string name="keep_a_personal_diary_about_the_things_that_really_matters">Keep a personal diary about the things that really matters. You can add personal notes about the situations to better analyze them afterwords.</string>
+    <string name="build_new_habits_two">Build New Habits</string>
+    <string name="once_you_internalized_your_patterns">Once you internalized your patterns, you canstart working on replacing or changing them. Get rid of unwanted and bad habits and startbrand new ones. Your life will get better and better!</string>
 </resources>

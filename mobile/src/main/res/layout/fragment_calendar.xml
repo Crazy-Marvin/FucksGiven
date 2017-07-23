@@ -8,15 +8,16 @@
         android:id="@+id/collapsibleCalendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#48848F"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         app:ccv_allowStateChange="true"
-        app:ccv_arrowColor="#FFFFFF"
-        app:ccv_dayTextColor="#FFFFFF"
-        app:ccv_eventIndicatorColor="#FFE18B"
+        app:ccv_arrowColor="#000000"
+        app:ccv_dayTextColor="#000000"
+        app:ccv_eventIndicatorColor="#32a0b9"
         app:ccv_headerTextColor="#FFFFFF"
-        app:ccv_selectedDayBackgroundColor="#175662"
+        app:ccv_selectedDayBackgroundColor="#4cc8df"
         app:ccv_state="month"
-        app:ccv_weekDayTextColor="#FFFFFF"/>
+        app:ccv_weekDayTextColor="#8c8b8b"/>
 </LinearLayout>

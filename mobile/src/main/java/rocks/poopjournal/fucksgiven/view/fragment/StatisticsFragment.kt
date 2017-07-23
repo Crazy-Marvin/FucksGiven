@@ -1,9 +1,9 @@
 package rocks.poopjournal.fucksgiven.view.fragment
 
+import android.graphics.Color
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.utils.ColorTemplate
 import kotlinx.android.synthetic.main.fragment_statiscs.*
 import rocks.poopjournal.fucksgiven.R
 
@@ -16,10 +16,8 @@ class StatisticsFragment : BaseFragment() {
 
     override fun init() {
         val data = BarData(getXAxisValues(), getDataSet())
-
         chart.data = data
         chart.setDescription(null)
-        chart.animateXY(2000, 2000)
         chart.invalidate()
     }
 
@@ -59,7 +57,7 @@ class StatisticsFragment : BaseFragment() {
         val v2e7 = BarEntry(5f, 6) // Jun
         valueSet2.add(v2e7)
         val barDataSet2 = BarDataSet(valueSet2, "Days")
-        barDataSet2.setColors(ColorTemplate.COLORFUL_COLORS)
+        barDataSet2.colors = listOf(Color.rgb(24, 55, 66))
         barDataSet2.setValueFormatter { value ->
             val formatted = value.toInt()
             "$formatted Fucks"

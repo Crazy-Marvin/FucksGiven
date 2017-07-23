@@ -35,9 +35,7 @@ dependencies {
     compile "com.jakewharton.timber:timber:$timber"
     //otto event bus
     compile "com.squareup:otto:$eventBus"
-    //app intro
-    compile "com.github.paolorotolo:appintro:$appIntro"
     compile project(':Calenderlibrary')
-    compile 'com.github.PhilJay:MPAndroidChart:v2.0.9'
+    compile "com.github.PhilJay:MPAndroidChart:$chart"
 }
 
