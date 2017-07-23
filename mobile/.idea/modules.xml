@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Calenderlibrary/Calenderlibrary.iml" filepath="$PROJECT_DIR$/../Calenderlibrary/Calenderlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../CrazyMarvinOrgApp.iml" filepath="$PROJECT_DIR$/../CrazyMarvinOrgApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobile.iml" filepath="$PROJECT_DIR$/mobile.iml" />
+    </modules>
+  </component>
+</project>
