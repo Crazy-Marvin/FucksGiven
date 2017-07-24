@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_bg_one"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    android:scrollbars="vertical">
 
-    <android.support.v7.widget.AppCompatImageView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/intro_bg_one"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <android.support.v7.widget.AppCompatImageView
         android:layout_width="match_parent"
@@ -59,3 +61,4 @@
         android:clickable="true"
         android:focusable="true"/>
 </FrameLayout>
+</ScrollView>

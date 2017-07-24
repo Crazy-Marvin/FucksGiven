@@ -1,61 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_bg_three"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    android:scrollbars="vertical">
 
-    <android.support.v7.widget.AppCompatImageView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/intro_bg_three"/>
-
-    <android.support.v7.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/intro_one"/>
-
-    <android.support.v7.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitEnd"
-        app:srcCompat="@drawable/next_two"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="85dp"
-        android:gravity="center"
         android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatTextView
-            style="@style/Base.TextAppearance.AppCompat.Large"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/identify_patterns"
-            android:textColor="@color/md_white_1000"/>
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/intro_one"/>
 
-        <android.support.v7.widget.AppCompatTextView
-            style="@style/Base.TextAppearance.AppCompat.Small"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:paddingTop="8dp"
-            android:text="@string/with_an_increasing_number_of_entries_you_get_more_and_more_useful_statistics_about_the_fucks"
-            android:textColor="@color/md_white_1000"/>
-    </LinearLayout>
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/next_two"/>
 
-    <View
-        android:id="@+id/viewClickable"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_gravity="bottom|end"
-        android:clickable="true"
-        android:focusable="true"/>
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="85dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/identify_patterns"
+                android:textColor="@color/md_white_1000"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="@string/with_an_increasing_number_of_entries_you_get_more_and_more_useful_statistics_about_the_fucks"
+                android:textColor="@color/md_white_1000"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewClickable"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="bottom|end"
+            android:clickable="true"
+            android:focusable="true"/>
+    </FrameLayout>
+</ScrollView>
