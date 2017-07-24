@@ -11,7 +11,7 @@ android:
     - extra-android-m2repository
 
 script:
-      - ./gradlew checkstyle build connectedCheck #edit your script here
+      - ./gradlew build connectedCheck #edit your script here
 
 notifications:
     on_success: change
