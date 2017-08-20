@@ -2,6 +2,7 @@ package rocks.poopjournal.fucksgiven.view.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import kotlinx.android.synthetic.main.fragment_intro_one.*
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.util.Constants
 import rocks.poopjournal.fucksgiven.view.activity.IntroActivity

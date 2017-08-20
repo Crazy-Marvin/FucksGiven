@@ -17,6 +17,7 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         jcenter()
         maven { url "https://jitpack.io" }
     }
@@ -26,7 +27,7 @@ ext {
     applicationId = "rocks.poopjournal.fucksgiven"
     minSdk = 19
     targetSdk = 25
-    buildTools = "26.0.0"
+    buildTools = "25.0.2"
     versionCode = 1
     versionName = "1.0"
 
@@ -37,6 +38,8 @@ ext {
     appIntro = "4.1.0"
     jodaTime = "2.7"
     chart = "v2.0.9"
+    playServices = "10.0.1"
+
 }
 task clean(type: Delete) {
     delete rootProject.buildDir

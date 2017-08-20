@@ -21,7 +21,12 @@ android {
         }
     }
 }
-
+repositories {
+    maven {
+        name "jitpack"
+        url "https://jitpack.io"
+    }
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //kotlin stdlib
@@ -35,7 +40,9 @@ dependencies {
     compile "com.jakewharton.timber:timber:$timber"
     //otto event bus
     compile "com.squareup:otto:$eventBus"
-    compile project(':Calenderlibrary')
     compile "com.github.PhilJay:MPAndroidChart:$chart"
+    compile "com.google.android.gms:play-services-location:${playServices}"
+    compile "com.google.android.gms:play-services-places:${playServices}"
+    compile 'com.github.gfranks:CollapsibleCalendarView:develop-SNAPSHOT'
 }
 

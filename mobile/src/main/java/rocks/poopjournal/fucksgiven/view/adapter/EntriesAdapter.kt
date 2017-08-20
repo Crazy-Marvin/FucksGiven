@@ -20,6 +20,8 @@ class EntriesAdapter(context: Context, models: List<Entry>)
 
     override fun bind(holder: EntryHolder, model: Entry) {
         holder.itemView.tvTime.text = model.formattedTime
+        holder.itemView.tvLocation.text = model.place
+        holder.itemView.tvNotes.text = model.notes
     }
 
 

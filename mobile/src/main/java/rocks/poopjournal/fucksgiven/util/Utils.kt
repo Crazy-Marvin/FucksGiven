@@ -11,7 +11,6 @@ import java.util.*
 
 object Utils {
 
-
     fun generateRandomId(): String {
         val uniqueId = UUID.randomUUID().toString()
         return uniqueId.replace("-".toRegex(), "")
@@ -43,11 +42,10 @@ object Utils {
         get() {
             val context = FucksGivenApp.instance
             try {
-                return context?.packageManager?.getPackageInfo(context.packageName, 0)
+                return context.packageManager?.getPackageInfo(context.packageName, 0)
             } catch (e: PackageManager.NameNotFoundException) {
                 e.printStackTrace()
                 return null
             }
-
         }
 }

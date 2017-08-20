@@ -36,7 +36,13 @@ class EntriesFragment : BaseFragment() {
         for (i in 1..10) {
             currentCalendar.add(Calendar.DAY_OF_MONTH, random.nextInt(25))
             currentCalendar.add(Calendar.MONTH, 1)
-            entries.add(Entry(i, currentCalendar.timeInMillis, currentCalendar.formatDateTime(Constants.DateFormats.ENTRY_DATE_FORMAT)))
+            entries.add(Entry(
+                    i,
+                    currentCalendar.timeInMillis,
+                    currentCalendar.formatDateTime(Constants.DateFormats.ENTRY_DATE_FORMAT),
+                    "22, M.G. Road, Bangalore.",
+                    "I wanna grow up once again"
+            ))
         }
 
         adapter = EntriesAdapter(context, entries)

@@ -23,7 +23,7 @@ class StatisticsFragment : BaseFragment() {
 
 
     private fun getDataSet(): ArrayList<BarDataSet> {
-        var dataSets: ArrayList<BarDataSet>? = null
+        val dataSets: ArrayList<BarDataSet>?
 
         val valueSet1 = ArrayList<BarEntry>()
         val v1e1 = BarEntry(1f, 0) // Jan

@@ -24,4 +24,13 @@
     <string name="keep_a_personal_diary_about_the_things_that_really_matters">Keep a personal diary about the things that really matters. You can add personal notes about the situations to better analyze them afterwords.</string>
     <string name="build_new_habits_two">Build New Habits</string>
     <string name="once_you_internalized_your_patterns">Once you internalized your patterns, you canstart working on replacing or changing them. Get rid of unwanted and bad habits and startbrand new ones. Your life will get better and better!</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="unable_to_turn_on_location">Unable to get location</string>
+    <string name="connect_internet">Please connect to internet</string>
+    <string name="play_service_disconnected">Google play services disconnected</string>
+    <string name="unknown_error">Unknown error occured</string>
+    <string name="play_service_failed">Google play services not available!</string>
+    <string name="location">Location</string>
+    <string name="notes">Notes</string>
 </resources>
