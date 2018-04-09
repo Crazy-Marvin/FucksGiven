@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.gradlePlugin = '2.3.1'
+    ext.gradlePlugin = '3.0.0'
     ext.kotlinVersion = '1.1.2-5'
     repositories {
         jcenter()
