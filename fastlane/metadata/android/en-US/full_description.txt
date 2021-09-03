@@ -1,0 +1,12 @@
+<b>A good look at bad habits.</b> Jot down your vices in a tap, right from the home page. Use Notes to add details — like a healthy alternative to that chocolate bar you cannot resist. And organise your input with Labels.
+
+
+<b>Faster than you can grab a pen.</b> Find your bad habits on the home page, and cross out the ones you give into. These will move to Done for the day. The next morning, start off fresh with a full list of things to avoid.
+
+
+<b>Stay on top of your progress.</b> The Log gives you insight into your overall success rates and pinpoints what bad habit you have been most attached to — over a week, a month, or a year. So you can easily work toward a better you.
+
+
+Webpage: <a href="https://www.crazymarvin.com/todont">https://www.crazymarvin.com/todont</a>
+Translate To Don’t: <a href="https://hosted.weblate.org/engage/todont/">https://hosted.weblate.org/engage/todont/</a> 
+Source on GitHub: <a href="https://github.com/Crazy-Marvin/ToDont">https://github.com/Crazy-Marvin/ToDont</a>
