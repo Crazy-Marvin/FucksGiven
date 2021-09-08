@@ -7,6 +7,6 @@
 <b>Stay on top of your progress.</b> The Log gives you insight into your overall success rates and pinpoints what bad habit you have been most attached to — over a week, a month, or a year. So you can easily work toward a better you.
 
 
-Webpage: <a href="https://www.crazymarvin.com/todont">https://www.crazymarvin.com/todont</a>
-Translate To Don’t: <a href="https://hosted.weblate.org/engage/todont/">https://hosted.weblate.org/engage/todont/</a> 
-Source on GitHub: <a href="https://github.com/Crazy-Marvin/ToDont">https://github.com/Crazy-Marvin/ToDont</a>
+Webpage: <a href="https://www.crazymarvin.com/fucksgiven">https://www.crazymarvin.com/fucksgiven</a>
+Translate To Don’t: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucksgiven/</a> 
+Source on GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
