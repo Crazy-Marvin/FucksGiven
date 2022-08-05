@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
@@ -11,6 +12,16 @@ class Graph extends StatefulWidget {
 
 class _GraphState extends State<Graph> {
   @override
+  final List<ChartData> chartData = [
+    ChartData('M', 9),
+    ChartData('TU', 8),
+    ChartData('W', 9),
+    ChartData('TH', 8),
+    ChartData('F', 8),
+    ChartData('ST', 9),
+    ChartData('SN', 9),
+
+  ];
   Widget build(BuildContext context) {
     return
       SafeArea(
@@ -72,14 +83,25 @@ class _GraphState extends State<Graph> {
               SizedBox(
                 height:5,
               ),
-              Expanded(
-                child: SizedBox(
-                  child: SfCartesianChart(),
+        Container(
+                    child: SfCartesianChart(
+                        primaryXAxis: CategoryAxis(),
+                        series: <CartesianSeries>[
+                          LineSeries<ChartData, String>(
+                              color:HexColor("#29A331"),
+                              dataSource: chartData,
+                              xValueMapper: (ChartData data, _) => data.x,
+                              yValueMapper: (ChartData data, _) => data.y,
+                              markerSettings: MarkerSettings(
+                                  isVisible: true,
+
+                                  shape: DataMarkerType.circle
+
+                              )
+                          )
+                        ]
+                    )
                 ),
-              ),
-
-
-
 
             ],
           ),
@@ -87,4 +109,9 @@ class _GraphState extends State<Graph> {
         ),
       );
   }
+}
+class ChartData {
+  ChartData(this.x, this.y);
+  final String x;
+  final int? y;
 }
