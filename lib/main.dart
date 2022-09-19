@@ -3,7 +3,8 @@ import 'package:fucksgiven/pages/Settings.dart';
 import 'package:fucksgiven/pages/graph.dart';
 import 'package:fucksgiven/pages/home.dart';
 import 'package:hexcolor/hexcolor.dart';
-
+import 'package:flutter_svg/avd.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -21,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     Graph(),
   ];
   List<String> title =[
-    'F**** given',
+    'Fucks given',
     'Stats',
   ];
 
@@ -62,8 +63,8 @@ class _MyAppState extends State<MyApp> {
             showUnselectedLabels: false,
             items: [
               BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage("images/homeicon.png"),
+                icon: SvgPicture.asset(
+                  "images/homeicon.svg",
                 ),
                 label: 'Home',
 
@@ -71,8 +72,8 @@ class _MyAppState extends State<MyApp> {
 
               ),
               BottomNavigationBarItem(
-                  icon: ImageIcon(
-                    AssetImage("images/chart.png"),
+                  icon: SvgPicture.asset(
+                    "images/chart.svg",
                   ),
                   label: 'Chart'
 

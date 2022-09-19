@@ -1,8 +1,16 @@
-[![Build Status](https://travis-ci.org/Crazy-Marvin/FucksGiven.svg?branch=master)](https://travis-ci.org/Crazy-Marvin/FucksGiven)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e3a69a23765d48e6a8b9c8dcbc54a543)](https://www.codacy.com/app/CrazyMarvin/FucksGiven?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Crazy-Marvin/FucksGiven&amp;utm_campaign=Badge_Grade)
-[![codebeat badge](https://codebeat.co/badges/7f4f8b3a-9394-4d5c-ac6b-e88d59c6e5b2)](https://codebeat.co/projects/github-com-crazy-marvin-fucksgiven-master)
+# fucksgiven
 
-# Fucks Given
+A new Flutter project.
 
-This app lets you count how many fucks you give.
+## Getting Started
 
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
