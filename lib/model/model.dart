@@ -12,7 +12,7 @@ class NotesField{
 class Note{
   final int? id;
   final String title;
-  final DateTime createdTime;
+  final String createdTime;
 
   const Note({
    this.id,
@@ -23,7 +23,7 @@ class Note{
   Note copy({
     int? id,
     String? title,
-    DateTime? createdTime
+    String? createdTime
   }) =>
   Note(
       id:id ?? this.id,
@@ -35,14 +35,14 @@ class Note{
   static Note fromJson(Map<String,Object?> json) => Note(
     id: json[NotesField.id] as int,
     title: json[NotesField.title] as String,
-    createdTime: DateTime.parse(json[NotesField.time] as String),
+    createdTime: json[NotesField.time] as String,
 
 
   );
   Map<String,Object?> toJson() =>{
     NotesField.id : id,
     NotesField.title :title,
-    NotesField.time: createdTime.toIso8601String(),
+    NotesField.time: createdTime,
 
   };
 

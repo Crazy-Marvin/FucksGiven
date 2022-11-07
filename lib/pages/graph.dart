@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fucksgiven/pages/Settings.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 class Graph extends StatefulWidget {
@@ -46,7 +47,12 @@ class _GraphState extends State<Graph> {
 
                       Expanded(
                         child: OutlinedButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context,
+                                MaterialPageRoute(builder: (context) =>  Settings()),
+                              );
+
+                            },
                             child: Center(child: Text('W'))
 
                         ),

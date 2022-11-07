@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fucksgiven/db/Notes_database.dart';
 import 'package:hexcolor/hexcolor.dart';
-
 import '../model/model.dart';
+import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,24 +15,37 @@ class _HomeState extends State<Home> {
   late List<Note> notes;
   bool isLoading = false;
   final myController = TextEditingController();
-
+  var notesDates =[] ;
   @override
   void initState() {
     refreshNotes();
+  }
+  Future deleteAll() async{
+    await NotesDatabase.instance.deleteAll();
   }
   Future refreshNotes() async{
     print('loadinggg........');
     // setState(() { isLoading = true;});
     this.notes = await NotesDatabase.instance.readAllNotes();
 
-    print("Notes check:${notes}");
+    for(int i = 0;i<this.notes.length;i++){
+      notesDates.add(notes[i].createdTime);
+
+    }
+
+    setState(() {
+      notesDates= notesDates.toSet().toList();
+    });
+    print(notesDates.length);
     // setState(() {
     //   isLoading = false;
     // });
   }
 
   Future addNote(title) async{
-    final note = Note(title: title, createdTime: DateTime.now());
+    DateFormat dateFormat = DateFormat.yMMMMd('en_US') ;
+
+    final note = Note(title: title, createdTime: dateFormat.format(DateTime.now()));
 
     await NotesDatabase.instance.create(note);
   }
@@ -73,6 +86,11 @@ class _HomeState extends State<Home> {
 
           return Column(
             children: [
+              // GestureDetector(
+              //     onTap: (){
+              //       deleteAll();
+              //     },
+              //     child: Text("delete")),
               Container(
                 height: 40,
                 color:  new HexColor("#29A331").withOpacity(0.1),
@@ -80,7 +98,7 @@ class _HomeState extends State<Home> {
                 alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
-                      child: Text(data[index], style: TextStyle(color: new HexColor("#29A331") ,
+                      child: Text(notesDates[index], style: TextStyle(color: new HexColor("#29A331") ,
                           fontSize: 17,
                         fontWeight: FontWeight.bold,
                           ),
@@ -88,24 +106,15 @@ class _HomeState extends State<Home> {
                     )
                 ),
               ),
-              ListView.builder(itemBuilder: (context, index){
-                return  Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
-                  child: Text("Lorem Ipsum is simply dummy text.",
-                    style: TextStyle(
-                    fontSize: 17,
-                  ),
-                  ),
-                );
-              },
-              itemCount: notes.length,
-                physics: ClampingScrollPhysics(),
-                shrinkWrap: true,
-              ),
+           //NESTED LIST STARTS HERE:-
+
+           NestedList(date: notesDates[index]),
+           //  NotesDatabase.instance.messageList(notesDates[index])
+
             ],
           );
         },
-        itemCount: 4,),
+        itemCount: notesDates.length,),
           floatingActionButton: new FloatingActionButton(
               elevation: 0.0,
               child: new Icon(Icons.add),
@@ -117,4 +126,70 @@ class _HomeState extends State<Home> {
       );
 
   }
+
 }
+class NestedList extends StatefulWidget {
+  NestedList({ required this.date});
+  final date;
+
+  @override
+  State<NestedList> createState() => _NestedListState();
+}
+
+class _NestedListState extends State<NestedList> {
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    // dataMap = NotesDatabase.instance.readNotebyDate(date);
+    return SizedBox(
+      child: StreamBuilder(
+        stream:  NotesDatabase.instance.readNotebyDate(widget.date).asStream(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          else{
+            var note = NotesDatabase.instance.readNotebyDate(widget.date);
+            return Text(snapshot.data.toString());
+
+
+          }
+
+
+
+            //return Text(snapshot.data[]);
+            // return ListView(
+            //
+            //   children: snapshot.data!.docs.map((doc) {
+            //     return Card(
+            //
+            //       child: Padding(
+            //
+            //         padding: EdgeInsets.all(10),
+            //         child: Row(
+            //           mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+            //           children: [
+            //             Expanded(
+            //                 flex: 3,
+            //                 child: Text(doc['name'].toString())),
+            //             Expanded(
+            //                 flex: 1,
+            //                 child: Text(doc['price'].toString()+" AED")),
+            //
+            //           ],
+            //         ),
+            //       ),
+            //     );
+            //   }).toList(),
+            // );
+        },
+      ),
+    );
+  }
+}
+
+

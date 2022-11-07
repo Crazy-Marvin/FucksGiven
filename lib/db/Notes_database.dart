@@ -2,6 +2,7 @@ import 'package:fucksgiven/model/model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
+import 'package:intl/intl.dart';
 
 class NotesDatabase {
   static final NotesDatabase instance =NotesDatabase._init();
@@ -42,6 +43,7 @@ class NotesDatabase {
   ''');
   }
   Future<Note> create(Note note) async{
+
     final db = await instance.database;
     final id = await db.insert(tableNotes, note.toJson());
 
@@ -63,13 +65,69 @@ class NotesDatabase {
       throw Exception('id $id not found');
     }
   }
+  readNotebyDate(String date) async{
+    final db = await instance.database;
+    final maps = await db.query(
+      tableNotes,
+      columns: NotesField.values,
+      where: '${NotesField.time} = ?',
+      whereArgs: [date],
+    );
+    if(maps.isNotEmpty){
+      print(maps);
+      return maps;
+    }
+    else{
+      throw Exception(' not found');
+    }
+  }
+  Future<int> notesByDateCount(String date) async{
+    final db = await instance.database;
+    final maps = await db.query(
+      tableNotes,
+      columns: NotesField.values,
+      where: '${NotesField.time} = ?',
+      whereArgs: [date],
+    );
+    if(maps.isNotEmpty){
+      print(maps.length);
+      return maps.length;
+    }
+    else{
+      throw Exception(' not found');
+    }
+  }
+
 
   Future<List<Note>> readAllNotes() async{
     final db = await instance.database;
     final orderBy = '${NotesField.time} ASC';
-    final result = await db.query(tableNotes,orderBy: orderBy);
-    
-    return result.map((json) => Note.fromJson(json)).toList();
+    final List<Map<String, dynamic>> maps= await db.query(tableNotes,orderBy: orderBy);
+
+    return List.generate(maps.length, (i) {
+      return Note(
+        title: maps[i]['title'],
+        createdTime: maps[i]['time'],
+
+      );
+    });
+  }
+  Future<List<Note>> readDates() async{
+    final db = await instance.database;
+    final orderBy = '${NotesField.time} ASC';
+    final List<Map<String, dynamic>> maps = await db.query(tableNotes,orderBy: orderBy);
+    return List.generate(maps.length, (i) {
+      return Note(
+         title: maps[i]['title'],
+        createdTime: maps[i]['createdTime'],
+      );
+    });
+    // return result.map((json) => Note.fromJson(json)).toList();
+  }
+  Future deleteAll() async{
+    final db = await instance.database;
+    return await db.rawDelete("Delete from $tableNotes");
+    // return result.map((json) => Note.fromJson(json)).toList();
   }
   //close the database function
   Future close() async{
@@ -78,5 +136,23 @@ class NotesDatabase {
   }
 
 
+  Future<List<Note>> messageList(String date) async {
+    final db = await instance.database;
+    final List<Map<String, dynamic>> maps =
+    await db.query(
+      tableNotes,
+      columns: NotesField.values,
+      where: '${NotesField.time} = ?',
+      whereArgs: [date],
+    );
+    return List.generate(maps.length, (i) {
+      return Note(
+        title: maps[i]['title'],
+        createdTime:maps[i]['createdTime'],
+
+      );
+    }
+    );
+  }
 
 }
