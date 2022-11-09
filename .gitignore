@@ -35,6 +35,13 @@ captures/
 # Intellij
 *.iml
 .idea/workspace.xml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
 
 # Keystore files
 *.jks
+
+# Android Profiling
+*.hprof
