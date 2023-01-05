@@ -43,7 +43,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   syncfusion_flutter_charts: ^20.1.48
   hexcolor: ^2.0.6
-  flutter_svg: ^1.0.3
+  flutter_svg: ^1.1.6
   sqflite: ^2.0.3+1
   path: ^1.8.2
 
