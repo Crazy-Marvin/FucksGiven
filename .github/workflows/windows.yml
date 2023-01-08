@@ -9,7 +9,7 @@ jobs:
      # - name: "🧪 Gradle Wrapper Validation"
      #   uses: gradle/wrapper-validation-action@v1
       - name: "🧰 Install JDK"
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
           java-version: 8
