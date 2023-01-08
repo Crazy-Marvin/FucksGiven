@@ -42,7 +42,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
   syncfusion_flutter_charts: ^20.1.48
-  hexcolor: ^2.0.6
+  hexcolor: ^3.0.1
   flutter_svg: ^1.1.6
   sqflite: ^2.2.2
   path: ^1.8.2
