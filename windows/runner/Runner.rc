@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "rocks.poopjournal" "\0"
-            VALUE "FileDescription", "fucksgiven" "\0"
+            VALUE "CompanyName", "rocks.poopjournal.fucksgiven" "\0"
+            VALUE "FileDescription", "fucks_given" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "fucksgiven" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 rocks.poopjournal. All rights reserved." "\0"
-            VALUE "OriginalFilename", "fucksgiven.exe" "\0"
-            VALUE "ProductName", "fucksgiven" "\0"
+            VALUE "InternalName", "fucks_given" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 rocks.poopjournal.fucksgiven. All rights reserved." "\0"
+            VALUE "OriginalFilename", "fucks_given.exe" "\0"
+            VALUE "ProductName", "Fucks Given" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
