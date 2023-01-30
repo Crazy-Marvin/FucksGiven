@@ -30,7 +30,7 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: Text(title[currentIndex].toString(),style: TextStyle(color: Colors. black,fontSize: 25)),
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         actions: <Widget>[
           IconButton(
             icon:ImageIcon(

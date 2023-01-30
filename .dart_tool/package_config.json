@@ -3,9 +3,9 @@
   "packages": [
     {
       "name": "async",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.14"
     },
     {
       "name": "boolean_selector",
@@ -15,19 +15,13 @@
     },
     {
       "name": "characters",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "charcode",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.3.1",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "clock",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -45,7 +39,7 @@
     },
     {
       "name": "fake_async",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.0",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -53,13 +47,19 @@
       "name": "flutter",
       "rootUri": "file:///Users/eapple/Developer/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_lints",
       "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_svg",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_test",
@@ -75,7 +75,7 @@
     },
     {
       "name": "hexcolor",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/hexcolor-2.0.6",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/hexcolor-2.0.7",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
@@ -99,27 +99,45 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.11",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.4",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5",
       "packageUri": "lib/",
       "languageVersion": "2.13"
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "path",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.1",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "path_drawing",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path_parsing-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
     },
     {
       "name": "sky_engine",
@@ -129,9 +147,21 @@
     },
     {
       "name": "source_span",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.2",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "sqflite",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.3+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
+      "name": "sqflite_common",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.2.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
     },
     {
       "name": "stack_trace",
@@ -147,31 +177,37 @@
     },
     {
       "name": "string_scanner",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "syncfusion_flutter_charts",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_charts-20.1.48",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_charts-20.1.58+1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "syncfusion_flutter_core",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-20.1.48",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-20.1.58+1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
+      "name": "synchronized",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-3.0.0+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "term_glyph",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.9",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -182,13 +218,19 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///Users/eapple/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/xml-6.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "fucksgiven",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-06-10T06:50:06.539873Z",
+  "generated": "2023-01-25T10:09:19.613977Z",
   "generator": "pub",
-  "generatorVersion": "2.17.1"
+  "generatorVersion": "2.18.2"
 }

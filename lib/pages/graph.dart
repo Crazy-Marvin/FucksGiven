@@ -34,7 +34,6 @@ class _GraphState extends State<Graph> {
     return
       SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
           body: Column(
 
             children:[

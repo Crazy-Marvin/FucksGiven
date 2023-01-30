@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
     this.notes = await NotesDatabase.instance.readAllNotes();
 
     for(int i = 0;i<this.notes.length;i++){
-      notesDates.add(notes[i].createdTime);
+      notesDates.insert(0,notes[i].createdTime);
 
     }
 
@@ -81,40 +81,49 @@ class _HomeState extends State<Home> {
     return
       Scaffold(
 
-        body:ListView.builder(
-          itemBuilder: (context,index){
+        body:SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            // height: 600,
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context,index){
 
-          return Column(
-            children: [
-              // GestureDetector(
-              //     onTap: (){
-              //       deleteAll();
-              //     },
-              //     child: Text("delete")),
-              Container(
-                height: 40,
-                color:  new HexColor("#29A331").withOpacity(0.1),
-                child: Align(
-                alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
-                      child: Text(notesDates[index], style: TextStyle(color: new HexColor("#29A331") ,
-                          fontSize: 17,
-                        fontWeight: FontWeight.bold,
+              return Column(
+                children: [
+                  GestureDetector(
+                      onTap: (){
+                        deleteAll();
+                      },
+                      child: Text("delete")),
+                  Container(
+                    height: 40,
+                    color:  new HexColor("#29A331").withOpacity(0.1),
+                    child: Align(
+                    alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+                          child: Text(notesDates[index], style: TextStyle(color: new HexColor("#29A331") ,
+                              fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                              ),
                           ),
-                      ),
-                    )
-                ),
-              ),
-           //NESTED LIST STARTS HERE:-
+                        )
+                    ),
+                  ),
+               //NESTED LIST STARTS HERE:-
 
-           NestedList(date: notesDates[index]),
-           //  NotesDatabase.instance.messageList(notesDates[index])
+               NestedList(date: notesDates[index]),
+               //  NotesDatabase.instance.messageList(notesDates[index])
 
-            ],
-          );
-        },
-        itemCount: notesDates.length,),
+                ],
+              );
+            },
+            itemCount: notesDates.length,),
+          ),
+        ),
           floatingActionButton: new FloatingActionButton(
               elevation: 0.0,
               child: new Icon(Icons.add),
@@ -138,7 +147,7 @@ class NestedList extends StatefulWidget {
 
 class _NestedListState extends State<NestedList> {
 
-
+var mylist ;
   @override
   Widget build(BuildContext context) {
 
@@ -154,14 +163,36 @@ class _NestedListState extends State<NestedList> {
           }
           else{
             var note = NotesDatabase.instance.readNotebyDate(widget.date);
-            return Text(snapshot.data.toString());
+             mylist = snapshot.data;
+            // return Text(snapshot.data.toString());
 
+            return Container(
+
+              width: double.infinity,
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: mylist.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      ListTile(
+                        title: Text(mylist[index]['title'].toString()),
+
+                        // subtitle: Text(myList[index].subtitle),
+                      ),
+                      Divider()
+                    ],
+                  );
+                },
+              ),
+            );
 
           }
 
 
 
-            //return Text(snapshot.data[]);
+            // return Text(snapshot.data[]);
             // return ListView(
             //
             //   children: snapshot.data!.docs.map((doc) {
