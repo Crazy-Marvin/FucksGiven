@@ -1,6 +1,7 @@
 # This file tracks properties of this Flutter project.
 # Used by Flutter tool to assess capabilities and perform upgrades etc.
 #
+<<<<<<< HEAD
 # This file should be version controlled.
 
 version:
@@ -34,3 +35,12 @@ migration:
   unmanaged_files:
     - 'lib/main.dart'
     - 'ios/Runner.xcodeproj/project.pbxproj'
+=======
+# This file should be version controlled and should not be manually edited.
+
+version:
+  revision: 9b2d32b605630f28625709ebd9d78ab3016b2bf6
+  channel: stable
+
+project_type: app
+>>>>>>> 99afa0d17fb122fd3b2172c41de9371a632d0411

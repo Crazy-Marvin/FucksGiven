@@ -5,11 +5,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: "📥 Check-out"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
      # - name: "🧪 Gradle Wrapper Validation"
      #   uses: gradle/wrapper-validation-action@v1
       - name: "🧰 Install JDK"
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
           java-version: 8
@@ -23,7 +23,7 @@ jobs:
       - name: "🧪 Code coverage"
         run: ./gradlew jacocoTestReport
       - name: "📤 Upload code coverage"
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           yml: .codecov.yml
