@@ -1,8 +1,7 @@
 <component name="libraryTable">
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
-      <root url="file://$USER_HOME$/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/hexcolor-2.0.7" />
-      <root url="file://$USER_HOME$/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.3+1" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sqflite-2.2.4+1" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
