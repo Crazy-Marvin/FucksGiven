@@ -12,7 +12,7 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenSsettingstate extends State<MainScreen> {
   int currentIndex =0;
   final screens = [
     Home(),
@@ -34,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
         actions: <Widget>[
           IconButton(
             icon:ImageIcon(
-              AssetImage("images/Settings.png"),
+              AssetImage("images/settings.svg"),
               color:HexColor("#29A331"),
             ),
             onPressed: () {
