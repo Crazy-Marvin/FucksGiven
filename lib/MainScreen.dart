@@ -61,7 +61,7 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "images/homeicon.svg",
+              "images/home.svg",
             ),
             label: 'Home',
 
