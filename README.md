@@ -16,7 +16,9 @@
 [![Google Play](https://badgen.net/badge/icon/googleplay?icon=googleplay&label)](https://play.google.com/store/apps/details?id=rocks.poopjournal.fucksgiven)
 # Fucks Given
 
-___TBD___
+Fucks Given lets you keep track of the things that made you care. Whenever something happens that you needlessly concern yourself with, jot it down with a tap. The app creates a chart of how many fucks you’ve given, so you can work to give none.
+ 
+Fucks Given allows you to back up your data and has a beautiful dark mode that can turn on automatically, following the system theme.
 
 # Contributing
 
