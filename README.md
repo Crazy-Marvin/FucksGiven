@@ -10,7 +10,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/379c59381e784f42b5910864e574bd8e)](https://www.codacy.com/gh/Crazy-Marvin/FucksGiven?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Crazy-Marvin/FucksGiven&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/Crazy-Marvin/FucksGiven/branch/master/graph/badge.svg)](https://codecov.io/gh/Crazy-Marvin/FucksGiven)
 [![Translation status](https://hosted.weblate.org/widgets/fucks-given/-/svg-badge.svg)](https://hosted.weblate.org/engage/fucks-given/)
-[![Known Vulnerabilities](https://snyk.io/test/github/Crazy-Marvin/FucksGiven/badge.svg)](https://snyk.io/test/github/Crazy-Marvin/FucksGiven)
 [![API](https://img.shields.io/badge/API-29%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=29)
 [![F-Droid](https://img.shields.io/f-droid/v/rocks.poopjournal.fucksgiven.svg)](https://f-droid.org/en/packages/rocks.poopjournal.fucksgiven/)
 [![Google Play](https://badgen.net/badge/icon/googleplay?icon=googleplay&label)](https://play.google.com/store/apps/details?id=rocks.poopjournal.fucksgiven)
