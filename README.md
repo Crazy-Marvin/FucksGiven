@@ -9,7 +9,7 @@
 [![Pull requests](https://img.shields.io/github/issues-pr/Crazy-Marvin/FucksGiven.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGiven/pulls)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/379c59381e784f42b5910864e574bd8e)](https://www.codacy.com/gh/Crazy-Marvin/FucksGiven?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Crazy-Marvin/FucksGiven&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/Crazy-Marvin/FucksGiven/branch/master/graph/badge.svg)](https://codecov.io/gh/Crazy-Marvin/FucksGiven)
-[![Translation status](https://hosted.weblate.org/widgets/fucksgiven/-/svg-badge.svg)](https://hosted.weblate.org/engage/fucksgiven/)
+[![Translation status](https://hosted.weblate.org/widgets/fucks-given/-/svg-badge.svg)](https://hosted.weblate.org/engage/fucks-given/)
 [![Known Vulnerabilities](https://snyk.io/test/github/Crazy-Marvin/FucksGiven/badge.svg)](https://snyk.io/test/github/Crazy-Marvin/FucksGiven)
 [![API](https://img.shields.io/badge/API-29%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=29)
 [![F-Droid](https://img.shields.io/f-droid/v/rocks.poopjournal.fucksgiven.svg)](https://f-droid.org/en/packages/rocks.poopjournal.fucksgiven/)
@@ -25,7 +25,7 @@ Fucks Given allows you to back up your data and has a beautiful dark mode that c
 The ```development``` or a feature branch is used while developing the code, and pushed into the master branch ```trunk``` afterwards for releases.
 PRs to the ```trunk``` need at least one approving review before getting merged.
 
-Help translate the app at [Hosted Weblate](https://hosted.weblate.org/engage/fucksgiven/).
+Help translate the app at [Hosted Weblate](https://hosted.weblate.org/engage/fucks-given/).
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
