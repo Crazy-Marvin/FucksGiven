@@ -45,7 +45,7 @@ $ open coverage/index.html
 
 ## Working with Translations 🌐
 
-This project relies on [flutter_localizations][flutter_localizations_link] and follows the [official internationalization guide for Flutter][internationalization_link].
+This project relies on [flutter_localizations][[flutter_localizations_link](https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html)] and follows the [official internationalization guide for Flutter][[internationalization_link](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)].
 
 ### Adding Strings
 
