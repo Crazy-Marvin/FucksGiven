@@ -19,7 +19,7 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 $ flutter run --flavor production --target lib/main_production.dart
 ```
 
-_\*Fucks Given works on iOS, Android, Web, and Windows._
+_\*Fucks Given works on Android, iOS, Web, Linux, Windows and macOS. We focus on Android and only create builds for Android at the moment._
 
 ---
 
