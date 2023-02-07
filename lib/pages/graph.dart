@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:fucksgiven/pages/Settings.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
-
 class Graph extends StatefulWidget {
   const Graph({Key? key}) : super(key: key);
 
@@ -11,8 +11,16 @@ class Graph extends StatefulWidget {
 }
 
 class _GraphState extends State<Graph> {
+  late TooltipBehavior _tooltipBehavior;
+
   @override
-  final List<ChartData> chartData = [
+  void initState(){
+    _tooltipBehavior = TooltipBehavior(enable: true);
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context) {
+    final List<ChartData> chartData = [
     ChartData('M', 9),
     ChartData('TU', 8),
     ChartData('W', 9),
@@ -21,12 +29,11 @@ class _GraphState extends State<Graph> {
     ChartData('ST', 9),
     ChartData('SN', 9),
 
-  ];
-  Widget build(BuildContext context) {
+    ];
+
     return
       SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
           body: Column(
 
             children:[
@@ -39,7 +46,12 @@ class _GraphState extends State<Graph> {
 
                       Expanded(
                         child: OutlinedButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context,
+                                MaterialPageRoute(builder: (context) =>  Settings()),
+                              );
+
+                            },
                             child: Center(child: Text('W'))
 
                         ),
@@ -83,25 +95,29 @@ class _GraphState extends State<Graph> {
               SizedBox(
                 height:5,
               ),
-        Container(
-                    child: SfCartesianChart(
-                        primaryXAxis: CategoryAxis(),
-                        series: <CartesianSeries>[
-                          LineSeries<ChartData, String>(
-                              color:HexColor("#29A331"),
-                              dataSource: chartData,
-                              xValueMapper: (ChartData data, _) => data.x,
-                              yValueMapper: (ChartData data, _) => data.y,
-                              markerSettings: MarkerSettings(
-                                  isVisible: true,
+                  Container(
+                      child: SfCartesianChart(
+                          primaryXAxis: CategoryAxis(),
+                          series: <CartesianSeries>[
+                            LineSeries<ChartData, String>(
+                                color:HexColor("#29A331"),
+                                dataSource: chartData,
+                                xValueMapper: (ChartData data, _) => data.x,
+                                yValueMapper: (ChartData data, _) => data.y,
+                                markerSettings: MarkerSettings(
+                                    isVisible: true,
 
-                                  shape: DataMarkerType.circle
+                                    shape: DataMarkerType.circle
 
-                              )
-                          )
-                        ]
-                    )
-                ),
+                                )
+                            )
+                          ]
+                      )
+                  )
+
+
+
+
 
             ],
           ),
