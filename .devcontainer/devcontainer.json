@@ -1,5 +1,5 @@
 {
   "name": "Flutter",
-  "image": "matspfeiffer/flutter:beta",
-  "extensions": ["dart-code.dart-code", "dart-code.flutter"]
+  "image": "matspfeiffer/flutter:latest",
+  "extensions": ["dart-code.dart-code", "dart-code.flutter", "FelixAngelov.bloc", "vscode-icons-team.vscode-icons", "MS-vsliveshare.vsliveshare"]
 }
