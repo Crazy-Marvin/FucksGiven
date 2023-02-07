@@ -1,4 +1,4 @@
-Welcome to the To Don't community.
+Welcome to the Fucks Given community.
 
 Within desired privacy, accept and grant criticism constructively.
 
