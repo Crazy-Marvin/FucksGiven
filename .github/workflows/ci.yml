@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latets
     steps:
       - name: "📥 Check-out"
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: "🧰 Install Java"
         uses: actions/setup-java@v1
         with:
