@@ -34,4 +34,4 @@ Check out the [contribution guidelines](https://github.com/Crazy-Marvin/FucksGiv
 
 # License
 
-[GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/)
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
