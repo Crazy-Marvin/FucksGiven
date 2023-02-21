@@ -1,6 +1,1 @@
-{
-  "counterAppBarTitle": "Telleverk",
-  "@counterAppBarTitle": {
-    "description": "Text shown in the AppBar of the Counter Page"
-  }
-}
+{}
