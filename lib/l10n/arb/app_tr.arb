@@ -1,1 +1,44 @@
-{}
+{
+  "stats": "İstatistikler",
+  "@stats": {
+    "description": "Text shown in the AppBar of the Stats Page"
+  },
+  "appearance": "Görünüm",
+  "@appearance": {
+    "description": "Text shown in the General Section of the Settings Page"
+  },
+  "dark": "Koyu",
+  "@dark": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "followSystem": "Sistemi takip et",
+  "@followSystem": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "data": "Veri",
+  "@data": {
+    "description": "Subheading in the Settings Page"
+  },
+  "backUp": "Yedekle",
+  "@backUp": {},
+  "restore": "Geri yükle",
+  "@restore": {
+    "description": "Text shown in the Data Section of the Settings Page"
+  },
+  "settings": "Ayarlar",
+  "@settings": {
+    "description": "Text shown in the AppBar of the Settings Page"
+  },
+  "fucksGivenAppBarTitle": "Umursadıklarım",
+  "@fucksGivenAppBarTitle": {
+    "description": "Text shown in the AppBar of Fucks Given"
+  },
+  "general": "Genel",
+  "@general": {
+    "description": "Subheading in the Settings Page"
+  },
+  "light": "Açık",
+  "@light": {
+    "description": "Text shown in the AppBar of the Counter Page"
+  }
+}
