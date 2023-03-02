@@ -1,3 +1,7 @@
 {
-  "@@locale": "es"
+  "@@locale": "es",
+  "fucksGivenAppBarTitle": "Jodidos",
+  "@fucksGivenAppBarTitle": {
+    "description": "Text shown in the AppBar of Fucks Given"
+  }
 }
