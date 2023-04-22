@@ -39,7 +39,7 @@ dependencies:
   syncfusion_flutter_charts: ^21.1.41
   hexcolor: ^3.0.1
   flutter_svg: ^1.1.6
-  sqflite: ^2.2.6
+  sqflite: ^2.2.7
   path: ^1.8.2
 
 
