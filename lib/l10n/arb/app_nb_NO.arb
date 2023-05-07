@@ -1,0 +1,44 @@
+{
+  "general": "Generelt",
+  "@general": {
+    "description": "Subheading in the Settings Page"
+  },
+  "settings": "Innstillinger",
+  "@settings": {
+    "description": "Text shown in the AppBar of the Settings Page"
+  },
+  "data": "Data",
+  "@data": {
+    "description": "Subheading in the Settings Page"
+  },
+  "stats": "Statistikk",
+  "@stats": {
+    "description": "Text shown in the AppBar of the Stats Page"
+  },
+  "light": "Lys",
+  "@light": {
+    "description": "Text shown in the AppBar of the Counter Page"
+  },
+  "dark": "Mørk",
+  "@dark": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "followSystem": "System",
+  "@followSystem": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "backUp": "Sikkerhetskopier",
+  "@backUp": {},
+  "restore": "Gjenopprett",
+  "@restore": {
+    "description": "Text shown in the Data Section of the Settings Page"
+  },
+  "fucksGivenAppBarTitle": "Fucks Given",
+  "@fucksGivenAppBarTitle": {
+    "description": "Text shown in the AppBar of Fucks Given"
+  },
+  "appearance": "Utseende",
+  "@appearance": {
+    "description": "Text shown in the General Section of the Settings Page"
+  }
+}
