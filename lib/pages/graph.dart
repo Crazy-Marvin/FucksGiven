@@ -7,7 +7,7 @@ import '../db/Notes_database.dart';
 
 import 'Settings.dart';
 List<int> weekdatesData= [0,0,0,0,0,0,0];
-
+var average = 0.0;
 class Graph extends StatefulWidget {
   const Graph({Key? key}) : super(key: key);
 
@@ -53,15 +53,18 @@ class _GraphState extends State<Graph> {
     print('loadinggg........');
 
     List<String> previousWeekDates = getPreviousWeekDates();
-
+    var avgCount=0;
     for (int i = 0; i < previousWeekDates.length; i++) {
       int noteCount = await NotesDatabase.instance.getDocumentCountByDate(previousWeekDates[i]);
       print("Count for ${previousWeekDates[i]}: $noteCount");
       weekdatesData[i] = noteCount;
+      avgCount = avgCount+noteCount;
       print("fayes: "+noteCount.toString());
     }
     setState(() {
       weekdatesData;
+      average = avgCount/7;
+
     });
 
   }
@@ -124,7 +127,7 @@ class _GraphState extends State<Graph> {
                 child: Row(
                   children: [
                     SizedBox(width: 20,),
-                    Text('4',style: TextStyle(fontSize: 25,fontWeight: FontWeight. bold)),
+                    Text(double.parse(average.toStringAsFixed(1)).toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight. bold)),
                     SizedBox(width: 8,),
                     Text('fucks given on average',style: TextStyle(fontSize: 20)),
                   ],
