@@ -1,8 +1,9 @@
-import 'package:fucksgiven/model/model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 import 'package:intl/intl.dart';
+
+import '../model/model.dart';
 
 class NotesDatabase {
   static final NotesDatabase instance =NotesDatabase._init();
@@ -65,7 +66,25 @@ class NotesDatabase {
       throw Exception('id $id not found');
     }
   }
+  getDocumentCountByDate(String date) async {
+    print("hello moon ki date: " + date);
+    final db = await instance.database;
+    final maps = await db.query(
+      tableNotes,
+      columns: NotesField.values,
+      where: '${NotesField.time} = ?',
+      whereArgs: [date],
+    );
+    if (maps.isNotEmpty) {
+      print(maps);
+      return maps.length; // Return the length of the 'maps' list, which is the count of documents.
+    } else {
+      return 0;
+    }
+  }
+
   readNotebyDate(String date) async{
+    print("hello moon ki date:" + date);
     final db = await instance.database;
     final maps = await db.query(
       tableNotes,
@@ -82,6 +101,7 @@ class NotesDatabase {
     }
   }
   Future<int> notesByDateCount(String date) async{
+    print("hello moon ki date2:" + date);
     final db = await instance.database;
     final maps = await db.query(
       tableNotes,
