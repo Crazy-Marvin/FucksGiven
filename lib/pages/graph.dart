@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fucksgiven/pages/Settings.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import '../db/Notes_database.dart';
+
+import 'Settings.dart';
+List<int> weekdatesData= [0,0,0,0,0,0,0];
+
 class Graph extends StatefulWidget {
   const Graph({Key? key}) : super(key: key);
 
@@ -13,21 +18,65 @@ class Graph extends StatefulWidget {
 class _GraphState extends State<Graph> {
   late TooltipBehavior _tooltipBehavior;
 
+
+
   @override
   void initState(){
     _tooltipBehavior = TooltipBehavior(enable: true);
     super.initState();
+    getDatesData();
+  }
+
+  List<String> getPreviousWeekDates() {
+    List<String> previousWeekDates = [];
+
+    // Get the current date
+    DateTime currentDate = DateTime.now();
+
+    // Calculate the starting date of the previous week (6 days ago from the current date)
+    DateTime previousWeekStartDate = currentDate.subtract(Duration(days: 6));
+
+    // Iterate through the previous week's dates and add them to the list
+    for (int i = 0; i < 7; i++) {
+      // Calculate each date by adding 'i' days to the previous week's starting date
+      DateTime date = previousWeekStartDate.add(Duration(days: i));
+
+      // Format the date in the desired pattern 'July 17, 2023' and add it to the list
+      String formattedDate = DateFormat('MMMM d, y').format(date);
+      previousWeekDates.add(formattedDate);
+    }
+
+    return previousWeekDates;
+  }
+
+  getDatesData() async {
+    print('loadinggg........');
+
+    List<String> previousWeekDates = getPreviousWeekDates();
+
+    for (int i = 0; i < previousWeekDates.length; i++) {
+      int noteCount = await NotesDatabase.instance.getDocumentCountByDate(previousWeekDates[i]);
+      print("Count for ${previousWeekDates[i]}: $noteCount");
+      weekdatesData[i] = noteCount;
+      print("fayes: "+noteCount.toString());
+    }
+    setState(() {
+      weekdatesData;
+    });
+
   }
   @override
   Widget build(BuildContext context) {
+
+
     final List<ChartData> chartData = [
-    ChartData('M', 9),
-    ChartData('TU', 8),
-    ChartData('W', 9),
-    ChartData('TH', 8),
-    ChartData('F', 8),
-    ChartData('ST', 9),
-    ChartData('SN', 9),
+    ChartData('M', weekdatesData[0]),
+    ChartData('TU', weekdatesData[1]),
+    ChartData('W', weekdatesData[2]),
+    ChartData('TH', weekdatesData[3]),
+    ChartData('F', weekdatesData[4]),
+    ChartData('ST', weekdatesData[5]),
+    ChartData('SN', weekdatesData[6]),
 
     ];
 
@@ -75,9 +124,9 @@ class _GraphState extends State<Graph> {
                 child: Row(
                   children: [
                     SizedBox(width: 20,),
-                    Text('4',style: TextStyle(color: Colors. black,fontSize: 25,fontWeight: FontWeight. bold)),
+                    Text('4',style: TextStyle(fontSize: 25,fontWeight: FontWeight. bold)),
                     SizedBox(width: 8,),
-                    Text('fucks given on average',style: TextStyle(color: Colors. black,fontSize: 20)),
+                    Text('fucks given on average',style: TextStyle(fontSize: 20)),
                   ],
                 ),
               ),
@@ -88,7 +137,7 @@ class _GraphState extends State<Graph> {
                 child: Row(
                   children: [
                     SizedBox(width: 20,),
-                    Text('5 - 12 September',style: TextStyle(color: Colors.black45,fontSize: 17)),
+                    Text('5 - 12 September',style: TextStyle(fontSize: 17)),
                   ],
                 ),
               ),
