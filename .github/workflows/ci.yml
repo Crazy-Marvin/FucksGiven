@@ -49,7 +49,7 @@ jobs:
           name: "Test coverage report"
           path: coverage/lcov.info
       - name: "📤 Upload test coverage report to Codecov.io"
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         if: runner.os == 'Linux'
         with:
           token: ${{secrets.CODECOV_TOKEN}}
