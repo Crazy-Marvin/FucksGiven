@@ -9,7 +9,7 @@
   "@appearance": {
     "description": "Text shown in the General Section of the Settings Page"
   },
-  "light": "Lumière",
+  "light": "Clair",
   "@light": {
     "description": "Text shown in the AppBar of the Counter Page"
   },
@@ -32,5 +32,13 @@
   "settings": "Paramètres",
   "@settings": {
     "description": "Text shown in the AppBar of the Settings Page"
+  },
+  "followSystem": "Paramètre système",
+  "@followSystem": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "restore": "Restaurer",
+  "@restore": {
+    "description": "Text shown in the Data Section of the Settings Page"
   }
 }
