@@ -1,1 +1,44 @@
-{}
+{
+  "settings": "设置",
+  "@settings": {
+    "description": "Text shown in the AppBar of the Settings Page"
+  },
+  "stats": "统计数据",
+  "@stats": {
+    "description": "Text shown in the AppBar of the Stats Page"
+  },
+  "general": "通用",
+  "@general": {
+    "description": "Subheading in the Settings Page"
+  },
+  "appearance": "外观",
+  "@appearance": {
+    "description": "Text shown in the General Section of the Settings Page"
+  },
+  "restore": "恢复",
+  "@restore": {
+    "description": "Text shown in the Data Section of the Settings Page"
+  },
+  "followSystem": "跟随系统",
+  "@followSystem": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "dark": "深色",
+  "@dark": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "light": "浅色",
+  "@light": {
+    "description": "Text shown in the AppBar of the Counter Page"
+  },
+  "data": "数据",
+  "@data": {
+    "description": "Subheading in the Settings Page"
+  },
+  "backUp": "备份",
+  "@backUp": {},
+  "fucksGivenAppBarTitle": "Fucks Given",
+  "@fucksGivenAppBarTitle": {
+    "description": "Text shown in the AppBar of Fucks Given"
+  }
+}
