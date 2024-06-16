@@ -2,6 +2,6 @@ Fucks Given lets you keep track of the things that made you care. Whenever somet
  
 Fucks Given allows you to back up your data and has a beautiful dark mode that can turn on automatically, following the system theme.
 
-Webpage: <a href="https://www.crazymarvin.com/fucks">https://www.crazymarvin.com/fucksgiven</a>
-Translate To Don’t: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucksigven/</a> 
+Webpage: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
+Translate Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucksigven/</a> 
 Source on GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
