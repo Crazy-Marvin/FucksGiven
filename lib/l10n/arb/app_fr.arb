@@ -1,0 +1,44 @@
+{
+  "backUp": "Sauvegarder",
+  "@backUp": {},
+  "fucksGivenAppBarTitle": "Fucks Given",
+  "@fucksGivenAppBarTitle": {
+    "description": "Text shown in the AppBar of Fucks Given"
+  },
+  "appearance": "Apparence",
+  "@appearance": {
+    "description": "Text shown in the General Section of the Settings Page"
+  },
+  "light": "Clair",
+  "@light": {
+    "description": "Text shown in the AppBar of the Counter Page"
+  },
+  "data": "Données",
+  "@data": {
+    "description": "Subheading in the Settings Page"
+  },
+  "stats": "Statistiques",
+  "@stats": {
+    "description": "Text shown in the AppBar of the Stats Page"
+  },
+  "dark": "Sombre",
+  "@dark": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "general": "Général",
+  "@general": {
+    "description": "Subheading in the Settings Page"
+  },
+  "settings": "Paramètres",
+  "@settings": {
+    "description": "Text shown in the AppBar of the Settings Page"
+  },
+  "followSystem": "Paramètre système",
+  "@followSystem": {
+    "description": "Text shown in the appearance chooser"
+  },
+  "restore": "Restaurer",
+  "@restore": {
+    "description": "Text shown in the Data Section of the Settings Page"
+  }
+}
