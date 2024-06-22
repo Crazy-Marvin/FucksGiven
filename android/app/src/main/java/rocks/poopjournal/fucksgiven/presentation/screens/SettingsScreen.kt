@@ -33,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -49,12 +50,12 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Settings", style = MaterialTheme.typography.titleLarge) },
+                title = { Text(text = stringResource(id = R.string.settings), style = MaterialTheme.typography.titleLarge) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Back",
+                            contentDescription = null,
                             tint = MaterialTheme.colorScheme.primary
                         )
                     }
@@ -79,7 +80,7 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "General",
+                        text = stringResource(id = R.string.general),
                         color = MaterialTheme.colorScheme.primary,
                         style = MaterialTheme.typography.labelSmall,
                         modifier = Modifier.padding(start = 11.dp)
@@ -89,7 +90,7 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                     .fillMaxWidth()
                     .padding(11.dp)
                     .clickable { showDialog = true }) {
-                    Text(text = "Appearance", style = MaterialTheme.typography.bodyLarge)
+                    Text(text = stringResource(id = R.string.apperance), style = MaterialTheme.typography.bodyLarge)
                     Text(
                         text = viewModel.themeSetting.theme.nameTheme,
                         style = MaterialTheme.typography.labelSmall,
@@ -112,7 +113,7 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Data",
+                        text = stringResource(id = R.string.data),
                         color = MaterialTheme.colorScheme.primary,
                         style = MaterialTheme.typography.labelSmall,
                         modifier = Modifier.padding(start = 11.dp)
@@ -131,10 +132,10 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.backup),
-                        contentDescription = "backup"
+                        contentDescription = stringResource(id = R.string.backup)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "Backup", style = MaterialTheme.typography.bodyLarge)
+                    Text(text = stringResource(id = R.string.backup), style = MaterialTheme.typography.bodyLarge)
                 }
                 Divider(
                     thickness = 0.8.dp,
@@ -153,10 +154,10 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.restore),
-                        contentDescription = "restore"
+                        contentDescription = stringResource(id = R.string.restore)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "Restore", style = MaterialTheme.typography.bodyLarge)
+                    Text(text = stringResource(id = R.string.restore), style = MaterialTheme.typography.bodyLarge)
                 }
             }
 //            Column {
@@ -206,7 +207,7 @@ fun ThemeSelectionDialog(
     val theme = userSetting.themeFlow.collectAsState()
     AlertDialog(
         onDismissRequest = onDismissRequest,
-        title = { Text(text = "Select Theme") },
+        title = { Text(text = stringResource(id = R.string.select_theme)) },
         text = {
             ThemeContent(selectedTheme = theme.value, onItemSelect = { themes ->
                 userSetting.theme = themes
@@ -214,7 +215,7 @@ fun ThemeSelectionDialog(
         },
         confirmButton = {
             Button(onClick = onDismissRequest) {
-                Text("OK")
+                Text(stringResource(id = R.string.ok))
             }
         }
     )

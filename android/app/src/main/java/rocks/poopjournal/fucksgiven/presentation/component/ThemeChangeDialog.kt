@@ -14,8 +14,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
+import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.AppTheme
 
 
@@ -28,15 +30,15 @@ fun ThemeContent(
     val themeItems = listOf(
         RadioItems(
             id = AppTheme.LIGHT.ordinal,
-            name = "Light Theme"
+            name = stringResource(id = R.string.light_theme)
         ),
         RadioItems(
             id = AppTheme.DARK.ordinal,
-            name = "Dark Theme"
+            name = stringResource(id = R.string.dark_theme)
         ),
         RadioItems(
             id = AppTheme.FOLLOW_SYSTEM.ordinal,
-            name = "Follow System"
+            name = stringResource(id = R.string.follow_system)
         )
     )
 

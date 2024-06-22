@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -51,12 +52,12 @@ fun AboutScreen(navController: NavHostController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "About", style = MaterialTheme.typography.titleLarge) },
+                title = { Text(text = stringResource(id = R.string.about), style = MaterialTheme.typography.titleLarge) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Back",
+                            contentDescription = null,
                             tint = MaterialTheme.colorScheme.primary
                         )
                     }
@@ -75,7 +76,7 @@ fun AboutScreen(navController: NavHostController) {
                     contentDescription = "rounded icon"
                     )
                 Text(
-                    text = "Fucks Given",
+                    text = stringResource(id = R.string.app_name),
                     style = MaterialTheme.typography.bodyLarge,
                 )
                 val stylizedPoetry = buildAnnotatedString {
