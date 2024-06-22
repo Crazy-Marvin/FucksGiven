@@ -27,9 +27,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import kotlinx.coroutines.launch
+import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.presentation.component.AppBar
 import rocks.poopjournal.fucksgiven.presentation.component.BottomBar
 import rocks.poopjournal.fucksgiven.presentation.component.BottomNavBar
@@ -45,7 +47,7 @@ fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel) {
     })
     var selectedPage by remember { mutableIntStateOf(0) } // Track selected page
 
-    Scaffold(topBar = { AppBar(title = "Stats", navigate = navController) },
+    Scaffold(topBar = { AppBar(title = stringResource(id = R.string.stats), navigate = navController) },
         bottomBar = {
             BottomNavBar(navHostController = navController, items = BottomBar.getMenuBottomItems())
         }) {
@@ -86,7 +88,7 @@ fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel) {
                         contentColor = MaterialTheme.colorScheme.primary
                     )
                 ) {
-                    Text("Weekly", style = MaterialTheme.typography.bodySmall)
+                    Text(stringResource(id = R.string.weekly), style = MaterialTheme.typography.bodySmall)
                 }
                 OutlinedButton(
                     onClick = {
@@ -108,7 +110,7 @@ fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel) {
                     )
 
                 ) {
-                    Text("Monthly", style = MaterialTheme.typography.bodySmall)
+                    Text(stringResource(id = R.string.monthly), style = MaterialTheme.typography.bodySmall)
                 }
                 OutlinedButton(
                     onClick = {
@@ -130,7 +132,7 @@ fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel) {
                     )
 
                 ) {
-                    Text("Yearly", style = MaterialTheme.typography.bodySmall)
+                    Text(stringResource(id = R.string.yearly), style = MaterialTheme.typography.bodySmall)
                 }
             }
 

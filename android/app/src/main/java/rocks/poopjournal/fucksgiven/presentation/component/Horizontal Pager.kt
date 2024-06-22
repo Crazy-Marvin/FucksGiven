@@ -15,8 +15,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.StatsViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -35,7 +37,15 @@ fun HorizontalPagerView(
 
 
     //weekly data processing
-    val weeklyXValues = listOf("M", "T", "W", "TH", "F", "S", "SU")
+    val weeklyXValues = listOf(
+        stringResource(id = R.string.m),
+        stringResource(id = R.string.t),
+        stringResource(id = R.string.w),
+        stringResource(id = R.string.th),
+        stringResource(id = R.string.f),
+        stringResource(id = R.string.s),
+        stringResource(id = R.string.su)
+    )
     // Create a list of LineDataPoint objects
     val weeklyLineDataPoints = weeklyXValues.map { day ->
         val dayOfWeek = getDayOfWeek(day)
@@ -70,37 +80,37 @@ fun HorizontalPagerView(
 
     //monthly data processing
     val monthlyXValues = listOf(
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19",
-        "20",
-        "21",
-        "22",
-        "23",
-        "24",
-        "25",
-        "26",
-        "27",
-        "28",
-        "29",
-        "30",
-        "31"
+        stringResource(id = R.string.one),
+        stringResource(id = R.string.two),
+        stringResource(id = R.string.three),
+        stringResource(id = R.string.four),
+        stringResource(id = R.string.five),
+        stringResource(id = R.string.six),
+        stringResource(id = R.string.seven),
+        stringResource(id = R.string.eight),
+        stringResource(id = R.string.nine),
+        stringResource(id = R.string.ten),
+        stringResource(id = R.string.eleven),
+        stringResource(id = R.string.twelve),
+        stringResource(id = R.string.thirteen),
+        stringResource(id = R.string.fourteen),
+        stringResource(id = R.string.fifteen),
+        stringResource(id = R.string.sixteen),
+        stringResource(id = R.string.seventeen),
+        stringResource(id = R.string.eighteen),
+        stringResource(id = R.string.nineteen),
+        stringResource(id = R.string.twenty),
+        stringResource(id = R.string.twentyone),
+        stringResource(id = R.string.twentytwo),
+        stringResource(id = R.string.twentythree),
+        stringResource(id = R.string.twentyfour),
+        stringResource(id = R.string.twentyfive),
+        stringResource(id = R.string.twentysix),
+        stringResource(id = R.string.twentyseven),
+        stringResource(id = R.string.twentyeight),
+        stringResource(id = R.string.twentynine),
+        stringResource(id = R.string.thirty),
+        stringResource(id = R.string.thirtyone)
     )
     val monthlyLineDataPoints = monthlyXValues.map { day ->
         val dayOfMonth = day.toInt()
@@ -112,14 +122,28 @@ fun HorizontalPagerView(
         LineDataPoint(day, count)
     }
     val totalMonthly = monthlyLineDataPoints.sumOf { it.yValue }
-    val monthlyAverage : Double = if (monthlyLineDataPoints.isNotEmpty()) totalMonthly.toDouble() / monthlyLineDataPoints.size else 0.0
+    val monthlyAverage: Double =
+        if (monthlyLineDataPoints.isNotEmpty()) totalMonthly.toDouble() / monthlyLineDataPoints.size else 0.0
 
     val currentMonth =
         Calendar.getInstance().getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())
     Log.d("MonthlyData", "Monthly data: $monthlyLineDataPoints , $monthlyAverage")
 
     //yearly data processing
-    val yearlyXValues = listOf("J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D")
+    val yearlyXValues = listOf(
+        stringResource(id = R.string.jan),
+        stringResource(id = R.string.Feb),
+        stringResource(id = R.string.Mar),
+        stringResource(id = R.string.April),
+        stringResource(id = R.string.May),
+        stringResource(id = R.string.june),
+        stringResource(id = R.string.july),
+        stringResource(id = R.string.aug),
+        stringResource(id = R.string.sep),
+        stringResource(id = R.string.oct),
+        stringResource(id = R.string.nov),
+        stringResource(id = R.string.dec)
+    )
     val yearlyLineDataPoints = yearlyXValues.mapIndexed { index, month ->
         val monthOfYear = index + 1
         val count = yearlyData.count { data ->
@@ -130,7 +154,7 @@ fun HorizontalPagerView(
         LineDataPoint(month, count)
     }
     val totalYearly = yearlyLineDataPoints.sumOf { it.yValue }
-    val yearlyAverage : Double =
+    val yearlyAverage: Double =
         if (yearlyLineDataPoints.isNotEmpty()) totalYearly.toDouble() / yearlyLineDataPoints.size else 0.0
 
 
@@ -159,7 +183,7 @@ fun HorizontalPagerView(
                             style = MaterialTheme.typography.titleLarge
                         )
                         Text(
-                            text = "fucks given on average",
+                            text = stringResource(id = R.string.average_fucks),
                             style = MaterialTheme.typography.bodyLarge
                         )
                     }
@@ -197,7 +221,7 @@ fun HorizontalPagerView(
                             style = MaterialTheme.typography.titleLarge
                         )
                         Text(
-                            text = "fucks given on average",
+                            text = stringResource(id = R.string.average_fucks),
                             style = MaterialTheme.typography.bodyLarge
                         )
                     }
@@ -219,7 +243,7 @@ fun HorizontalPagerView(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text =when {
+                            text = when {
                                 yearlyAverage == 0.0 -> "0"
                                 yearlyAverage < 1.0 -> "<1"
                                 else -> yearlyAverage.toString()
@@ -229,12 +253,12 @@ fun HorizontalPagerView(
                             style = MaterialTheme.typography.titleLarge
                         )
                         Text(
-                            text = "fucks given on average",
+                            text = stringResource(id = R.string.average_fucks),
                             style = MaterialTheme.typography.bodyLarge
                         )
                     }
                     Text(
-                        text = "January-December",
+                        text = stringResource(id = R.string.january_december),
                         modifier = Modifier.padding(end = 3.dp, bottom = 5.dp, start = 10.dp),
                         style = MaterialTheme.typography.bodyLarge
                     )

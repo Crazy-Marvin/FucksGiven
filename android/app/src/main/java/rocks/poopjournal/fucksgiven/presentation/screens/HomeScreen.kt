@@ -50,12 +50,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
 import com.google.accompanist.permissions.shouldShowRationale
+import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.data.FuckData
 import rocks.poopjournal.fucksgiven.presentation.component.AppBar
 import rocks.poopjournal.fucksgiven.presentation.component.BottomBar
@@ -101,7 +103,12 @@ fun HomeScreen(
     }
 
 
-    Scaffold(topBar = { AppBar(title = "Fucks Given", navigate = navController) },
+    Scaffold(topBar = {
+        AppBar(
+            title = stringResource(id = R.string.app_name),
+            navigate = navController
+        )
+    },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { addTaskDialogOpen = true },
@@ -110,7 +117,7 @@ fun HomeScreen(
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,
-                    contentDescription = "Add",
+                    contentDescription = null,
                     tint = MaterialTheme.colorScheme.background
                 )
             }
@@ -126,13 +133,16 @@ fun HomeScreen(
         ) {
             if (addTaskDialogOpen) {
                 AddDialog(onDismiss = { addTaskDialogOpen = false }) { data ->
-                    viewModel.addFuck(data,context)
+                    viewModel.addFuck(data, context)
                 }
             }
             if (uiState.fuckList.isNotEmpty()) {
                 FucksList(fuckList = uiState.fuckList)
             } else {
-                Text(text = "No Fucks Given", modifier = Modifier.padding(12.dp))
+                Text(
+                    text = stringResource(id = R.string.no_fucks),
+                    modifier = Modifier.padding(12.dp)
+                )
             }
         }
     }
@@ -188,7 +198,11 @@ fun FucksList(
                             style = MaterialTheme.typography.bodyLarge
                         )
                     }
-                    Divider(color = Color.LightGray, thickness = 0.5.dp, modifier = Modifier.padding(start = 8.dp))
+                    Divider(
+                        color = Color.LightGray,
+                        thickness = 0.5.dp,
+                        modifier = Modifier.padding(start = 8.dp)
+                    )
                 }
             }
         }
@@ -224,7 +238,7 @@ fun AddDialog(
                 contentColor = MaterialTheme.colorScheme.background
             )
         ) {
-            Text(text = "Add")
+            Text(text = stringResource(id = R.string.add))
         }
     }, dismissButton = {
         TextButton(
@@ -232,7 +246,7 @@ fun AddDialog(
                 contentColor = MaterialTheme.colorScheme.primary
             )
         ) {
-            Text(text = "Cancel")
+            Text(text = stringResource(id = R.string.cancel))
         }
     }, containerColor = MaterialTheme.colorScheme.background, text = {
         Column(
@@ -248,32 +262,41 @@ fun AddDialog(
                     unfocusedBorderColor = MaterialTheme.colorScheme.primary
                 ),
                 placeholder = {
-                    Text(text = "Description", style = MaterialTheme.typography.bodyLarge)
+                    Text(
+                        text = stringResource(id = R.string.description),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
                 }
             )
             Spacer(modifier = Modifier.height(10.dp))
 
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .border(
-                            1.dp,
-                            shape = RoundedCornerShape(5.dp),
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                        .padding(5.dp)
-                        .clickable { dateDialogOpen = true }
-                        .height(50.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Text(
-                        text = if (date == 0L) "Select Date" else getFormattedDate(date),
-                        modifier = Modifier.padding(start = 8.dp),
-                        style = MaterialTheme.typography.bodyLarge
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .border(
+                        1.dp,
+                        shape = RoundedCornerShape(5.dp),
+                        color = MaterialTheme.colorScheme.primary
                     )
-                    Icon(imageVector = Icons.Filled.DateRange, contentDescription = "Date")
-                }
+                    .padding(5.dp)
+                    .clickable { dateDialogOpen = true }
+                    .height(50.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = if (date == 0L) stringResource(id = R.string.select_date) else getFormattedDate(
+                        date
+                    ),
+                    modifier = Modifier.padding(start = 8.dp),
+                    style = MaterialTheme.typography.bodyLarge
+                )
+                Icon(
+                    imageVector = Icons.Filled.DateRange, contentDescription = stringResource(
+                        id = R.string.select_date
+                    )
+                )
+            }
 
 
             if (dateDialogOpen) {
@@ -284,13 +307,13 @@ fun AddDialog(
                                 date = datePickerState.selectedDateMillis ?: 0L
                                 dateDialogOpen = false
                             }) {
-                            Text(text = "Ok")
+                            Text(text = stringResource(id = R.string.ok))
                         }
                     },
                     dismissButton = {
                         TextButton(
                             onClick = { dateDialogOpen = false }) {
-                            Text(text = "Cancel")
+                            Text(text = stringResource(id = R.string.cancel))
                         }
                     }
                 ) {

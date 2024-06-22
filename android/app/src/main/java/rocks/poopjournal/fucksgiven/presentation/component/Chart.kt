@@ -29,12 +29,12 @@ fun LineChartComposable(
     xCount : Int
 
 ) {
-    val context = LocalContext.current
+    val context1 = LocalContext.current
     val entries = lineDataPoints.mapIndexed { index, dataPoint ->
         Entry(index.toFloat(), dataPoint.yValue.toFloat())
     }
 
-    val tf = ResourcesCompat.getFont(context, R.font.opensans_regular)
+    val tf = ResourcesCompat.getFont(context1, R.font.opensans_regular)
     AndroidView(
         modifier = Modifier
             .fillMaxWidth()
