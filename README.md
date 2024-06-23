@@ -9,7 +9,7 @@
 [![codecov](https://codecov.io/gh/Crazy-Marvin/FucksGiven/branch/master/graph/badge.svg)](https://codecov.io/gh/Crazy-Marvin/FucksGiven)
 [![Translation status](https://hosted.weblate.org/widgets/fucks-given/-/svg-badge.svg)](https://hosted.weblate.org/engage/fucks-given/)
 [![Known Vulnerabilities](https://snyk.io/test/github/Crazy-Marvin/FucksGiven/badge.svg?targetFile=app%2Fbuild.gradle.kts)](https://snyk.io/test/github/Crazy-Marvin/ToDont?targetFile=app%2Fbuild.gradle.kts)
-[![API](https://img.shields.io/badge/API-29%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=26)
+[![API](https://img.shields.io/badge/API-26%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=26)
 [![F-Droid](https://img.shields.io/f-droid/v/rocks.poopjournal.fucksgiven.svg)](https://f-droid.org/en/packages/rocks.poopjournal.fucksgiven/)
 [![Google Play](https://badgen.net/badge/icon/googleplay?icon=googleplay&label)](https://play.google.com/store/apps/details?id=rocks.poopjournal.fucksgiven)
 
