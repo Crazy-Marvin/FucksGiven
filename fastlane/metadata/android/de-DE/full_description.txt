@@ -1,0 +1,7 @@
+Mit Fucks Given kannst du die Dinge festhalten, die dich beschäftigt haben. Wann immer etwas passiert, über das du dir unnötigerweise Gedanken machst, kannst du es mit einem Fingertipp notieren. Die App erstellt eine Übersicht darüber, wie viele Ficks du gegeben hast, damit du daran arbeiten kannst, keine mehr zu geben.
+ 
+Fucks Given ermöglicht es Ihnen, Ihre Daten zu sichern und hat einen schönen dunklen Modus, der sich automatisch einschalten kann und dem Systemthema folgt.
+
+Webseite: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
+Helfe bei der Übersetzung: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
+Verbessere den Code: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
