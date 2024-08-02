@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fucks Given</string>
-    <string name="about">Um</string>
+    <string name="about">Über</string>
     <string name="apache">Apache-Lizenz 2.0</string>
-    <string name="no_fucks">Keine Scheiße gegeben</string>
+    <string name="no_fucks">Keine Ficks gegeben</string>
     <string name="add">Hinzufügen</string>
     <string name="cancel">Stornieren</string>
     <string name="description">Beschreibung</string>
@@ -10,7 +11,7 @@
     <string name="ok">OK</string>
     <string name="settings">Einstellungen</string>
     <string name="general">Allgemein</string>
-    <string name="apperance">Aussehen</string>
+    <string name="apperance">Erscheinungsbild</string>
     <string name="data">Daten</string>
     <string name="backup">Sicherung</string>
     <string name="restore">Wiederherstellen</string>
@@ -19,7 +20,7 @@
     <string name="weekly">Wöchentlich</string>
     <string name="monthly">Monatlich</string>
     <string name="yearly">Jährlich</string>
-    <string name="average_fucks">Scheiße im Durchschnitt gegeben</string>
+    <string name="average_fucks">Ficks im Durchschnitt gegeben</string>
     <string name="january_december">Januar-Dezember</string>
     <string name="m">M</string>
     <string name="t">T</string>
@@ -71,9 +72,9 @@
     <string name="oct">Ö</string>
     <string name="nov">N</string>
     <string name="dec">D</string>
-    <string name="light_theme">Lichtthema</string>
-    <string name="dark_theme">Dunkles Thema</string>
-    <string name="follow_system">Folgen Sie dem System</string>
+    <string name="light_theme">Hell</string>
+    <string name="dark_theme">Dunkel</string>
+    <string name="follow_system">System folgen</string>
     <string name="appwidget_text">BEISPIEL</string>
     <string name="add_widget">Widget hinzufügen</string>
     <string name="app_widget_description">Dies ist eine Beschreibung des App-Widgets</string>
