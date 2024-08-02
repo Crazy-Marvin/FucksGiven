@@ -22,6 +22,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        setProperty("archivesBaseName", "FucksGiven-$versionName")
+        aaptOptions.cruncherEnabled = false
     }
 
     buildTypes {
