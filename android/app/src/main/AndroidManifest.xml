@@ -20,8 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FucksGiven"
-        tools:targetApi="tiramisu"
-        android:localeConfig="@xml/local_config">
+        tools:targetApi="tiramisu">
 
 
         <activity
