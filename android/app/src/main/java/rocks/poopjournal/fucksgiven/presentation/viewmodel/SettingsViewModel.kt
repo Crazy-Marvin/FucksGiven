@@ -18,9 +18,9 @@ class SettingsViewModel @Inject constructor(
     lateinit var themeSetting: ThemeSetting
 
 
-    fun backupDatabase() {
+    fun backupDatabase(message : String) {
         viewModelScope.launch {
-            val result = databaseBackupManager.backupDatabase()
+            val result = databaseBackupManager.backupDatabase(message)
             // Handle the result
         }
     }

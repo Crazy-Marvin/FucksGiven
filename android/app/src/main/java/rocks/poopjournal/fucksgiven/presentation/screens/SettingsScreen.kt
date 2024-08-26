@@ -47,7 +47,7 @@ import rocks.poopjournal.fucksgiven.presentation.viewmodel.SettingsViewModel
 @Composable
 fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel) {
     var showDialog by remember { mutableStateOf(false) }
-
+    val toastMessage = stringResource(id = R.string.backup_success)
     Scaffold(
         topBar = {
             TopAppBar(
@@ -127,7 +127,7 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                         .height(50.dp)
                         .padding(11.dp)
                         .clickable {
-                            viewModel.backupDatabase()
+                            viewModel.backupDatabase(toastMessage)
                         },
                     verticalAlignment = Alignment.CenterVertically
                 ) {

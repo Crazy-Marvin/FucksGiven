@@ -14,6 +14,7 @@
     <string name="apperance">Aspekto</string>
     <string name="data">Datumoj</string>
     <string name="backup">Rezervo</string>
+    <string name="backup_success">Sekurkopio de datumbazo sukcese</string>
     <string name="restore">Restaŭri</string>
     <string name="select_theme">Elektu Temon</string>
     <string name="stats">Statoj</string>
