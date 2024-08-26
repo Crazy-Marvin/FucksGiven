@@ -14,6 +14,7 @@
     <string name="apperance">Apparence</string>
     <string name="data">Données</string>
     <string name="backup">Sauvegarde</string>
+    <string name="backup_success">Sauvegarde de la base de données réussie</string>
     <string name="restore">Restaurer</string>
     <string name="select_theme">Sélectionne un thème</string>
     <string name="stats">Statistiques</string>

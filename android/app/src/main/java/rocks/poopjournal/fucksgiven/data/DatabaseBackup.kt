@@ -17,7 +17,7 @@ class DatabaseBackupManager @Inject constructor(
     private val context: Context,
     private val fuckDatabase: FuckDatabase
 ) {
-    fun backupDatabase(): Int {
+    fun backupDatabase(message : String): Int {
         var result = -99
         val dbFile = context.getDatabasePath(THEDATABASE_DATABASE_NAME)
         val dbWalFile = File(dbFile.path + SQLITE_WALFILE_SUFFIX)
@@ -34,7 +34,7 @@ class DatabaseBackupManager @Inject constructor(
             if (dbWalFile.exists()) dbWalFile.copyTo(bkpWalFile, true)
             if (dbShmFile.exists()) dbShmFile.copyTo(bkpShmFile, true)
             result = 0
-            Toast.makeText(context, "Database backed up Successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
         } catch (e: IOException) {
             e.printStackTrace()
         }

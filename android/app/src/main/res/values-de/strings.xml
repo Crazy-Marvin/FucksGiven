@@ -14,6 +14,7 @@
     <string name="apperance">Erscheinungsbild</string>
     <string name="data">Daten</string>
     <string name="backup">Sicherung</string>
+    <string name="backup_success">Datenbanksicherung erfolgreich</string>
     <string name="restore">Wiederherstellen</string>
     <string name="select_theme">Thema wählen</string>
     <string name="stats">Statistiken</string>

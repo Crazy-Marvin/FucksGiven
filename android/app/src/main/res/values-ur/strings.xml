@@ -14,6 +14,7 @@
     <string name="apperance">ظہور</string>
     <string name="data">ڈیٹا</string>
     <string name="backup">بیک اپ</string>
+    <string name="backup_success">ڈیٹا بیس کا بیک اپ کامیابی کے ساتھ</string>
     <string name="restore">بحال کریں۔</string>
     <string name="select_theme">تھیم منتخب کریں۔</string>
     <string name="stats">اعدادوشمار</string>
