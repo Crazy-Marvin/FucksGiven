@@ -9,6 +9,9 @@ android {
     namespace = "rocks.poopjournal.fucksgiven"
     compileSdk = 35
 
+    androidResources {
+        generateLocaleConfig = true
+      }
 
     defaultConfig {
 
