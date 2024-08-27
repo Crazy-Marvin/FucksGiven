@@ -1,0 +1,3 @@
+- 🐛 Bugfixes
+- ⚙️ Dependency Updates
+- 🗺️ Translation Updates
