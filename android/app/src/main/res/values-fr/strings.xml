@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Baise donnée</string>
+    <string name="app_name">Ça fait chier</string>
     <string name="about">À propos</string>
     <string name="apache">Licence Apache 2.0</string>
-    <string name="no_fucks">Pas de baise donnée</string>
+    <string name="no_fucks">Rien à foutre</string>
     <string name="add">Ajouter</string>
     <string name="cancel">Annuler</string>
     <string name="description">Description</string>
@@ -21,15 +21,15 @@
     <string name="weekly">Hebdomadaire</string>
     <string name="monthly">Mensuel</string>
     <string name="yearly">Annuel</string>
-    <string name="average_fucks">baise donnée en moyenne</string>
+    <string name="average_fucks">Moments chiants en moyenne</string>
     <string name="january_december">janvier-décembre</string>
-    <string name="m">M</string>
-    <string name="t">T</string>
-    <string name="w">W</string>
-    <string name="th">ÈME</string>
-    <string name="f">F</string>
-    <string name="s">S</string>
-    <string name="su">Ils sont</string>
+    <string name="m">l</string>
+    <string name="t">mar</string>
+    <string name="w">mer</string>
+    <string name="th">j</string>
+    <string name="f">v</string>
+    <string name="s">s</string>
+    <string name="su">d</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
@@ -61,25 +61,25 @@
     <string name="twentynine">29</string>
     <string name="thirty">30</string>
     <string name="thirtyone">31</string>
-    <string name="jan">J.</string>
-    <string name="Feb">F</string>
-    <string name="Mar">M</string>
-    <string name="April">UN</string>
-    <string name="May">M</string>
-    <string name="june">J.</string>
-    <string name="july">J.</string>
-    <string name="aug">UN</string>
-    <string name="sep">S</string>
-    <string name="oct">Ô</string>
-    <string name="nov">N</string>
-    <string name="dec">D</string>
-    <string name="light_theme">Thème Lumière</string>
+    <string name="jan">j</string>
+    <string name="Feb">f</string>
+    <string name="Mar">m</string>
+    <string name="April">a</string>
+    <string name="May">m</string>
+    <string name="june">j</string>
+    <string name="july">j</string>
+    <string name="aug">a</string>
+    <string name="sep">s</string>
+    <string name="oct">o</string>
+    <string name="nov">n</string>
+    <string name="dec">d</string>
+    <string name="light_theme">Thème clair</string>
     <string name="dark_theme">Thème sombre</string>
     <string name="follow_system">Suivre le système</string>
     <string name="appwidget_text">EXEMPLE</string>
     <string name="add_widget">Ajouter un widget</string>
     <string name="app_widget_description">Ceci est une description du widget d\'application</string>
-    <string name="title_activity_wear">PorterActivité</string>
+    <string name="title_activity_wear">WearActivity</string>
     <string name="crazy_marvin" translatable="false">Crazy Marvin</string>
     <string name="developer">Développeur</string>
     <string name="mubeen" translatable="false">Mubeen Ali</string>
@@ -87,7 +87,7 @@
     <string name="translate" translatable="false">Translate</string>
     <string name="report">Signaler un problème</string>
     <string name="view_source">Voir la source</string>
-    <string name="open_source" translatable="false">Open-source Licenses</string>
+    <string name="open_source" translatable="false">Licences libres</string>
     <string name="feather_icons" translatable="false">Feather Icons</string>
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="android_jetpack" translatable="false">Android Jetpack</string>
