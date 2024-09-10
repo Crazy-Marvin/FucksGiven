@@ -1,0 +1,3 @@
+- 🐛 Fehlerbehebungen
+- ⚙️ Abhängigkeitsaktualisierungen
+- 🗺️ Übersetzungsaktualisierungen
