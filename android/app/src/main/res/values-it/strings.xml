@@ -1,2 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="description">Descrizione</string>
+    <string name="add">Aggiungi</string>
+    <string name="about">Informazioni</string>
+    <string name="select_date">Scegli Data</string>
+    <string name="ok">Ok</string>
+    <string name="settings">Impostazioni</string>
+    <string name="general">Generali</string>
+    <string name="apperance">Aspetto</string>
+    <string name="data">Dati</string>
+    <string name="backup">Backup</string>
+    <string name="restore">Ripristina backup</string>
+    <string name="select_theme">Scegli tema</string>
+    <string name="stats">Statistiche</string>
+    <string name="weekly">Settimana</string>
+    <string name="average_fucks">fucks given in media</string>
+    <string name="t">m</string>
+    <string name="yearly">Anno</string>
+    <string name="w">m</string>
+    <string name="th">g</string>
+    <string name="su">d</string>
+    <string name="Mar">m</string>
+    <string name="May">m</string>
+    <string name="light_theme">Tema Chiaro</string>
+    <string name="dark_theme">Tema Scuro</string>
+    <string name="aug">a</string>
+    <string name="sep">s</string>
+    <string name="dec">d</string>
+    <string name="app_widget_description">Questa è una descrizione del widget</string>
+    <string name="open_source">Licenze open-source</string>
+    <string name="cancel">Annulla</string>
+    <string name="apache">Licenza Apache 2.0</string>
+    <string name="follow_system">Segui il Sistema</string>
+    <string name="jan">g</string>
+    <string name="july">l</string>
+    <string name="oct">o</string>
+    <string name="Feb">f</string>
+    <string name="june">g</string>
+    <string name="April">a</string>
+    <string name="appwidget_text">ESEMPIO</string>
+    <string name="nov">n</string>
+    <string name="add_widget">Aggiungi widget</string>
+    <string name="contribution">Contribuisci</string>
+    <string name="developer">Sviluppatore</string>
+    <string name="report">Segnala un problema</string>
+    <string name="january_december">gennaio-dicembre</string>
+    <string name="f">v</string>
+    <string name="s">s</string>
+    <string name="m">l</string>
+    <string name="monthly">Mese</string>
+    <string name="backup_success">Backup completato con successo</string>
+</resources>
