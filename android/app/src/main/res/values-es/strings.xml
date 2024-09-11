@@ -66,7 +66,7 @@
     <string name="app_widget_description">Esta es una descripción del widget de la aplicación</string>
     <string name="title_activity_wear">WearActivity</string>
     <string name="developer">Desarrollador</string>
-    <string name="contribution">Colabolar</string>
+    <string name="contribution">Colaborar</string>
     <string name="report">Informar de un fallo</string>
     <string name="view_source">Ver fuente</string>
     <string name="open_source">Licencias de código abierto</string>
@@ -75,4 +75,11 @@
     <string name="Mar">M</string>
     <string name="April">A</string>
     <string name="May">M</string>
+    <string name="june">Jun</string>
+    <string name="july">Jul</string>
+    <string name="aug">Ago</string>
+    <string name="sep">Sep</string>
+    <string name="oct">Oct</string>
+    <string name="nov">Nov</string>
+    <string name="dec">Dic</string>
 </resources>
