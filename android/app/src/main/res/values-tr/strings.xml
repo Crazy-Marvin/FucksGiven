@@ -1,2 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">S*ktir Edilenler</string>
+    <string name="cancel">İptal</string>
+    <string name="description">Açıklama</string>
+    <string name="settings">Ayarlar</string>
+    <string name="general">Genel</string>
+    <string name="backup">Yedekle</string>
+    <string name="backup_success">Veritabanı başarıyla yedeklendi</string>
+    <string name="restore">Geri Yükle</string>
+    <string name="stats">İstatistikler</string>
+    <string name="weekly">Haftalık</string>
+    <string name="monthly">Aylık</string>
+    <string name="yearly">Yıllık</string>
+    <string name="average_fucks">S*ktir edilenler ortalaması</string>
+    <string name="about">Hakkında</string>
+    <string name="add">Ekle</string>
+    <string name="apache">Apache License 2.0</string>
+    <string name="no_fucks">S*ktir Edilen Yok</string>
+    <string name="select_theme">Tema Seç</string>
+    <string name="apperance">Kişiselleştirme</string>
+    <string name="data">Veri</string>
+    <string name="select_date">Tarih Seç</string>
+    <string name="ok">Tamam</string>
+</resources>
