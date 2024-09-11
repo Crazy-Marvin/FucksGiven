@@ -11,4 +11,7 @@
     <string name="ok">De acuerdo</string>
     <string name="settings">Ajustes</string>
     <string name="general">General</string>
+    <string name="apperance">Apariencia</string>
+    <string name="data">Datos</string>
+    <string name="backup">Recuperar</string>
 </resources>
