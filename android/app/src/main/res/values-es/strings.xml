@@ -70,4 +70,9 @@
     <string name="report">Informar de un fallo</string>
     <string name="view_source">Ver fuente</string>
     <string name="open_source">Licencias de código abierto</string>
+    <string name="jan">E</string>
+    <string name="Feb">F</string>
+    <string name="Mar">M</string>
+    <string name="April">A</string>
+    <string name="May">M</string>
 </resources>
