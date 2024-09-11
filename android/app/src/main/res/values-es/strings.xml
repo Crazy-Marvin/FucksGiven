@@ -76,10 +76,13 @@
     <string name="April">A</string>
     <string name="May">M</string>
     <string name="june">J</string>
-    <string name="july">Jul</string>
-    <string name="aug">Ago</string>
-    <string name="sep">Sep</string>
-    <string name="oct">Oct</string>
-    <string name="nov">Nov</string>
-    <string name="dec">Dic</string>
+    <string name="july">J</string>
+    <string name="aug">A</string>
+    <string name="sep">S</string>
+    <string name="oct">O</string>
+    <string name="nov">N</string>
+    <string name="dec">D</string>
+    <string name="twentynine">29</string>
+    <string name="thirty">30</string>
+    <string name="thirtyone">31</string>
 </resources>
