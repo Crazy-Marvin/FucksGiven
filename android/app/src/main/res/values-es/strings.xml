@@ -16,7 +16,7 @@
     <string name="backup">Copia de seguridad</string>
     <string name="backup_success">Copia de seguridad de la base de datos realizada con éxito</string>
     <string name="restore">Restaurar</string>
-    <string name="select_theme">Elegir Tema</string>
+    <string name="select_theme">Elegir tema</string>
     <string name="stats">Estadísticas</string>
     <string name="weekly">Semanal</string>
     <string name="monthly">Mensual</string>
