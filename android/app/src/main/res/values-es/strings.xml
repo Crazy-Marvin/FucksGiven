@@ -13,7 +13,7 @@
     <string name="general">General</string>
     <string name="apperance">Apariencia</string>
     <string name="data">Datos</string>
-    <string name="backup">Recuperar</string>
+    <string name="backup">Copia de seguridad</string>
     <string name="backup_success">Copia de seguridad de la base de datos realizada con éxito</string>
     <string name="restore">Restaurar</string>
     <string name="select_theme">Elegir Tema</string>
