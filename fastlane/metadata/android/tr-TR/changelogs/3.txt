@@ -1,0 +1,3 @@
+- 🐛 Hata Düzeltmeleri
+- ⚙️ Bağımlılık Güncellemeleri
+- 🗺️ Çeviri Güncellemeleri
