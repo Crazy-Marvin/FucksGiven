@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="apache">Apache 版權協議 2.0</string>
+    <string name="no_fucks">費事調理儂務</string>
+    <string name="settings">設定儂務</string>
+    <string name="general">一般儂務</string>
+    <string name="app_name">調理儂務</string>
+    <string name="about">細說儂務</string>
+    <string name="add">我掉</string>
+    <string name="cancel">算數</string>
+    <string name="description">咩樹</string>
+    <string name="ok">確定</string>
+    <string name="select_date">邊日</string>
+</resources>
