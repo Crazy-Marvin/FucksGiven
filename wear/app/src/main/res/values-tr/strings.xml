@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">S*ktirEdilenlerSaat</string>
+    <string name="hello_world">Kare dünyadan,
+\nMerhaba, %1$s!</string>
+</resources>
