@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">調理儂務手戴</string>
+    <string name="hello_world">直角切去只剩下圓形，就無謂啦
+\n率真修正，%1$s！</string>
+</resources>
