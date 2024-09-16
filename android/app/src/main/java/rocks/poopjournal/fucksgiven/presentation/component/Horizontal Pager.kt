@@ -19,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import rocks.poopjournal.fucksgiven.R
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.StatsViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -29,6 +30,7 @@ import java.util.Locale
 fun HorizontalPagerView(
     pagerState: PagerState,
     viewModel: StatsViewModel,
+    themeSetting: ThemeSetting
 
     ) {
     val weeklyData by viewModel.weeklyData.observeAsState(emptyList())
@@ -197,7 +199,8 @@ fun HorizontalPagerView(
 
                     LineChartComposable(
                         lineDataPoints = weeklyLineDataPoints,
-                        xCount = weeklyLineDataPoints.size
+                        xCount = weeklyLineDataPoints.size,
+                        themeSetting = themeSetting
                     )
                 }
             }
@@ -230,7 +233,7 @@ fun HorizontalPagerView(
                         modifier = Modifier.padding(end = 3.dp, bottom = 5.dp, start = 10.dp),
                         style = MaterialTheme.typography.bodyLarge
                     )
-                    LineChartComposable(lineDataPoints = monthlyLineDataPoints, xCount = 6)
+                    LineChartComposable(lineDataPoints = monthlyLineDataPoints, xCount = 6, themeSetting = themeSetting)
                 }
             }
 
@@ -264,7 +267,8 @@ fun HorizontalPagerView(
                     )
                     LineChartComposable(
                         lineDataPoints = yearlyLineDataPoints,
-                        xCount = yearlyLineDataPoints.size
+                        xCount = yearlyLineDataPoints.size,
+                        themeSetting = themeSetting
                     )
                 }
             }

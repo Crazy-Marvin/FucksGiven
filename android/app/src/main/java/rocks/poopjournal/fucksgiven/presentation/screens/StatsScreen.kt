@@ -36,11 +36,12 @@ import rocks.poopjournal.fucksgiven.presentation.component.AppBar
 import rocks.poopjournal.fucksgiven.presentation.component.BottomBar
 import rocks.poopjournal.fucksgiven.presentation.component.BottomNavBar
 import rocks.poopjournal.fucksgiven.presentation.component.HorizontalPagerView
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.StatsViewModel
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel) {
+fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel,themeSetting: ThemeSetting) {
     val scope = rememberCoroutineScope()
     val pager = rememberPagerState(pageCount = {
         3
@@ -138,7 +139,8 @@ fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel) {
 
             HorizontalPagerView(
                 pagerState = pager,
-                viewModel = viewModel
+                viewModel = viewModel,
+                themeSetting = themeSetting
             )
         }
     }
