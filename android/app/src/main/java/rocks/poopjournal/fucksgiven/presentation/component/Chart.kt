@@ -1,12 +1,15 @@
 package rocks.poopjournal.fucksgiven.presentation.component
 
+import android.content.res.Configuration
 import android.graphics.Typeface
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
@@ -25,12 +28,15 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.formatter.ValueFormatter
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.presentation.ui.theme.FuckGreen
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.AppTheme
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
 import java.util.Locale
 
 @Composable
 fun LineChartComposable(
     lineDataPoints: List<LineDataPoint>,
-    xCount : Int
+    xCount : Int,
+    themeSetting: ThemeSetting
 
 ) {
     val context1 = LocalContext.current
@@ -39,6 +45,7 @@ fun LineChartComposable(
     }
 
     val tf = ResourcesCompat.getFont(context1, R.font.opensans_regular)
+    val theme = themeSetting.themeFlow.collectAsState()
     AndroidView(
         modifier = Modifier
             .fillMaxWidth()
@@ -49,19 +56,37 @@ fun LineChartComposable(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
                 )
-                setBackgroundColor(Color.White.toArgb())
+
                 xAxis.position = XAxis.XAxisPosition.BOTTOM
                 axisRight.isEnabled = true
                 axisLeft.isEnabled = false
-                axisRight.textColor = Color.Black.toArgb()
-                xAxis.textColor = Color.Black.toArgb()
                 legend.isEnabled = false
-
                 // Customizing the Line Chart
                 description.isEnabled = false
                 setDrawGridBackground(false)
 
                 // Data Setup
+                when (theme.value) {
+                    AppTheme.DARK -> {
+                        axisRight.textColor = Color.White.toArgb()
+                        xAxis.textColor = Color.White.toArgb()
+                        setBackgroundColor(Color.Black.toArgb())
+                        setGridBackgroundColor(Color.White.toArgb())
+                    }
+                    AppTheme.LIGHT -> {
+                        axisRight.textColor = Color.Black.toArgb()
+                        xAxis.textColor = Color.Black.toArgb()
+                        setBackgroundColor(Color.White.toArgb())
+                        setGridBackgroundColor(Color.Black.toArgb())
+
+                    }
+                    AppTheme.FOLLOW_SYSTEM -> {
+                        axisRight.textColor = Color.White.toArgb()
+                        xAxis.textColor = Color.White.toArgb()
+                        setBackgroundColor(Color.Black.toArgb())
+                        setGridBackgroundColor(Color.White.toArgb())
+                    }
+                }
 
                 val dataSet = LineDataSet(entries, "Label").apply {
                     color = FuckGreen.toArgb()

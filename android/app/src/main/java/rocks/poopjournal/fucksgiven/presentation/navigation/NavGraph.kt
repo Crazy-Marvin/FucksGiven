@@ -12,12 +12,13 @@ import rocks.poopjournal.fucksgiven.presentation.viewmodel.HomeViewModel
 import rocks.poopjournal.fucksgiven.presentation.screens.HomeScreen
 import rocks.poopjournal.fucksgiven.presentation.screens.SettingScreen
 import rocks.poopjournal.fucksgiven.presentation.screens.StatsScreen
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.SettingsViewModel
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.StatsViewModel
 
 @RequiresApi(Build.VERSION_CODES.P)
 @Composable
-fun NavGraph(navController: NavHostController){
+fun NavGraph(navController: NavHostController,themeSetting: ThemeSetting){
     val viewModel : HomeViewModel = hiltViewModel()
     val statsViewModel : StatsViewModel = hiltViewModel()
     val settingsViewModel : SettingsViewModel = hiltViewModel()
@@ -27,7 +28,7 @@ fun NavGraph(navController: NavHostController){
             HomeScreen(navController,viewModel)
         }
         composable(route = STATS_SCREEN){
-            StatsScreen(navController = navController, viewModel = statsViewModel)
+            StatsScreen(navController = navController, viewModel = statsViewModel,themeSetting)
         }
 
         composable(route = ABOUT_SCREEN){
