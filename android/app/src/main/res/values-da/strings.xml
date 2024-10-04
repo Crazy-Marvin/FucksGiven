@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about">Om</string>
+    <string name="ok">OK</string>
+    <string name="settings">Indstillinger</string>
+    <string name="restore">Gendan</string>
+    <string name="select_theme">Vælg Tema</string>
+    <string name="add">Tilføj</string>
+    <string name="cancel">Annuller</string>
+    <string name="description">Beskrivelse</string>
+    <string name="select_date">Vælg Dato</string>
+    <string name="general">Generelt</string>
+    <string name="data">Data</string>
+    <string name="apperance">Udseende</string>
+    <string name="backup">Sikkerhedskopiering</string>
+</resources>

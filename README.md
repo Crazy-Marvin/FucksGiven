@@ -1,5 +1,6 @@
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Crazy-Marvin/FucksGiven/CI/development)](https://github.com/Crazy-Marvin/FucksGiven/actions)
 [![License](https://img.shields.io/github/license/Crazy-Marvin/FucksGiven.svg)](https://github.com/Crazy-Marvin/FucksGiven/blob/development/LICENSE)
+[![Figma Mockups](https://img.shields.io/badge/Figma-black?logo=figma)](https://www.figma.com/file/wi0bNwioIdPWahuNJAUPoS/Untitled?node-id=0%3A1)
 [![Last commit](https://img.shields.io/github/last-commit/Crazy-Marvin/FucksGiven.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGiven/commits)
 [![Releases](https://img.shields.io/github/downloads/Crazy-Marvin/FucksGiven/total.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGiven/releases)
 [![Latest tag](https://img.shields.io/github/tag/Crazy-Marvin/FucksGiven.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGivne/tags)
