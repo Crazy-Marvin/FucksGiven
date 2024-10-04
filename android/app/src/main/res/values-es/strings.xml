@@ -85,4 +85,7 @@
     <string name="twentynine">29</string>
     <string name="thirty">30</string>
     <string name="thirtyone">31</string>
+    <string name="delete_dialog">¿Estás seguro de que quieres borrarlo?</string>
+    <string name="update">Actualizar</string>
+    <string name="delete">Borrar</string>
 </resources>
