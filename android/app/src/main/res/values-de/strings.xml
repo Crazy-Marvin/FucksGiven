@@ -92,4 +92,7 @@
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="android_jetpack" translatable="false">Android Jetpack</string>
     <string name="apache_license" translatable="false">Apache License 2.0</string>
+    <string name="delete">Löschen</string>
+    <string name="update">Aktualisieren</string>
+    <string name="delete_dialog">Möchtest du den Eintrag wirklich löschen?</string>
 </resources>
