@@ -85,4 +85,7 @@
     <string name="five">5</string>
     <string name="seven">7</string>
     <string name="eight">8</string>
+    <string name="update">Güncelle</string>
+    <string name="delete">Sil</string>
+    <string name="delete_dialog">Silmek istediğinize emin misiniz?</string>
 </resources>
