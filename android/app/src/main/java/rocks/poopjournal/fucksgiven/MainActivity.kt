@@ -10,8 +10,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.collectAsState
+import androidx.core.os.LocaleListCompat
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import rocks.poopjournal.fucksgiven.presentation.navigation.NavGraph
@@ -30,16 +32,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            if (SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                val localeManager = applicationContext
-                    .getSystemService(LocaleManager::class.java)
-                localeManager.overrideLocaleConfig = LocaleConfig(
-                    LocaleList.forLanguageTags("en-US,de,ur,fr")
-                )
-
-                val overrideLocaleConfig = localeManager.overrideLocaleConfig
-                val supportedLocales = overrideLocaleConfig?.supportedLocales
-            }
             val theme = themeSetting.themeFlow.collectAsState()
             val useDarkColors = when (theme.value) {
                 AppTheme.LIGHT -> false

@@ -2,6 +2,7 @@ package rocks.poopjournal.fucksgiven.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.conflate
@@ -15,6 +16,8 @@ class FuckRepository @Inject constructor(
     fun getAllFucks() : Flow<List<FuckData>> = fuckDao.getAllData().flowOn(Dispatchers.IO).conflate()
     fun getFuck(id: Int) : Flow<FuckData> = fuckDao.getData(id).flowOn(Dispatchers.IO).conflate()
     suspend fun insertFuck(fuckData: FuckData) = fuckDao.insert(fuckData)
+    suspend fun updateFuck(fuckData: FuckData) = fuckDao.update(fuckData)
+    suspend fun deleteFuck(fuckData: FuckData) = fuckDao.delete(fuckData)
 
     fun getWeeklyData(): LiveData<List<FuckData>> {
         val calendar = Calendar.getInstance().apply {
@@ -29,7 +32,9 @@ class FuckRepository @Inject constructor(
         calendar.add(Calendar.DAY_OF_WEEK, 7)
         val endOfWeek = calendar.timeInMillis
 
-        return fuckDao.getDataBetweenDates(startOfWeek, endOfWeek)
+          return fuckDao.getDataBetweenDates(startOfWeek, endOfWeek).map {
+            it ?: emptyList() // Convert null to empty list
+        }
     }
 
     fun getMonthlyData(): LiveData<List<FuckData>> {

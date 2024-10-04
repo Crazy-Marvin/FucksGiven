@@ -1,24 +1,17 @@
 package rocks.poopjournal.fucksgiven.presentation.component
 
-import android.content.res.Configuration
-import android.graphics.Typeface
-import android.view.View
 import android.view.ViewGroup
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.text.layoutDirection
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
@@ -30,7 +23,6 @@ import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.presentation.ui.theme.FuckGreen
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.AppTheme
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
-import java.util.Locale
 
 @Composable
 fun LineChartComposable(
@@ -171,8 +163,8 @@ fun LineChartComposable(
             chart.axisRight.isGranularityEnabled = true
             chart.notifyDataSetChanged()
             chart.fitScreen()
-            chart.viewPortHandler.setMaximumScaleX(2f);
-            chart.viewPortHandler.setMaximumScaleY(2f);
+            chart.viewPortHandler.setMaximumScaleX(2f)
+            chart.viewPortHandler.setMaximumScaleY(2f)
             chart.isDoubleTapToZoomEnabled = false
             chart.invalidate() // Refresh the chart
         }
