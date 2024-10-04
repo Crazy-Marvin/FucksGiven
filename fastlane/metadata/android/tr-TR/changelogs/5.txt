@@ -1,3 +1,11 @@
-- 🐛 Hata Düzeltmeleri
-- ⚙️ Bağımlılık Güncellemeleri
-- 🗺️ Çeviri Güncellemeleri
+- 🖋️ Artık var olan bir girdi düzenlenebilir (#98)
+- 📅 Yeni girdiler için bugünün tarihi öntanımlı olur (#97)
+- 🚨 QUERY_ALL_PACKAGES izni (artık) gerekli olmadığı için kaldırıldı (#94)
+- 🕶️ Koyu mod nihayet güzel (#95)
+- 🐛 Hata düzeltmeleri
+- ⚙️ Bağımlılık güncellemeleri
+- 🗺️ Çeviri güncellemeleri
+
+Katkıda bulunan herkese ve çevirmenlere çok teşekkürler. 😘
+Bazı kullanıcılar çökmeler yaşıyor (#99 ve #100). Lütfen bu güncellemenin sizin için bunu düzeltip düzeltmediğini bildirin. 🙏
+https://github.com/Crazy-Marvin/FucksGiven/ adresinden sorunları bildirebilir ve düzeltmeler gönderebilir veya https://hosted.weblate.org/engage/fucks-given/ adresinden çevirebilirsiniz. 🚀
