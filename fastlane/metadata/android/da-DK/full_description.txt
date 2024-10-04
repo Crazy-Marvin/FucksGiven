@@ -1,0 +1,7 @@
+Fucks Given holder styr på de ting, der fik dig til at bekymre dig. Når der sker noget, som du unødigt spekulerer på, så notér det med et tryk. Appen opretter et diagram over, hvor mange fucks du har givet, så du kan arbejde på ikke at give nogen.
+ 
+Fucks Given lader dig sikkerhedskopiere dine data og har en smuk mørk tilstand, der kan tændes automatisk og følge systemets tema. Den fungerer endda på dit smartwatch.
+
+Hjemmeside: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
+Oversæt Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a>
+Kilde på GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
