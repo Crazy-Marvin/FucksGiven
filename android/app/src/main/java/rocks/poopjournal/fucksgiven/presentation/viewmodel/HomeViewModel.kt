@@ -53,13 +53,25 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun addFuck(fuck: FuckData,context: Context) {
-        if(fuck.description.isEmpty() && fuck.date == 0L){
-            Toast.makeText(context,"Fill all information",Toast.LENGTH_SHORT).show()
+    fun addFuck(fuck: FuckData, context: Context) {
+        if (fuck.description.isEmpty() && fuck.date == 0L) {
+            Toast.makeText(context, "Fill all information", Toast.LENGTH_SHORT).show()
             return
         }
         viewModelScope.launch {
             fuckRepository.insertFuck(fuck)
+        }
+    }
+
+    fun updateFuck(fuck: FuckData, context: Context) {
+        viewModelScope.launch {
+            fuckRepository.updateFuck(fuck)
+        }
+    }
+
+    fun deleteFuck(fuck: FuckData) {
+        viewModelScope.launch {
+            fuckRepository.deleteFuck(fuck)
         }
     }
 

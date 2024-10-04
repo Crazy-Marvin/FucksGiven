@@ -87,6 +87,9 @@
     <string name="report">Report a problem</string>
     <string name="view_source">View Source</string>
     <string name="open_source">Open-source Licenses</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="delete_dialog">Are you Sure you want to delete?</string>
     <string name="feather_icons" translatable="false">Feather Icons</string>
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="android_jetpack" translatable="false">Android Jetpack</string>

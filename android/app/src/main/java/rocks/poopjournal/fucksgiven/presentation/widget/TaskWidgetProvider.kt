@@ -36,8 +36,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import rocks.poopjournal.fucksgiven.MainActivity
 import rocks.poopjournal.fucksgiven.R
-import rocks.poopjournal.fucksgiven.presentation.screens.getFormattedDate
-import rocks.poopjournal.fucksgiven.presentation.screens.isToday
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.getFormattedDate
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.isToday
 
 class MyAppWidget : GlanceAppWidget() {
     override val sizeMode: SizeMode
