@@ -1,0 +1,3 @@
+- 🐛 Fejlrettelser
+- ⚙️ Afhængighedsopdateringer
+- 🗺️ Oversættelsesopdateringer
