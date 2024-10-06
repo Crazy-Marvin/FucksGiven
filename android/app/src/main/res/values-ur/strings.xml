@@ -78,12 +78,12 @@
     <string name="follow_system">سسٹم کو فالو کریں۔</string>
     <string name="appwidget_text">مثال</string>
     <string name="add_widget">ویجیٹ شامل کریں۔</string>
-    <string name="app_widget_description">یہ ایک ایپ ویجیٹ کی تفصیل ہے۔</string>
+    <string name="app_widget_description">یہ ایک ایپ ویجیٹ کی تفصیل ہے ۔</string>
     <string name="title_activity_wear">WearActivity</string>
     <string name="crazy_marvin" translatable="false">Crazy Marvin</string>
     <string name="developer">ڈویلپر</string>
     <string name="mubeen" translatable="false">Mubeen Ali</string>
-    <string name="contribution">تعاون کریں۔</string>
+    <string name="contribution">شراکت کریں</string>
     <string name="translate" translatable="false">Translate</string>
     <string name="report">مسئلے کے بارے میں بتائیے</string>
     <string name="view_source">ماخذ دیکھیں</string>
@@ -92,4 +92,7 @@
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="android_jetpack" translatable="false">Android Jetpack</string>
     <string name="apache_license" translatable="false">Apache License 2.0</string>
+    <string name="update">اپ ڈیٹ</string>
+    <string name="delete">حذف کریں</string>
+    <string name="delete_dialog">کیا آپ کو یقین ہے کہ آپ حذف کرنا چاہتے ہیں ؟</string>
 </resources>
