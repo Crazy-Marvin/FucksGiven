@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ça fait chier</string>
+    <string name="app_name">Fucks Given</string>
     <string name="about">À propos</string>
     <string name="apache">Licence Apache 2.0</string>
     <string name="no_fucks">Rien à foutre</string>
@@ -92,4 +92,7 @@
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="android_jetpack" translatable="false">Android Jetpack</string>
     <string name="apache_license" translatable="false">Apache License 2.0</string>
+    <string name="update">Mise à Jour</string>
+    <string name="delete">Supprimer</string>
+    <string name="delete_dialog">Êtes-vous sûr de vouloir supprimer ?</string>
 </resources>
