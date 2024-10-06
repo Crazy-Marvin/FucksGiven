@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                 AppTheme.DARK -> true
             }
             FucksGivenTheme(darkTheme = useDarkColors) {
-                NavGraph(navController = rememberNavController(), themeSetting = themeSetting)
+                NavGraph(navController = rememberNavController(), themeSetting = themeSetting, context = this)
             }
         }
     }

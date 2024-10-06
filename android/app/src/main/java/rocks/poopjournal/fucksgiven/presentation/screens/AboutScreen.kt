@@ -112,7 +112,7 @@ fun AboutScreen(navController: NavHostController) {
                     style = MaterialTheme.typography.bodyLarge,
                 )
                 val stylizedPoetry = buildAnnotatedString {
-                    withStyle(style = SpanStyle(fontSize = 14.sp, fontWeight = FontWeight.W400)) {
+                    withStyle(style = SpanStyle(fontSize = 14.sp, fontWeight = FontWeight.W400, color = MaterialTheme.colorScheme.primary)) {
                         append("v${packageInfo.longVersionCode}")
                         append("—")
                         withStyle(style = SpanStyle(color = MaterialTheme.colorScheme.primary)) {

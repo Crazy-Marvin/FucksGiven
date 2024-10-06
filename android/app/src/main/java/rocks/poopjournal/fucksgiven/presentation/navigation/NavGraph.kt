@@ -1,5 +1,6 @@
 package rocks.poopjournal.fucksgiven.presentation.navigation
 
+import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
@@ -18,7 +19,7 @@ import rocks.poopjournal.fucksgiven.presentation.viewmodel.StatsViewModel
 
 @RequiresApi(Build.VERSION_CODES.P)
 @Composable
-fun NavGraph(navController: NavHostController,themeSetting: ThemeSetting){
+fun NavGraph(navController: NavHostController,themeSetting: ThemeSetting,context: Context){
     val viewModel : HomeViewModel = hiltViewModel()
     val statsViewModel : StatsViewModel = hiltViewModel()
     val settingsViewModel : SettingsViewModel = hiltViewModel()
@@ -28,7 +29,7 @@ fun NavGraph(navController: NavHostController,themeSetting: ThemeSetting){
             HomeScreen(navController,viewModel)
         }
         composable(route = STATS_SCREEN){
-            StatsScreen(navController = navController, viewModel = statsViewModel,themeSetting)
+            StatsScreen(navController = navController, viewModel = statsViewModel, themeSetting = themeSetting, context = context)
         }
 
         composable(route = ABOUT_SCREEN){
