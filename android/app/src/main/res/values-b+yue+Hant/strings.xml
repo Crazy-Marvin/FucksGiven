@@ -85,4 +85,7 @@
     <string name="twentyfour">24</string>
     <string name="twentyfive">25</string>
     <string name="twentyseven">27</string>
+    <string name="update">執執佢</string>
+    <string name="delete">剷走佢</string>
+    <string name="delete_dialog">係咪肯定要剷走佢？</string>
 </resources>
