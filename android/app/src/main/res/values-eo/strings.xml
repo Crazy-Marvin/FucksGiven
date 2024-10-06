@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Fikas Donita</string>
+    <string name="app_name">Fucks Given</string>
     <string name="about">Pri</string>
     <string name="apache">Apache-Licenco 2.0</string>
     <string name="no_fucks">Neniu Fiko Donita</string>
@@ -87,9 +87,12 @@
     <string name="translate" translatable="false">Translate</string>
     <string name="report">Raportu problemon</string>
     <string name="view_source">Vidi Fonton</string>
-    <string name="open_source" translatable="false">Open-source Licenses</string>
+    <string name="open_source" translatable="false">Malfermfontaj Licencoj</string>
     <string name="feather_icons" translatable="false">Feather Icons</string>
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="android_jetpack" translatable="false">Android Jetpack</string>
     <string name="apache_license" translatable="false">Apache License 2.0</string>
+    <string name="update">Ĝisdatigo</string>
+    <string name="delete">Forigi</string>
+    <string name="delete_dialog">Ĉu Vi Certas, ke vi volas forigi?</string>
 </resources>
