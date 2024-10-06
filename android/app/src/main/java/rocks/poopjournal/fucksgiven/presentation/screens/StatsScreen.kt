@@ -1,5 +1,6 @@
 package rocks.poopjournal.fucksgiven.presentation.screens
 
+import android.content.Context
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -41,14 +42,24 @@ import rocks.poopjournal.fucksgiven.presentation.viewmodel.StatsViewModel
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel,themeSetting: ThemeSetting) {
+fun StatsScreen(
+    navController: NavHostController,
+    viewModel: StatsViewModel,
+    themeSetting: ThemeSetting,
+    context: Context
+) {
     val scope = rememberCoroutineScope()
     val pager = rememberPagerState(pageCount = {
         3
     })
     var selectedPage by remember { mutableIntStateOf(0) } // Track selected page
 
-    Scaffold(topBar = { AppBar(title = stringResource(id = R.string.stats), navigate = navController) },
+    Scaffold(topBar = {
+        AppBar(
+            title = stringResource(id = R.string.stats),
+            navigate = navController
+        )
+    },
         bottomBar = {
             BottomNavBar(navHostController = navController, items = BottomBar.getMenuBottomItems())
         }) {
@@ -89,7 +100,10 @@ fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel,them
                         contentColor = MaterialTheme.colorScheme.primary
                     )
                 ) {
-                    Text(stringResource(id = R.string.weekly), style = MaterialTheme.typography.bodySmall)
+                    Text(
+                        stringResource(id = R.string.weekly),
+                        style = MaterialTheme.typography.bodySmall
+                    )
                 }
                 OutlinedButton(
                     onClick = {
@@ -111,7 +125,10 @@ fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel,them
                     )
 
                 ) {
-                    Text(stringResource(id = R.string.monthly), style = MaterialTheme.typography.bodySmall)
+                    Text(
+                        stringResource(id = R.string.monthly),
+                        style = MaterialTheme.typography.bodySmall
+                    )
                 }
                 OutlinedButton(
                     onClick = {
@@ -133,14 +150,18 @@ fun StatsScreen(navController: NavHostController, viewModel: StatsViewModel,them
                     )
 
                 ) {
-                    Text(stringResource(id = R.string.yearly), style = MaterialTheme.typography.bodySmall)
+                    Text(
+                        stringResource(id = R.string.yearly),
+                        style = MaterialTheme.typography.bodySmall
+                    )
                 }
             }
 
             HorizontalPagerView(
                 pagerState = pager,
                 viewModel = viewModel,
-                themeSetting = themeSetting
+                themeSetting = themeSetting,
+                context = context
             )
         }
     }

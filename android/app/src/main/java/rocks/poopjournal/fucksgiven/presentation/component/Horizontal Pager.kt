@@ -1,5 +1,6 @@
 package rocks.poopjournal.fucksgiven.presentation.component
 
+import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
@@ -18,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.glance.LocalContext
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.StatsViewModel
@@ -30,13 +32,13 @@ import java.util.Locale
 fun HorizontalPagerView(
     pagerState: PagerState,
     viewModel: StatsViewModel,
-    themeSetting: ThemeSetting
+    themeSetting: ThemeSetting,
+    context: Context
+) {
 
-    ) {
     val weeklyData by viewModel.weeklyData.observeAsState(emptyList())
     val monthlyData by viewModel.monthlyData.observeAsState(emptyList())
     val yearlyData by viewModel.yearlyData.observeAsState(emptyList())
-
 
     //weekly data processing
     val weeklyXValues = listOf(
@@ -50,13 +52,19 @@ fun HorizontalPagerView(
     )
     // Create a list of LineDataPoint objects
     val weeklyLineDataPoints = weeklyXValues.map { day ->
-        val dayOfWeek = getDayOfWeek(day)
-        val count = weeklyData.count { data ->
-            val calendar = Calendar.getInstance()
-            calendar.timeInMillis = data.date
-            calendar.get(Calendar.DAY_OF_WEEK) == dayOfWeek
+        try {
+            val dayOfWeek = getDayOfWeek(day, context)
+            val count = weeklyData.count { data ->
+                val calendar = Calendar.getInstance()
+                calendar.timeInMillis = data.date
+                calendar.get(Calendar.DAY_OF_WEEK) == dayOfWeek
+            }
+            LineDataPoint(day, count)
+        } catch (e: Exception) {
+            // Log if any exceptions occur during processing
+            Log.e("HorizontalPagerView", "Error processing day: $day", e)
+            LineDataPoint(day, 0) // Fallback to avoid crash
         }
-        LineDataPoint(day, count)
     }
 
     val total = weeklyLineDataPoints.sumOf { it.yValue }
@@ -276,15 +284,22 @@ fun HorizontalPagerView(
     }
 }
 
-fun getDayOfWeek(day: String): Int {
+fun getDayOfWeek(day: String,context: Context): Int {
+    val monday = context.getString(R.string.m)
+    val tuesday = context.getString(R.string.t)
+    val wednesday = context.getString(R.string.w)
+    val thursday = context.getString(R.string.th)
+    val friday = context.getString(R.string.f)
+    val saturday = context.getString(R.string.s)
+    val sunday = context.getString(R.string.su)
     return when (day) {
-        "M" -> Calendar.MONDAY
-        "T" -> Calendar.TUESDAY
-        "W" -> Calendar.WEDNESDAY
-        "TH" -> Calendar.THURSDAY
-        "F" -> Calendar.FRIDAY
-        "S" -> Calendar.SATURDAY
-        "SU" -> Calendar.SUNDAY
+        monday -> Calendar.MONDAY
+        tuesday -> Calendar.TUESDAY
+        wednesday -> Calendar.WEDNESDAY
+        thursday -> Calendar.THURSDAY
+        friday -> Calendar.FRIDAY
+        saturday -> Calendar.SATURDAY
+        sunday -> Calendar.SUNDAY
         else -> throw IllegalArgumentException("Invalid day of the week")
     }
 }
