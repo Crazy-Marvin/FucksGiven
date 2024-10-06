@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="no_fucks">Не забит хуй</string>
+    <string name="no_fucks">Вас ничего не заёбывало</string>
     <string name="add">Добавить</string>
     <string name="cancel">Отмена</string>
     <string name="settings">Настройки</string>
