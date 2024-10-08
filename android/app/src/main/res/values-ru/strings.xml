@@ -7,10 +7,10 @@
     <string name="general">Основные</string>
     <string name="apperance">Внешний вид</string>
     <string name="data">Данные</string>
-    <string name="backup">Резервная копия</string>
+    <string name="backup">Экспортировать</string>
     <string name="backup_success">Резервная копия создана успешно</string>
-    <string name="restore">Восстановить</string>
-    <string name="select_theme">Выбрать тему</string>
+    <string name="restore">Импортировать</string>
+    <string name="select_theme">Выберите тему</string>
     <string name="weekly">Еженедельно</string>
     <string name="monthly">Ежемесячно</string>
     <string name="yearly">Ежегодно</string>
@@ -35,7 +35,7 @@
     <string name="appwidget_text">ОБРАЗЕЦ</string>
     <string name="developer">Разработчик</string>
     <string name="view_source">Посмотреть исходный код</string>
-    <string name="app_name">Fucks Given</string>
+    <string name="app_name">Заебало</string>
     <string name="about">О приложении</string>
     <string name="apache">Лицензия Apache 2.0</string>
     <string name="description">Описание</string>
@@ -56,12 +56,12 @@
     <string name="twentyseven">27</string>
     <string name="twentynine">29</string>
     <string name="dec">Д</string>
-    <string name="dark_theme">Темная тема</string>
+    <string name="dark_theme">Тёмная тема</string>
     <string name="report">Сообщить о проблеме</string>
     <string name="add_widget">Добавить виджет</string>
     <string name="app_widget_description">Это описание виджета приложения</string>
     <string name="stats">Показатели</string>
-    <string name="average_fucks">забит хуй в среднем</string>
+    <string name="average_fucks">раз заёбывает в среднем</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="m">Пн</string>
