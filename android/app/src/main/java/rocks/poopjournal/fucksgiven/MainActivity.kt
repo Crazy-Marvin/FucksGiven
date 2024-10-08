@@ -1,22 +1,22 @@
 package rocks.poopjournal.fucksgiven
 
-import android.app.LocaleConfig
-import android.app.LocaleManager
 import android.os.Build
-import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
-import android.os.LocaleList
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.collectAsState
-import androidx.core.os.LocaleListCompat
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import rocks.poopjournal.fucksgiven.data.getPasswordProtectionEnabled
 import rocks.poopjournal.fucksgiven.presentation.navigation.NavGraph
+import rocks.poopjournal.fucksgiven.presentation.screens.PasswordPromptScreen
 import rocks.poopjournal.fucksgiven.presentation.ui.theme.FucksGivenTheme
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.AppTheme
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
@@ -39,7 +39,15 @@ class MainActivity : ComponentActivity() {
                 AppTheme.DARK -> true
             }
             FucksGivenTheme(darkTheme = useDarkColors) {
-                NavGraph(navController = rememberNavController(), themeSetting = themeSetting, context = this)
+                var isAuthenticated by remember { mutableStateOf(false) }
+                val isPasswordProtectionEnabled = getPasswordProtectionEnabled(context = this)
+                if (isAuthenticated || !isPasswordProtectionEnabled) {
+                    NavGraph(navController = rememberNavController(), themeSetting = themeSetting, context = this)
+                } else {
+                    PasswordPromptScreen(context = this) {
+                        isAuthenticated = true
+                    }
+                }
             }
         }
     }
