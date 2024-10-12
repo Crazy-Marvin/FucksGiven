@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -15,6 +16,7 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import rocks.poopjournal.fucksgiven.data.getPasswordProtectionEnabled
+import rocks.poopjournal.fucksgiven.presentation.component.BiometricPromptManager
 import rocks.poopjournal.fucksgiven.presentation.navigation.NavGraph
 import rocks.poopjournal.fucksgiven.presentation.screens.PasswordPromptScreen
 import rocks.poopjournal.fucksgiven.presentation.ui.theme.FucksGivenTheme
@@ -23,7 +25,7 @@ import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var themeSetting: ThemeSetting
 

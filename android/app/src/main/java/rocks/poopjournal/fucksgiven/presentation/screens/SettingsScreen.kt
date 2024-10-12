@@ -24,6 +24,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
@@ -127,19 +128,25 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Security",
+                        text = stringResource(R.string.security),
                         color = MaterialTheme.colorScheme.primary,
                         style = MaterialTheme.typography.labelSmall,
-                        modifier = Modifier.padding(start = 12.dp)
+                        modifier = Modifier.padding(start = 11.dp)
                     )
                 }
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(16.dp)
+                    modifier = Modifier.padding(start = 11.dp)
                 ) {
-                    Text(text = "Enable Password Protection")
+                    Text(text = stringResource(R.string.enable_app_protection))
                     Switch(
                         modifier = Modifier.padding(start = 4.dp),
+                        colors = SwitchDefaults.colors(
+                            checkedThumbColor = Color.White,
+                            checkedTrackColor = MaterialTheme.colorScheme.primary,
+                            uncheckedThumbColor = MaterialTheme.colorScheme.primary,
+                            uncheckedTrackColor = Color.White,
+                        ),
                         checked = isPasswordProtectionEnabled,
                         onCheckedChange = { enabled ->
                             isPasswordProtectionEnabled = enabled
@@ -323,7 +330,7 @@ fun SetPasswordScreen(context: Context, onPasswordSet: () -> Unit, onDismissRequ
                 Toast.makeText(context, "Password didn't match", Toast.LENGTH_SHORT ).show()
             }
         }) {
-            Text(text = "Set Password")
+            Text(text = "Set Password", color = Color.White)
         }
         }
     }
