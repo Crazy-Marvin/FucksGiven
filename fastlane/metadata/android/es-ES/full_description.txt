@@ -1,7 +1,7 @@
-Fucks Given te permite realizar un seguimiento de las cosas que te hicieron preocuparte. Cada vez que suceda algo que te preocupe innecesariamente, anótalo con un toque. La aplicación crea una tabla de cuántas folladas has dado, para que puedas trabajar para no dar ninguna.
- 
-Fucks Given te permite hacer una copia de seguridad de tus datos y tiene un hermoso modo oscuro que se puede activar automáticamente, siguiendo el tema del sistema. Incluso funciona en tu reloj inteligente.
+Me Importa un Carajo (Fucks Given) te permite realizar un seguimiento de las cosas que te hicieron preocuparte. Cada vez que suceda algo que te preocupe innecesariamente, anótalo con un toque. La aplicación crea una tabla de cuántas veces has dicho "Me importa un carajo", para que puedas mejorar para no decirlo más.
+
+Me Importa un Carajo (Fucks Given) te permite hacer una copia de seguridad de tus datos y tiene un hermoso modo oscuro que se puede activar automáticamente, siguiendo el tema del sistema. Incluso funciona en tu reloj inteligente.
 
 Página web: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
 Traducir Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
-Fuente en GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
+Código fuente en GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>

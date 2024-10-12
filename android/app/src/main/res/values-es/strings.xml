@@ -2,8 +2,8 @@
 <resources>
     <string name="about">Acerca de</string>
     <string name="apache">Licencia Apache 2.0</string>
-    <string name="no_fucks">Sin Fucks Dados</string>
-    <string name="app_name">Fucks Dados</string>
+    <string name="no_fucks">Todavía te sigue importando</string>
+    <string name="app_name">Me importa un carajo</string>
     <string name="add">Añadir</string>
     <string name="cancel">Cancelar</string>
     <string name="description">Descripción</string>
