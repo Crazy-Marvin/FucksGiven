@@ -1,2 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="about">אודות</string>
+    <string name="apache">רישיון Apache 2.0</string>
+    <string name="add">הוספה</string>
+    <string name="cancel">ביטול</string>
+    <string name="description">תיאור</string>
+    <string name="select_date">בחירת תאריך</string>
+    <string name="ok">אישור</string>
+    <string name="settings">הגדרות</string>
+    <string name="general">כללי</string>
+    <string name="apperance">הופעה</string>
+    <string name="data">נתונים</string>
+    <string name="backup">גיבוי</string>
+    <string name="backup_success">מסד הנתונים גובה בהצלחה</string>
+    <string name="restore">שיחזור</string>
+    <string name="select_theme">בחירת ערכת נושא</string>
+    <string name="stats">סטטיסטיקות</string>
+    <string name="weekly">שבועי</string>
+    <string name="monthly">חודשי</string>
+    <string name="yearly">שנתי</string>
+    <string name="january_december">ינואר-דצמבר</string>
+    <string name="m">ח</string>
+    <string name="t">ש</string>
+    <string name="w">שב</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="ten">10</string>
+    <string name="eleven">11</string>
+    <string name="twelve">12</string>
+    <string name="fourteen">14</string>
+    <string name="fifteen">15</string>
+    <string name="sixteen">16</string>
+    <string name="seventeen">17</string>
+    <string name="eighteen">18</string>
+    <string name="twenty">20</string>
+    <string name="twentyone">21</string>
+    <string name="twentytwo">22</string>
+    <string name="twentythree">23</string>
+    <string name="twentyfour">24</string>
+    <string name="twentysix">26</string>
+    <string name="twentyeight">28</string>
+    <string name="twentynine">29</string>
+    <string name="six">6</string>
+    <string name="thirty">30</string>
+    <string name="thirteen">13</string>
+    <string name="nineteen">19</string>
+    <string name="twentyfive">25</string>
+    <string name="twentyseven">27</string>
+</resources>
