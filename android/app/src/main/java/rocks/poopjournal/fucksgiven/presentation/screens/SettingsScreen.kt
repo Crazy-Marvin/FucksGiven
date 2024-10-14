@@ -1,7 +1,10 @@
 package rocks.poopjournal.fucksgiven.presentation.screens
 
+import android.content.Context
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,7 +23,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -31,13 +37,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import rocks.poopjournal.fucksgiven.R
+import rocks.poopjournal.fucksgiven.data.getPasswordProtectionEnabled
+import rocks.poopjournal.fucksgiven.data.savePassword
+import rocks.poopjournal.fucksgiven.data.setPasswordProtectionEnabled
 import rocks.poopjournal.fucksgiven.presentation.component.ThemeContent
 import rocks.poopjournal.fucksgiven.presentation.navigation.ABOUT_SCREEN
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
@@ -45,9 +56,12 @@ import rocks.poopjournal.fucksgiven.presentation.viewmodel.SettingsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel) {
+fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel, context: Context) {
     var showDialog by remember { mutableStateOf(false) }
     val toastMessage = stringResource(id = R.string.backup_success)
+    var isPasswordProtectionEnabled by remember { mutableStateOf(getPasswordProtectionEnabled(context)) }
+    var showPasswordDialog by remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -105,6 +119,62 @@ fun SettingScreen(navController: NavHostController, viewModel: SettingsViewModel
                     }
                 }
             }
+            Column {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp)
+                        .background(MaterialTheme.colorScheme.secondary),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = stringResource(R.string.security),
+                        color = MaterialTheme.colorScheme.primary,
+                        style = MaterialTheme.typography.labelSmall,
+                        modifier = Modifier.padding(start = 11.dp)
+                    )
+                }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(start = 11.dp)
+                ) {
+                    Text(text = stringResource(R.string.enable_app_protection))
+                    Switch(
+                        modifier = Modifier.padding(start = 4.dp),
+                        colors = SwitchDefaults.colors(
+                            checkedThumbColor = Color.White,
+                            checkedTrackColor = MaterialTheme.colorScheme.primary,
+                            uncheckedThumbColor = MaterialTheme.colorScheme.primary,
+                            uncheckedTrackColor = Color.White,
+                        ),
+                        checked = isPasswordProtectionEnabled,
+                        onCheckedChange = { enabled ->
+                            isPasswordProtectionEnabled = enabled
+
+                            if (enabled) {
+                                showPasswordDialog = true
+                            } else{
+                                isPasswordProtectionEnabled = false
+                                setPasswordProtectionEnabled(context, false)
+                            }
+                        }
+                    )
+                }
+            }
+            if (showPasswordDialog) {
+                SetPasswordScreen(
+                    context = context,
+                    onPasswordSet = {
+                        showPasswordDialog = false
+                    },
+                    onDismissRequest = {
+                        showPasswordDialog = false
+                        isPasswordProtectionEnabled = false
+                        setPasswordProtectionEnabled(context, false)
+                    }
+                )
+            }
+
             Column {
                 Row(
                     modifier = Modifier
@@ -220,4 +290,48 @@ fun ThemeSelectionDialog(
             }
         }
     )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SetPasswordScreen(context: Context, onPasswordSet: () -> Unit, onDismissRequest: () -> Unit) {
+    var password by remember { mutableStateOf("") }
+    var confirmPassword by remember { mutableStateOf("") }
+
+    AlertDialog(onDismissRequest = onDismissRequest){
+    Column(
+        modifier = Modifier.clipToBounds(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        TextField(
+            value = password,
+            onValueChange = { password = it },
+            label = { Text("Enter Password") },
+            modifier = Modifier.padding(16.dp),
+            visualTransformation = PasswordVisualTransformation()
+        )
+        TextField(
+            value = confirmPassword,
+            onValueChange = { confirmPassword = it },
+            label = { Text("Confirm Password") },
+            modifier = Modifier.padding(16.dp),
+            visualTransformation = PasswordVisualTransformation()
+        )
+        Button(
+            onClick = {
+            if (password == confirmPassword && password.isNotBlank()) {
+                setPasswordProtectionEnabled(context, true)
+                savePassword(context, password)
+                onPasswordSet()
+            } else {
+                password = ""
+                confirmPassword = ""
+                Toast.makeText(context, "Password didn't match", Toast.LENGTH_SHORT ).show()
+            }
+        }) {
+            Text(text = "Set Password", color = Color.White)
+        }
+        }
+    }
 }

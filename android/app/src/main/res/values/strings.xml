@@ -11,6 +11,8 @@
     <string name="settings">Settings</string>
     <string name="general">General</string>
     <string name="apperance">Appearance</string>
+    <string name="enable_app_protection">Enable App Protection</string>
+    <string name="security">Security</string>
     <string name="data">Data</string>
     <string name="backup">Backup</string>
     <string name="backup_success">Database backup successfully</string>
