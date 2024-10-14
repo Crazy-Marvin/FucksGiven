@@ -82,4 +82,8 @@
     <string name="report">Rapportér et problem</string>
     <string name="view_source">Se Kilde</string>
     <string name="app_name">Fucks Given</string>
+    <string name="backup_success">Database sikkerhedskopieret</string>
+    <string name="stats">Statistik</string>
+    <string name="average_fucks">fucks givet i gennemsnit</string>
+    <string name="open_source">Open source-licenser</string>
 </resources>

@@ -73,4 +73,14 @@
     <string name="weekly">每週</string>
     <string name="monthly">每月</string>
     <string name="yearly">每年</string>
+    <string name="ok">好的</string>
+    <string name="m">一</string>
+    <string name="t">二</string>
+    <string name="w">三</string>
+    <string name="th">四</string>
+    <string name="f">五</string>
+    <string name="s">六</string>
+    <string name="su">日</string>
+    <string name="update">更新</string>
+    <string name="delete">刪除</string>
 </resources>
