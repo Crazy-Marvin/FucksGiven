@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import rocks.poopjournal.fucksgiven.presentation.screens.AboutScreen
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.HomeViewModel
 import rocks.poopjournal.fucksgiven.presentation.screens.HomeScreen
+import rocks.poopjournal.fucksgiven.presentation.screens.PasswordPromptScreen
 import rocks.poopjournal.fucksgiven.presentation.screens.SettingScreen
 import rocks.poopjournal.fucksgiven.presentation.screens.StatsScreen
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
@@ -19,7 +20,7 @@ import rocks.poopjournal.fucksgiven.presentation.viewmodel.StatsViewModel
 
 @RequiresApi(Build.VERSION_CODES.P)
 @Composable
-fun NavGraph(navController: NavHostController,themeSetting: ThemeSetting,context: Context){
+fun NavGraph(navController: NavHostController,themeSetting: ThemeSetting, context: Context){
     val viewModel : HomeViewModel = hiltViewModel()
     val statsViewModel : StatsViewModel = hiltViewModel()
     val settingsViewModel : SettingsViewModel = hiltViewModel()
@@ -37,8 +38,12 @@ fun NavGraph(navController: NavHostController,themeSetting: ThemeSetting,context
         }
 
         composable(route = SETTINGS_SCREEN){
-            SettingScreen(navController = navController, viewModel = settingsViewModel)
+            SettingScreen(navController = navController, viewModel = settingsViewModel, context = context)
         }
-
+        composable(route = PASSWORD_PROMPT_SCREEN){
+            PasswordPromptScreen(context, onAuthenticated = {
+                navController.navigate(HOME_SCREEN)
+            })
+        }
     }
 }

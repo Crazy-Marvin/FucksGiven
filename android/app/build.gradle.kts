@@ -66,7 +66,7 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.appcompat:appcompat:1.7.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -108,7 +108,8 @@ dependencies {
     implementation ("androidx.glance:glance-appwidget:1.0.0")
     implementation ("androidx.glance:glance-material3:1.0.0")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.8.6")
-
+    implementation("androidx.security:security-crypto:1.1.0-alpha04")
+    implementation("androidx.biometric:biometric:1.4.0-alpha02")
 }
 
 kapt{
