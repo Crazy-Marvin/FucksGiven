@@ -1,0 +1,3 @@
+- 🐛 Correction de bugs
+- ⚙️ Mise à jour des dépendances
+- 🗺 Mise à jour des traductions
