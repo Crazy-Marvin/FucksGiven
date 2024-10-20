@@ -88,4 +88,6 @@
     <string name="update">Güncelle</string>
     <string name="delete">Sil</string>
     <string name="delete_dialog">Silmek istediğinize emin misiniz?</string>
+    <string name="security">Güvenlik</string>
+    <string name="enable_app_protection">Uygulama Korumasını Etkinleştir</string>
 </resources>
