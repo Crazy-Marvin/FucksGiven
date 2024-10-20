@@ -83,4 +83,9 @@
     <string name="su">日</string>
     <string name="update">更新</string>
     <string name="delete">刪除</string>
+    <string name="enable_app_protection">啟用程式保護</string>
+    <string name="security">安全性</string>
+    <string name="average_fucks">平均Fucks Given</string>
+    <string name="title_activity_wear">穿戴裝置</string>
+    <string name="delete_dialog">真的要刪除？</string>
 </resources>
