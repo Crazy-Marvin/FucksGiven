@@ -1,0 +1,7 @@
+- 🐛 錯誤修正
+- ⚙️ 協力更新
+- 🗺️ 翻譯灌溉
+
+鳴謝咁多位儂務手足同翻譯鼎力灌溉。 😘
+
+歡迎到 https://github.com/Crazy-Marvin/FucksGiven/ 報告問題或提交修正，或到 https://hosted.weblate.org/engage/fucks-given/ 幫手翻譯。 🚀
