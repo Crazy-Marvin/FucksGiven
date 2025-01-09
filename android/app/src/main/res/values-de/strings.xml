@@ -84,7 +84,7 @@
     <string name="developer">Entwickler</string>
     <string name="mubeen" translatable="false">Mubeen Ali</string>
     <string name="contribution">Beitragen</string>
-    <string name="translate" translatable="false">Translate</string>
+    <string name="translate" translatable="false">Übersetzen</string>
     <string name="report">Ein Problem melden</string>
     <string name="view_source">Quelltext anzeigen</string>
     <string name="open_source" translatable="false">Quelloffene Lizenzen</string>
@@ -98,4 +98,6 @@
     <string name="enable_app_protection">App-Schutz aktivieren</string>
     <string name="security">Sicherheit</string>
     <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="theme_follow_system">System folgen</string>
 </resources>
