@@ -73,4 +73,21 @@
     <string name="twentysix">26</string>
     <string name="eight">8</string>
     <string name="thirteen">13</string>
+    <string name="security">安全性</string>
+    <string name="enable_app_protection">启用程序保护</string>
+    <string name="ok">是</string>
+    <string name="theme_dark">深色</string>
+    <string name="w">三</string>
+    <string name="title_activity_wear">穿戴装置</string>
+    <string name="delete">删除</string>
+    <string name="t">二</string>
+    <string name="m">一</string>
+    <string name="th">四</string>
+    <string name="su">日</string>
+    <string name="update">更新</string>
+    <string name="delete_dialog">你确定要删除吗？</string>
+    <string name="theme_light">浅色</string>
+    <string name="theme_follow_system">跟随系统</string>
+    <string name="f">五</string>
+    <string name="s">六</string>
 </resources>

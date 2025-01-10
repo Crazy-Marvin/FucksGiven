@@ -88,4 +88,7 @@
     <string name="average_fucks">平均Fucks Given</string>
     <string name="title_activity_wear">穿戴裝置</string>
     <string name="delete_dialog">真的要刪除？</string>
+    <string name="theme_light">淺色</string>
+    <string name="theme_dark">深色</string>
+    <string name="theme_follow_system">跟隨系統</string>
 </resources>

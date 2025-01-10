@@ -90,4 +90,8 @@
     <string name="delete_dialog">堅係要剷走佢？</string>
     <string name="enable_app_protection">把守儂務大門，說好儂務故事</string>
     <string name="security">維護儂務安全</string>
+    <string name="theme_light">白頭浪</string>
+    <string name="theme_dark">黑眼睛</string>
+    <string name="theme_follow_system">跟大路</string>
+    <string name="translate">幫手翻譯</string>
 </resources>

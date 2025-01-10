@@ -84,7 +84,7 @@
     <string name="developer">Développeur</string>
     <string name="mubeen" translatable="false">Mubeen Ali</string>
     <string name="contribution">Contribuer</string>
-    <string name="translate" translatable="false">Translate</string>
+    <string name="translate" translatable="false">Traduire</string>
     <string name="report">Signaler un problème</string>
     <string name="view_source">Voir la source</string>
     <string name="open_source" translatable="false">Licences libres</string>
@@ -95,4 +95,9 @@
     <string name="update">Mise à Jour</string>
     <string name="delete">Supprimer</string>
     <string name="delete_dialog">Êtes-vous sûr de vouloir supprimer ?</string>
+    <string name="enable_app_protection">Activer la protection de l\'appli</string>
+    <string name="security">Sécurité</string>
+    <string name="theme_light">Clair</string>
+    <string name="theme_dark">Sombre</string>
+    <string name="theme_follow_system">Suivre le système</string>
 </resources>
