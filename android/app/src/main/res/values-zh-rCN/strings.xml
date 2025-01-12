@@ -90,4 +90,8 @@
     <string name="theme_follow_system">跟随系统</string>
     <string name="f">五</string>
     <string name="s">六</string>
+    <string name="app_name">Fucks Given</string>
+    <string name="no_fucks">无 Fucks Given</string>
+    <string name="average_fucks">平均 Fucks Given</string>
+    <string name="translate">翻译</string>
 </resources>
