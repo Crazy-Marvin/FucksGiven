@@ -90,4 +90,8 @@
     <string name="delete_dialog">Вы точно хотите удалить?</string>
     <string name="enable_app_protection">Защита приложения</string>
     <string name="security">Безопасность</string>
+    <string name="theme_light">Светлая тема</string>
+    <string name="theme_follow_system">Системная</string>
+    <string name="theme_dark">Тёмная тема</string>
+    <string name="translate">Перевести</string>
 </resources>
