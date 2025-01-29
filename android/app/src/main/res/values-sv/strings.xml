@@ -1,2 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="january_december">Januari-December</string>
+    <string name="t">T</string>
+    <string name="restore">Återställ</string>
+    <string name="description">Beskrivning</string>
+    <string name="apperance">Utseende</string>
+    <string name="data">Data</string>
+    <string name="backup">Säkerhetskopia</string>
+    <string name="theme_dark">Mörk</string>
+    <string name="stats">Statistik</string>
+    <string name="weekly">Per vecka</string>
+    <string name="th">To</string>
+    <string name="f">F</string>
+    <string name="s">L</string>
+    <string name="su">S</string>
+    <string name="one">1</string>
+    <string name="ten">10</string>
+    <string name="developer">Utvecklare</string>
+    <string name="report">Rapportera ett fel</string>
+    <string name="delete">Ta bort</string>
+    <string name="about">Om</string>
+    <string name="add">Lägg till</string>
+    <string name="select_date">Välj datum</string>
+    <string name="cancel">Avbryt</string>
+    <string name="ok">Ok</string>
+    <string name="enable_app_protection">Aktivera appskydd</string>
+    <string name="general">Allmänt</string>
+    <string name="five">5</string>
+    <string name="security">Säkerhet</string>
+    <string name="m">M</string>
+    <string name="select_theme">Välj tema</string>
+    <string name="update">Uppdatera</string>
+    <string name="theme_follow_system">Följ systemet</string>
+    <string name="monthly">Per månad</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="six">6</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="contribution">Bidra</string>
+    <string name="settings">Inställningar</string>
+    <string name="yearly">Per år</string>
+    <string name="translate">Översätt</string>
+    <string name="theme_light">Ljus</string>
+    <string name="seven">7</string>
+    <string name="two">2</string>
+    <string name="w">O</string>
+</resources>
