@@ -90,4 +90,8 @@
     <string name="delete">Borrar</string>
     <string name="enable_app_protection">Habilitar la protección de aplicaciones</string>
     <string name="security">Seguridad</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="theme_follow_system">Predeterminado del Sistema</string>
+    <string name="translate">Traducir</string>
 </resources>
