@@ -23,12 +23,12 @@ Fucks Given allows you to back up your data and has a beautiful dark mode that c
 <a href="https://f-droid.org/packages/rocks.poopjournal.fucksgiven/">
     <img alt="Get it on F-Droid"
         height="80"
-        src="https://user-images.githubusercontent.com/15004217/36919296-19b8524e-1e5d-11e8-8962-48463b1cec8a.png" />
+        src="https://f-droid.org/badge/get-it-on.png" />
         </a>
 <a href="https://play.google.com/store/apps/details?id=rocks.poopjournal.fucksgiven">
     <img alt="Get it on Google Play"
         height="80"
-        src="https://user-images.githubusercontent.com/15004217/36810046-fa306856-1cc9-11e8-808e-6eb8a81783c7.png" />
+        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
         </a>
 
 # Contributing
