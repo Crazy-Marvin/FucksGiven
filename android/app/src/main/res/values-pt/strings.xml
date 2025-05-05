@@ -66,13 +66,13 @@
     <string name="settings">Configurações</string>
     <string name="general">Geral</string>
     <string name="data">Dados</string>
-    <string name="no_fucks">Tô nem aí</string>
-    <string name="app_name">Me Importei</string>
+    <string name="no_fucks">Zero Fodas Dadas</string>
+    <string name="app_name">Fodas Dadas</string>
     <string name="restore">Restaurar</string>
     <string name="add_widget">Adicionar widget</string>
     <string name="cancel">Cancelar</string>
     <string name="backup">Backup</string>
-    <string name="select_theme">Selecionar tema</string>
+    <string name="select_theme">Selecionar Tema</string>
     <string name="monthly">Mensal</string>
     <string name="yearly">Anual</string>
     <string name="appwidget_text">EXEMPLO</string>
@@ -84,4 +84,13 @@
     <string name="twentyeight">28</string>
     <string name="April">A</string>
     <string name="May">M</string>
+    <string name="enable_app_protection">Habilitar Proteção do App</string>
+    <string name="security">Segurança</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Escuro</string>
+    <string name="theme_follow_system">Tema do Sistema</string>
+    <string name="follow_system">Sistema</string>
+    <string name="app_widget_description">Esta é uma descrição de widget de app</string>
+    <string name="translate">Traduzir</string>
+    <string name="apache">Licença Apache 2.0</string>
 </resources>
