@@ -10,7 +10,7 @@
     <string name="apperance">Aspetto</string>
     <string name="data">Dati</string>
     <string name="backup">Backup</string>
-    <string name="restore">Ripristina backup</string>
+    <string name="restore">Restore</string>
     <string name="select_theme">Scegli tema</string>
     <string name="stats">Statistiche</string>
     <string name="weekly">Settimana</string>
