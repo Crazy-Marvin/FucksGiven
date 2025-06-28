@@ -1,0 +1,7 @@
+- 🐛 Corecții de erori
+- ⚙️ Actualizări de dependențe
+- 🗺️ Actualizări de traducere
+
+Mulțumiri speciale tuturor contribuitorilor și traducătorilor. 😘
+Unii utilizatori se confruntă cu erori (#99 și #100). Vă rugăm să comentați dacă această actualizare a rezolvat acest lucru pentru dvs. sau nu. 🙏
+Nu ezitați să raportați probleme și să trimiteți remedieri pe https://github.com/Crazy-Marvin/FucksGiven/ sau traduceri pe https://hosted.weblate.org/engage/fucks-given/. 🚀

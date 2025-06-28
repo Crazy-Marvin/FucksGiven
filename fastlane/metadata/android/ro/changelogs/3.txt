@@ -1,0 +1,3 @@
+- 🐛 Corecții de erori
+- ⚙️ Actualizări de dependențe
+- 🗺️ Actualizări de traducere
