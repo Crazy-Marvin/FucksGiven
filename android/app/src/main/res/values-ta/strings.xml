@@ -10,7 +10,7 @@
     <string name="sep">கள்</string>
     <string name="oct">ஓ</string>
     <string name="nov">N</string>
-    <string name="dec">டி</string>
+    <string name="dec">டீ</string>
     <string name="light_theme">ஒளி கருப்பொருள்</string>
     <string name="dark_theme">இருண்ட கருப்பொருள்</string>
     <string name="follow_system">அமைப்பைப் பின்தொடரவும்</string>
@@ -90,4 +90,8 @@
     <string name="june">செ</string>
     <string name="delete">நீக்கு</string>
     <string name="delete_dialog">நீங்கள் நிச்சயமாக நீக்க விரும்புகிறீர்களா?</string>
+    <string name="theme_light">ஒளி</string>
+    <string name="theme_dark">இருள்</string>
+    <string name="theme_follow_system">அமைப்பைப் பின்தொடரவும்</string>
+    <string name="translate">மொழிபெயர்த்திடு</string>
 </resources>
