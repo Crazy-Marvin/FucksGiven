@@ -1,0 +1,7 @@
+Fucks Given îți permite să urmărești lucrurile care te-au făcut să-ți pese. Ori de câte ori se întâmplă ceva de care te preocupă inutil, notează-l cu o atingere. Aplicația creează un grafic cu câte fututuri ai dat, astfel încât să poți lucra pentru a nu da niciuna.
+
+Fucks Given îți permite să faci backup la datele tale și are un mod întunecat frumos care se poate activa automat, urmând tema sistemului. Funcționează chiar și pe ceasul tău inteligent.
+
+Pagină web: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
+Traducere Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a>
+Sursă pe GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>

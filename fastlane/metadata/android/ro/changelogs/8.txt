@@ -1,0 +1,7 @@
+- 🐛 Corecții de erori
+- ⚙️ Actualizări de dependențe
+- 🗺️ Actualizări de traducere
+
+Mulțumiri speciale tuturor contribuitorilor și traducătorilor. 😘
+
+Nu ezitați să raportați probleme și să trimiteți remedieri la https://github.com/Crazy-Marvin/FucksGiven/ sau traduceri la https://hosted.weblate.org/engage/fucks-given/. 🚀
