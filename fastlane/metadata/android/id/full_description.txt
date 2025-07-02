@@ -1,0 +1,9 @@
+Fucks Given memberi anda hak untuk mencatat semua hal yang membuat anda terlalu peduli. Saat suatu hal membuat anda insomnia sampai jam 3 pagi, catat itu dengan satu ketukan saja. Aplikasi ini membuat grafik dari seberapa banyak anda peduli, agar membantu anda menjadi manusia dingin yang selalu ada di impian mu 🥶
+
+Fucks Given bisa mencadangkan data anda dan mempunyai mode gelap yang menyala bedasarkan tema sistem mu. Ada dukungan untuk smartwatch mu juga.
+
+Situs Web:<a href="https://www.crazymarvin.com/fucks-given">
+https://www.crazymarvin.com/fucks-given</a>
+Terjemahkan Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
+
+Kode sumber di GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
