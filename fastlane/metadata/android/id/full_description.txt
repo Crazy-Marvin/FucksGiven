@@ -2,6 +2,6 @@ Fucks Given memberi anda hak untuk mencatat semua hal yang membuat anda terlalu 
  
 Fucks Given bisa mencadangkan data anda dan mempunyai tema gelap yang secara otomatis menyala bedasarkan tema sistem mu. Aplikasi ini berjalan di smartwatch mu juga.
 
-Webpage: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
-Translate Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
-Source on GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
+Halaman web: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
+Terjemahkan Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
+Kode sumber di GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
