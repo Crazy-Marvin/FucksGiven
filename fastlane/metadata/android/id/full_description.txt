@@ -4,6 +4,5 @@ Fucks Given bisa mencadangkan data anda dan mempunyai mode gelap yang menyala be
 
 Situs Web:<a href="https://www.crazymarvin.com/fucks-given">
 https://www.crazymarvin.com/fucks-given</a>
-Terjemahkan Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
-
+Terjemahkan Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a>
 Kode sumber di GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
