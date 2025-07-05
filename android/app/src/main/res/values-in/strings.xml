@@ -85,4 +85,13 @@
     <string name="th">K</string>
     <string name="f">J</string>
     <string name="s">S</string>
+    <string name="enable_app_protection">Nyalakan perlindungan aplikasi</string>
+    <string name="security">Keamanan</string>
+    <string name="theme_light">Terang</string>
+    <string name="theme_dark">Gelap</string>
+    <string name="theme_follow_system">Ikuti tema sistem</string>
+    <string name="average_fucks">Rata-rata kepedulian</string>
+    <string name="translate">Terjemahkan</string>
+    <string name="view_source">Lihat Sumber</string>
+    <string name="no_fucks">Tidak Peduli Sama Sekali</string>
 </resources>
