@@ -30,5 +30,6 @@
     <string name="january_december">Xaneiro-Decembro</string>
     <string name="m">L</string>
     <string name="t">M</string>
-    <string name="w">X</string>
+    <string name="w">M</string>
+    <string name="th">X</string>
 </resources>
