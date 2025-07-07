@@ -1,0 +1,7 @@
+- 🐛 Corrección de errores
+- ⚙️ Actualizaciones de dependencias
+- 🗺️ Actualizaciones de Traducción
+
+Muchas gracias a todos los colaboradores y traductores. 😘
+Algunos usuarios están experimentando bloqueos (#99 y #100). Por favor, comenta si esta actualización solucionó esto para ti o no. 🙏
+No dudes en informar de problemas y enviar correcciones en https://github.com/Crazy-Marvin/FucksGiven/ o traducciones en https://hosted.weblate.org/engage/fucks-given/. 🚀
