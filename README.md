@@ -3,7 +3,7 @@
 [![Figma Mockups](https://img.shields.io/badge/Figma-black?logo=figma)](https://www.figma.com/file/wi0bNwioIdPWahuNJAUPoS/Untitled?node-id=0%3A1)
 [![Last commit](https://img.shields.io/github/last-commit/Crazy-Marvin/FucksGiven.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGiven/commits)
 [![Releases](https://img.shields.io/github/downloads/Crazy-Marvin/FucksGiven/total.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGiven/releases)
-[![Latest tag](https://img.shields.io/github/tag/Crazy-Marvin/FucksGiven.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGivne/tags)
+[![Latest tag](https://img.shields.io/github/tag/Crazy-Marvin/FucksGiven.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGiven/tags)
 [![Issues](https://img.shields.io/github/issues/Crazy-Marvin/FucksGiven.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGiven/issues)
 [![Pull requests](https://img.shields.io/github/issues-pr/Crazy-Marvin/FucksGiven.svg?style=flat)](https://github.com/Crazy-Marvin/FucksGiven/pulls)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/379c59381e784f42b5910864e574bd8e)](https://www.codacy.com/gh/Crazy-Marvin/FucksGiven?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Crazy-Marvin/FucksGiven&amp;utm_campaign=Badge_Grade)
