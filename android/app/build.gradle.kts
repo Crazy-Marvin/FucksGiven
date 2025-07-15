@@ -1,13 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
 }
 
 android {
     namespace = "rocks.poopjournal.fucksgiven"
-    compileSdk = 35
+    compileSdk = 36
 
     androidResources {
         generateLocaleConfig = true
@@ -17,9 +18,9 @@ android {
 
         applicationId = "rocks.poopjournal.fucksgiven"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 8
-        versionName = "1.0.7"
+        targetSdk = 36
+        versionCode = 9
+        versionName = "1.0.8"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -49,9 +50,7 @@ android {
         compose = true
         viewBinding = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -88,28 +87,28 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation("androidx.navigation:navigation-compose:2.8.5")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
-    implementation ("androidx.work:work-runtime-ktx:2.10.0")
+    implementation("androidx.navigation:navigation-compose:2.9.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.1")
+    implementation ("androidx.work:work-runtime-ktx:2.10.2")
 
 
     // Room
-    implementation("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.room:room-runtime:2.7.2")
+    annotationProcessor("androidx.room:room-compiler:2.7.2")
+    kapt("androidx.room:room-compiler:2.7.2")
+    implementation("androidx.room:room-ktx:2.7.2")
 
     //Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-    implementation("com.google.accompanist:accompanist-permissions:0.31.0-alpha")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation("com.google.accompanist:accompanist-permissions:0.37.3")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
-    implementation ("androidx.glance:glance-appwidget:1.0.0")
-    implementation ("androidx.glance:glance-material3:1.0.0")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
-    implementation("androidx.security:security-crypto:1.1.0-alpha04")
-    implementation("androidx.biometric:biometric:1.4.0-alpha02")
+    implementation ("androidx.glance:glance-appwidget:1.1.1")
+    implementation ("androidx.glance:glance-material3:1.1.1")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.9.1")
+    implementation("androidx.security:security-crypto:1.1.0-beta01")
+    implementation("androidx.biometric:biometric:1.4.0-alpha04")
 }
 
 kapt{
