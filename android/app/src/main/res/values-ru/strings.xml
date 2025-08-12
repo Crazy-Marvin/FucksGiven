@@ -10,7 +10,7 @@
     <string name="backup">Экспортировать</string>
     <string name="backup_success">Резервная копия создана успешно</string>
     <string name="restore">Импортировать</string>
-    <string name="select_theme">Выберите тему</string>
+    <string name="select_theme">Выбрать тему</string>
     <string name="weekly">Еженедельно</string>
     <string name="monthly">Ежемесячно</string>
     <string name="yearly">Ежегодно</string>
@@ -60,8 +60,8 @@
     <string name="report">Сообщить о проблеме</string>
     <string name="add_widget">Добавить виджет</string>
     <string name="app_widget_description">Это описание виджета приложения</string>
-    <string name="stats">Показатели</string>
-    <string name="average_fucks">раз заёбывает в среднем</string>
+    <string name="stats">Статистика</string>
+    <string name="average_fucks">хуёв забито в среднем</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="m">Пн</string>
@@ -88,10 +88,10 @@
     <string name="update">Обновление</string>
     <string name="delete">Удалить</string>
     <string name="delete_dialog">Вы точно хотите удалить?</string>
-    <string name="enable_app_protection">Защита приложения</string>
+    <string name="enable_app_protection">Включить защиту приложения</string>
     <string name="security">Безопасность</string>
     <string name="theme_light">Светлая тема</string>
-    <string name="theme_follow_system">Системная</string>
+    <string name="theme_follow_system">Как в системе</string>
     <string name="theme_dark">Тёмная тема</string>
     <string name="translate">Перевести</string>
 </resources>
