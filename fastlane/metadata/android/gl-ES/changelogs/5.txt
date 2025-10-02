@@ -1,0 +1,11 @@
+- 🖋️ Agora é posible editar unga entrada xa existente (#98)
+- 📅 A fecha do día é a predeterminada para novas entradas (#97)
+- 🚨 Permiso QUERY_ALL_PACKAGES eliminado porque xa no é necesario (#94)
+- 🕶️ O Modo Oscuro finalmente é fermoso (#95)
+- 🐛 Correxíronse errores
+- ⚙️ Actualizacións de dependencias
+- 🗺️ Actualizacións de Tradución
+
+Moitas grazas a todolos colaboradores e tradutores. 😘
+Algúns usuarios están experimentando bloqueos (#99 y #100). Por favor, comenta se esta actualización solucionou esto para ti ou no. 🙏
+Non dubides en informar de problemas e enviar correccións en https://github.com/Crazy-Marvin/FucksGiven/ ou traduciónes en https://hosted.weblate.org/engage/fucks-given/. 🚀
