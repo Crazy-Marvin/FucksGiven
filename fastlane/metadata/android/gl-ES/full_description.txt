@@ -1,0 +1,8 @@
+Importame un Carallo permiteche manter seguemento das cousas que che importaron. Cando che pasa algo máis da conta ou máis do que debería, marcao cun toque. A aplicación crea unha taboa de cantas veces dixeches "Importame un Carallo", para que podas mellorar para non dicilo máis.
+
+Importame un Carallo (Fucks Given) permiteche facer unha copia de seguridade dos teus datos é ten un modo oscuro fermoso que se pode activar automáticamente, seguindo o tema do sistema. Incluso funciona no to teu reloxo intelixente.
+
+Páxina web: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
+Traducir Fucks Given: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a>
+
+Código fonte en GitHub: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>

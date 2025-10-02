@@ -1,0 +1,5 @@
+- 🐛 Correxíronse errores
+
+- ⚙️ Dependencias actualizadas
+
+- 🗺️ Actualizacións de tradución
