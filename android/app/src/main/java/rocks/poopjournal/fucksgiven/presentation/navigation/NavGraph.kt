@@ -40,8 +40,8 @@ fun NavGraph(navController: NavHostController,themeSetting: ThemeSetting, contex
         composable(route = SETTINGS_SCREEN){
             SettingScreen(navController = navController, viewModel = settingsViewModel, context = context)
         }
-        composable(route = PASSWORD_PROMPT_SCREEN){
-            PasswordPromptScreen(context, onAuthenticated = {
+        composable(route = PASSWORD_PROMPT_SCREEN) {
+            PasswordPromptScreen(onAuthenticated = {
                 navController.navigate(HOME_SCREEN)
             })
         }

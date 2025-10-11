@@ -1,14 +1,9 @@
 package rocks.poopjournal.fucksgiven.presentation.screens
 
-import rocks.poopjournal.fucksgiven.data.getPassword
-import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.os.Bundle
 import android.provider.Settings
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
@@ -21,7 +16,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Button
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -31,23 +27,39 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.presentation.component.BiometricPromptManager
+import rocks.poopjournal.fucksgiven.presentation.viewmodel.PasswordPromptViewModel
 
 @Composable
-fun PasswordPromptScreen(context: Context, onAuthenticated: () -> Unit) {
-    var enteredPassword by remember { mutableStateOf("") }
-    val storedPassword = getPassword(context)
+fun PasswordPromptScreen(
+    viewModel: PasswordPromptViewModel = hiltViewModel(),
+    onAuthenticated: () -> Unit
+) {
+    val context = LocalContext.current
+
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
     val promptManager = remember { BiometricPromptManager(context as AppCompatActivity) }
+    val keyboardController = LocalSoftwareKeyboardController.current
+
+    LaunchedEffect(Unit) {
+        viewModel.authenticated.collect {
+            onAuthenticated()
+        }
+    }
 
     // A surface container using the 'background' color from the theme
     Surface(
@@ -94,32 +106,46 @@ fun PasswordPromptScreen(context: Context, onAuthenticated: () -> Unit) {
             )
 
             OutlinedTextField(
-                value = enteredPassword,
-                onValueChange = { enteredPassword = it },
+                value = state.password,
+                onValueChange = viewModel::onChangePassword,
                 label = { Text("Enter Password") },
                 modifier = Modifier.padding(vertical = 16.dp),
-                visualTransformation = PasswordVisualTransformation()
+                visualTransformation = PasswordVisualTransformation(),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Password,
+                    imeAction = ImeAction.Done,
+                ),
+                singleLine = true,
+                isError = !state.passwordError.isNullOrEmpty(),
+                supportingText = if (state.passwordError.isNullOrEmpty()) null else {
+                    { Text(state.passwordError!!) }
+                },
+                keyboardActions = KeyboardActions(
+                    onDone = {
+                        keyboardController?.hide()
+                        viewModel.submitPassword()
+                    }
+                )
             )
 
-            OutlinedButton(onClick = {
-                if (storedPassword == enteredPassword) {
-                    onAuthenticated()
-                } else {
-                    Toast.makeText(context, "Password is not correct", Toast.LENGTH_SHORT).show()
-                }
-            },
+            OutlinedButton(
+                onClick = {
+                    keyboardController?.hide()
+                    viewModel.submitPassword()
+                },
                 modifier = Modifier.fillMaxWidth(0.3f)
             ) {
                 Text(text = "Login")
             }
             Spacer(modifier = Modifier.fillMaxSize(0.4f))
-            OutlinedButton(onClick = {
-                promptManager.showBiometricPrompt(
-                    title = "Biometric Authentication",
-                    description = "Authenticate using your Fingerprint"
-                )
-            }
-                ) {
+            OutlinedButton(
+                onClick = {
+                    promptManager.showBiometricPrompt(
+                        title = "Biometric Authentication",
+                        description = "Authenticate using your Fingerprint"
+                    )
+                }
+            ) {
                 Text(text = "Authenticate with Fingerprint")
             }
 
@@ -129,18 +155,23 @@ fun PasswordPromptScreen(context: Context, onAuthenticated: () -> Unit) {
                         is BiometricPromptManager.BiometricResult.AuthenticationError -> {
                             result.error
                         }
+
                         BiometricPromptManager.BiometricResult.AuthenticationFailed -> {
                             "Authentication failed"
                         }
+
                         BiometricPromptManager.BiometricResult.AuthenticationNotSet -> {
                             "Authentication not set"
                         }
+
                         BiometricPromptManager.BiometricResult.AuthenticationSuccess -> {
                             "Authentication success"
                         }
+
                         BiometricPromptManager.BiometricResult.FeatureUnavailable -> {
                             "Feature unavailable"
                         }
+
                         BiometricPromptManager.BiometricResult.HardwareUnavailable -> {
                             "Hardware unavailable"
                         }
