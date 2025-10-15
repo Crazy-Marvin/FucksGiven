@@ -3,10 +3,10 @@ package rocks.poopjournal.fucksgiven.presentation.widget
 import android.content.Context
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
@@ -62,7 +62,6 @@ class MyAppWidget : GlanceAppWidget() {
             WidgetTheme {
                 val isLocked by isLockedFlow.collectAsState()
                 val fucks by fucksFlow.collectAsState(emptyList())
-                Log.i("MyAppWidget", "isLocked: $isLocked")
                 if (isLocked) {
                     // Show a locked state if protection is ON
                     LockedWidgetContent(context = appContext)
@@ -105,11 +104,11 @@ private fun LockedWidgetContent(context: Context) {
     ) {
         Image(
             provider = ImageProvider(R.drawable.ic_lock), // Your new lock icon
-            contentDescription = "Widget Locked",
+            contentDescription = stringResource(R.string.widget_locked),
             modifier = GlanceModifier.size(48.dp)
         )
         Text(
-            text = "Tap to unlock",
+            text = stringResource(R.string.tap_to_unlock),
             modifier = GlanceModifier.padding(top = 8.dp),
             style = TextStyle(color = GlanceTheme.colors.onBackground)
         )
@@ -133,7 +132,7 @@ fun UnlockedWidgetContent(context: Context, list: List<FuckData>) {
             horizontalAlignment = Alignment.End
         ) {
             Text(
-                text = "Fucks Given", // Replace with a plain string
+                text = stringResource(R.string.app_name), // Replace with a plain string
                 modifier = GlanceModifier.defaultWeight(),
                 style = TextStyle(
                     fontFamily = FontFamily.SansSerif,
@@ -174,7 +173,7 @@ fun UnlockedWidgetContent(context: Context, list: List<FuckData>) {
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             val headerText = if (isToday(date)) {
-                                "Today"
+                                stringResource(R.string.today)
                             } else {
                                 date
                             }
@@ -211,7 +210,7 @@ fun UnlockedWidgetContent(context: Context, list: List<FuckData>) {
             }
         } else {
             Text(
-                text = "No fucks given", // Replace with a plain string
+                text = stringResource(R.string.no_fucks), // Replace with a plain string
                 modifier = GlanceModifier.padding(12.dp)
             )
         }

@@ -33,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -61,6 +62,8 @@ fun PasswordPromptScreen(
         }
     }
 
+    val biometricPromptTitle = stringResource(R.string.biometric_authentication)
+    val biometricPromptDescription = stringResource(R.string.biometric_auth_description)
     // A surface container using the 'background' color from the theme
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -108,7 +111,7 @@ fun PasswordPromptScreen(
             OutlinedTextField(
                 value = state.password,
                 onValueChange = viewModel::onChangePassword,
-                label = { Text("Enter Password") },
+                label = { Text(stringResource(R.string.enter_password)) },
                 modifier = Modifier.padding(vertical = 16.dp),
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(
@@ -135,18 +138,18 @@ fun PasswordPromptScreen(
                 },
                 modifier = Modifier.fillMaxWidth(0.3f)
             ) {
-                Text(text = "Login")
+                Text(text = stringResource(R.string.login))
             }
             Spacer(modifier = Modifier.fillMaxSize(0.4f))
             OutlinedButton(
                 onClick = {
                     promptManager.showBiometricPrompt(
-                        title = "Biometric Authentication",
-                        description = "Authenticate using your Fingerprint"
+                        title = biometricPromptTitle,
+                        description = biometricPromptDescription
                     )
                 }
             ) {
-                Text(text = "Authenticate with Fingerprint")
+                Text(text = stringResource(R.string.biometric_auth_btn_label))
             }
 
             biometricResult?.let { result ->
@@ -157,23 +160,23 @@ fun PasswordPromptScreen(
                         }
 
                         BiometricPromptManager.BiometricResult.AuthenticationFailed -> {
-                            "Authentication failed"
+                            stringResource(R.string.authentication_failed)
                         }
 
                         BiometricPromptManager.BiometricResult.AuthenticationNotSet -> {
-                            "Authentication not set"
+                            stringResource(R.string.authentication_not_set)
                         }
 
                         BiometricPromptManager.BiometricResult.AuthenticationSuccess -> {
-                            "Authentication success"
+                            stringResource(R.string.authentication_success)
                         }
 
                         BiometricPromptManager.BiometricResult.FeatureUnavailable -> {
-                            "Feature unavailable"
+                            stringResource(R.string.feature_unavailable)
                         }
 
                         BiometricPromptManager.BiometricResult.HardwareUnavailable -> {
-                            "Hardware unavailable"
+                            stringResource(R.string.hardware_unavailable)
                         }
                     },
                     modifier = Modifier.padding(top = 4.dp)

@@ -81,6 +81,9 @@ fun SettingScreen(
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
 
+    val protectionEnabledMessage = stringResource(R.string.protection_enabled_success)
+    val protectionDisabledMessage = stringResource(R.string.protection_disabled_success)
+
     if (showPasswordDialog) {
         BasicAlertDialog(
             onDismissRequest = {
@@ -92,7 +95,7 @@ fun SettingScreen(
                     onSubmitPassword = { password ->
                         viewModel.secureStorage.savePassword(password)
                         scope.launch {
-                            snackbarHostState.showSnackbar("App protection enabled.")
+                            snackbarHostState.showSnackbar(protectionEnabledMessage)
                             MyAppWidget().updateAll(context = context)
                         }
                         showPasswordDialog = false
@@ -104,7 +107,7 @@ fun SettingScreen(
     }
 
     Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState)  },
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = {
@@ -212,7 +215,7 @@ fun SettingScreen(
                                 isPasswordProtectionEnabled = false
                                 viewModel.secureStorage.clearStoredPassword()
                                 scope.launch {
-                                    snackbarHostState.showSnackbar("App protection disabled.")
+                                    snackbarHostState.showSnackbar(protectionDisabledMessage)
                                     MyAppWidget().updateAll(context = context)
                                 }
                             }
@@ -310,7 +313,7 @@ fun SettingScreen(
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.about),
-                        contentDescription = "about"
+                        contentDescription = stringResource(R.string.about)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
@@ -353,6 +356,7 @@ fun SetPasswordScreen(onSubmitPassword: (String) -> Unit) {
     var confirmPassword by remember { mutableStateOf("") }
     var passwordError by remember { mutableStateOf<String?>(null) }
 
+    val passwordDidNotMatchMessage = stringResource(R.string.password_did_not_match)
     Card {
         Column(
             modifier = Modifier
@@ -364,7 +368,7 @@ fun SetPasswordScreen(onSubmitPassword: (String) -> Unit) {
             TextField(
                 value = password,
                 onValueChange = { password = it },
-                label = { Text("Enter Password") },
+                label = { Text(stringResource(R.string.enter_password)) },
                 modifier = Modifier.padding(16.dp),
                 visualTransformation = PasswordVisualTransformation(),
                 singleLine = true,
@@ -378,7 +382,7 @@ fun SetPasswordScreen(onSubmitPassword: (String) -> Unit) {
                         ) {
                             Icon(
                                 Icons.Rounded.Clear,
-                                contentDescription = "Clear Password"
+                                contentDescription = stringResource(R.string.clear_password)
                             )
                         }
                     }
@@ -392,7 +396,7 @@ fun SetPasswordScreen(onSubmitPassword: (String) -> Unit) {
             TextField(
                 value = confirmPassword,
                 onValueChange = { confirmPassword = it },
-                label = { Text("Confirm Password") },
+                label = { Text(stringResource(R.string.confirm_password)) },
                 modifier = Modifier.padding(16.dp),
                 visualTransformation = PasswordVisualTransformation(),
                 singleLine = true,
@@ -410,7 +414,7 @@ fun SetPasswordScreen(onSubmitPassword: (String) -> Unit) {
                         ) {
                             Icon(
                                 Icons.Rounded.Clear,
-                                contentDescription = "Clear Password"
+                                contentDescription = stringResource(R.string.clear_password)
                             )
                         }
                     }
@@ -429,11 +433,11 @@ fun SetPasswordScreen(onSubmitPassword: (String) -> Unit) {
                         passwordError = null
                         onSubmitPassword(password)
                     } else {
-                        passwordError = "Password didn't match"
+                        passwordError = passwordDidNotMatchMessage
                     }
                 }
             ) {
-                Text(text = "Set Password", color = Color.White)
+                Text(text = stringResource(R.string.set_password), color = Color.White)
             }
         }
     }
