@@ -1,7 +1,6 @@
 package rocks.poopjournal.fucksgiven.presentation.screens
 
 import android.content.Context
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -12,17 +11,24 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.rounded.Clear
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.BasicAlertDialog
 import androidx.compose.material3.Button
-import androidx.compose.material3.Divider
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
@@ -34,6 +40,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,17 +49,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.glance.appwidget.updateAll
 import androidx.navigation.NavHostController
+import kotlinx.coroutines.launch
 import rocks.poopjournal.fucksgiven.R
-import rocks.poopjournal.fucksgiven.data.getPasswordProtectionEnabled
-import rocks.poopjournal.fucksgiven.data.savePassword
-import rocks.poopjournal.fucksgiven.data.setPasswordProtectionEnabled
 import rocks.poopjournal.fucksgiven.presentation.component.ThemeContent
 import rocks.poopjournal.fucksgiven.presentation.navigation.ABOUT_SCREEN
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.SettingsViewModel
+import rocks.poopjournal.fucksgiven.presentation.widget.MyAppWidget
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -65,14 +74,40 @@ fun SettingScreen(
     val toastMessage = stringResource(id = R.string.backup_success)
     var isPasswordProtectionEnabled by remember {
         mutableStateOf(
-            getPasswordProtectionEnabled(
-                context
-            )
+            viewModel.secureStorage.getPasswordProtectionEnabled()
         )
     }
     var showPasswordDialog by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
+
+    val protectionEnabledMessage = stringResource(R.string.protection_enabled_success)
+    val protectionDisabledMessage = stringResource(R.string.protection_disabled_success)
+
+    if (showPasswordDialog) {
+        BasicAlertDialog(
+            onDismissRequest = {
+                showPasswordDialog = false
+                isPasswordProtectionEnabled = false
+            },
+            content = {
+                SetPasswordScreen(
+                    onSubmitPassword = { password ->
+                        viewModel.secureStorage.savePassword(password)
+                        scope.launch {
+                            snackbarHostState.showSnackbar(protectionEnabledMessage)
+                            MyAppWidget().updateAll(context = context)
+                        }
+                        showPasswordDialog = false
+                    },
+                )
+            }
+        )
+
+    }
 
     Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = {
@@ -84,7 +119,7 @@ fun SettingScreen(
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.primary
                         )
@@ -99,7 +134,8 @@ fun SettingScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it)
+                .padding(it),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Column {
                 Row(
@@ -116,10 +152,11 @@ fun SettingScreen(
                         modifier = Modifier.padding(start = 11.dp)
                     )
                 }
-                Column(modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(11.dp)
-                    .clickable { showDialog = true }) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(11.dp)
+                        .clickable { showDialog = true }) {
                     Text(
                         text = stringResource(id = R.string.apperance),
                         style = MaterialTheme.typography.bodyLarge
@@ -154,7 +191,10 @@ fun SettingScreen(
                 }
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(start = 11.dp)
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 8.dp)
                 ) {
                     Text(text = stringResource(R.string.enable_app_protection))
                     Switch(
@@ -173,26 +213,16 @@ fun SettingScreen(
                                 showPasswordDialog = true
                             } else {
                                 isPasswordProtectionEnabled = false
-                                setPasswordProtectionEnabled(context, false)
+                                viewModel.secureStorage.clearStoredPassword()
+                                scope.launch {
+                                    snackbarHostState.showSnackbar(protectionDisabledMessage)
+                                    MyAppWidget().updateAll(context = context)
+                                }
                             }
                         }
                     )
                 }
             }
-            if (showPasswordDialog) {
-                SetPasswordScreen(
-                    context = context,
-                    onPasswordSet = {
-                        showPasswordDialog = false
-                    },
-                    onDismissRequest = {
-                        showPasswordDialog = false
-                        isPasswordProtectionEnabled = false
-                        setPasswordProtectionEnabled(context, false)
-                    }
-                )
-            }
-
             Column {
                 Row(
                     modifier = Modifier
@@ -229,10 +259,10 @@ fun SettingScreen(
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
-                Divider(
+                HorizontalDivider(
+                    modifier = Modifier.padding(start = 11.dp),
                     thickness = 0.8.dp,
-                    color = Color.LightGray,
-                    modifier = Modifier.padding(start = 11.dp)
+                    color = Color.LightGray
                 )
                 Row(
                     modifier = Modifier
@@ -283,7 +313,7 @@ fun SettingScreen(
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.about),
-                        contentDescription = "about"
+                        contentDescription = stringResource(R.string.about)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
@@ -321,43 +351,93 @@ fun ThemeSelectionDialog(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SetPasswordScreen(context: Context, onPasswordSet: () -> Unit, onDismissRequest: () -> Unit) {
+fun SetPasswordScreen(onSubmitPassword: (String) -> Unit) {
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
+    var passwordError by remember { mutableStateOf<String?>(null) }
 
-    AlertDialog(onDismissRequest = onDismissRequest) {
+    val passwordDidNotMatchMessage = stringResource(R.string.password_did_not_match)
+    Card {
         Column(
-            modifier = Modifier.clipToBounds(),
+            modifier = Modifier
+                .clipToBounds()
+                .padding(vertical = 24.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             TextField(
                 value = password,
                 onValueChange = { password = it },
-                label = { Text("Enter Password") },
+                label = { Text(stringResource(R.string.enter_password)) },
                 modifier = Modifier.padding(16.dp),
-                visualTransformation = PasswordVisualTransformation()
+                visualTransformation = PasswordVisualTransformation(),
+                singleLine = true,
+                suffix = if (password.isEmpty()) null else {
+                    {
+                        IconButton(
+                            onClick = {
+                                password = ""
+                            },
+                            modifier = Modifier.size(24.dp)
+                        ) {
+                            Icon(
+                                Icons.Rounded.Clear,
+                                contentDescription = stringResource(R.string.clear_password)
+                            )
+                        }
+                    }
+                },
+                keyboardOptions = KeyboardOptions(
+                    autoCorrectEnabled = false,
+                    imeAction = ImeAction.Next,
+                    keyboardType = KeyboardType.Password,
+                )
             )
             TextField(
                 value = confirmPassword,
                 onValueChange = { confirmPassword = it },
-                label = { Text("Confirm Password") },
+                label = { Text(stringResource(R.string.confirm_password)) },
                 modifier = Modifier.padding(16.dp),
-                visualTransformation = PasswordVisualTransformation()
+                visualTransformation = PasswordVisualTransformation(),
+                singleLine = true,
+                isError = !passwordError.isNullOrEmpty(),
+                supportingText = if (passwordError.isNullOrEmpty()) null else {
+                    { Text(passwordError!!) }
+                },
+                suffix = if (confirmPassword.isEmpty()) null else {
+                    {
+                        IconButton(
+                            onClick = {
+                                confirmPassword = ""
+                            },
+                            modifier = Modifier.size(24.dp)
+                        ) {
+                            Icon(
+                                Icons.Rounded.Clear,
+                                contentDescription = stringResource(R.string.clear_password)
+                            )
+                        }
+                    }
+                },
+                keyboardOptions = KeyboardOptions(
+                    autoCorrectEnabled = false,
+                    imeAction = ImeAction.Done,
+                    keyboardType = KeyboardType.Password,
+                )
             )
+            Spacer(modifier = Modifier.height(16.dp))
             Button(
+                enabled = password.isNotEmpty() && confirmPassword.isNotEmpty(),
                 onClick = {
                     if (password == confirmPassword && password.isNotBlank()) {
-                        setPasswordProtectionEnabled(context, true)
-                        savePassword(context, password)
-                        onPasswordSet()
+                        passwordError = null
+                        onSubmitPassword(password)
                     } else {
-                        password = ""
-                        confirmPassword = ""
-                        Toast.makeText(context, "Password didn't match", Toast.LENGTH_SHORT).show()
+                        passwordError = passwordDidNotMatchMessage
                     }
-                }) {
-                Text(text = "Set Password", color = Color.White)
+                }
+            ) {
+                Text(text = stringResource(R.string.set_password), color = Color.White)
             }
         }
     }

@@ -94,6 +94,25 @@
     <string name="open_source">Open-source Licenses</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="clear_password">Clear Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password_did_not_match">Password didn\'t match</string>
+    <string name="set_password">Set Password</string>
+    <string name="widget_locked">Widget Locked</string>
+    <string name="tap_to_unlock">Tap to unlock</string>
+    <string name="today">Today</string>
+    <string name="login">Login</string>
+    <string name="biometric_authentication">Biometric Authentication</string>
+    <string name="biometric_auth_description">Authenticate using your Fingerprint</string>
+    <string name="biometric_auth_btn_label">Authenticate with Fingerprint</string>
+    <string name="authentication_failed">Authentication failed</string>
+    <string name="authentication_not_set">Authentication not set</string>
+    <string name="authentication_success">Authentication success</string>
+    <string name="feature_unavailable">Feature unavailable</string>
+    <string name="hardware_unavailable">Hardware unavailable</string>
+    <string name="protection_enabled_success">App protection enabled.</string>
+    <string name="protection_disabled_success">App protection disabled.</string>
     <string name="delete_dialog">Are you Sure you want to delete?</string>
     <string name="feather_icons" translatable="false">Feather Icons</string>
     <string name="mit_license" translatable="false">MIT License</string>

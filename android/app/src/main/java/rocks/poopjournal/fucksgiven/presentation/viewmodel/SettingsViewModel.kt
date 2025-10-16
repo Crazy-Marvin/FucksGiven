@@ -5,13 +5,15 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import rocks.poopjournal.fucksgiven.data.DatabaseBackupManager
+import rocks.poopjournal.fucksgiven.data.SecureStorage
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.ThemeSetting
 import javax.inject.Inject
 
 
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
-    private val databaseBackupManager: DatabaseBackupManager
+    private val databaseBackupManager: DatabaseBackupManager,
+    val secureStorage: SecureStorage,
 ) : ViewModel() {
 
     @Inject

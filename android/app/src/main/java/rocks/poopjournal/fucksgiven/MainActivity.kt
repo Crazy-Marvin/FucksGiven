@@ -2,7 +2,6 @@ package rocks.poopjournal.fucksgiven
 
 import android.os.Build
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -15,8 +14,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import rocks.poopjournal.fucksgiven.data.getPasswordProtectionEnabled
-import rocks.poopjournal.fucksgiven.presentation.component.BiometricPromptManager
+import rocks.poopjournal.fucksgiven.data.SecureStorage
 import rocks.poopjournal.fucksgiven.presentation.navigation.NavGraph
 import rocks.poopjournal.fucksgiven.presentation.screens.PasswordPromptScreen
 import rocks.poopjournal.fucksgiven.presentation.ui.theme.FucksGivenTheme
@@ -28,6 +26,9 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var themeSetting: ThemeSetting
+
+    @Inject
+    lateinit var secureStorage: SecureStorage
 
     @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,11 +43,11 @@ class MainActivity : AppCompatActivity() {
             }
             FucksGivenTheme(darkTheme = useDarkColors) {
                 var isAuthenticated by remember { mutableStateOf(false) }
-                val isPasswordProtectionEnabled = getPasswordProtectionEnabled(context = this)
+                val isPasswordProtectionEnabled = secureStorage.getPasswordProtectionEnabled()
                 if (isAuthenticated || !isPasswordProtectionEnabled) {
                     NavGraph(navController = rememberNavController(), themeSetting = themeSetting, context = this)
                 } else {
-                    PasswordPromptScreen(context = this) {
+                    PasswordPromptScreen {
                         isAuthenticated = true
                     }
                 }
