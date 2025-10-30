@@ -100,4 +100,8 @@
     <string name="theme_light">Clair</string>
     <string name="theme_dark">Sombre</string>
     <string name="theme_follow_system">Suivre le système</string>
+    <string name="today">Aujourd\'hui</string>
+    <string name="login">Se connecter</string>
+    <string name="biometric_authentication">Authentification biométrique</string>
+    <string name="authentication_failed">L\'authentification a échoué</string>
 </resources>
