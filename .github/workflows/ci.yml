@@ -44,7 +44,7 @@ jobs:
       - name: "✅ Test"
         run: flutter test --coverage
       - name: "📤 Upload test coverage report"
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: "Test coverage report"
           path: coverage/lcov.info
@@ -55,12 +55,12 @@ jobs:
           token: ${{secrets.CODECOV_TOKEN}}
           file: coverage/lcov.info
       - name: "📤 Upload Android App Bundle"
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: "Android App Bundle"
           path: build/app/outputs/bundle/release/app-release.aab
       - name: "📤 Upload Android APK"
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: "Android APK"
           path: build/app/outputs/apk/release/app-release.apk
