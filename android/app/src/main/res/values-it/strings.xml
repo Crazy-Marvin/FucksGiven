@@ -4,7 +4,7 @@
     <string name="add">Aggiungi</string>
     <string name="about">Informazioni</string>
     <string name="select_date">Scegli la data</string>
-    <string name="ok">D\'accordo</string>
+    <string name="ok">Ok</string>
     <string name="settings">Impostazioni</string>
     <string name="general">Generali</string>
     <string name="apperance">Aspetto</string>
@@ -51,4 +51,6 @@
     <string name="monthly">Mese</string>
     <string name="backup_success">Backup completato con successo</string>
     <string name="view_source">Visualizza il sorgente</string>
+    <string name="enable_app_protection">Abilita Protezione App</string>
+    <string name="security">Sicurezza</string>
 </resources>
