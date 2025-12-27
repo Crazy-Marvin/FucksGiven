@@ -94,4 +94,21 @@
     <string name="no_fucks">没有 Fucks Given</string>
     <string name="average_fucks">平均 Fucks Given</string>
     <string name="translate">翻译</string>
+    <string name="enter_password">输入密码</string>
+    <string name="clear_password">清除密码</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="password_did_not_match">密码不一致</string>
+    <string name="set_password">设置密码</string>
+    <string name="tap_to_unlock">点击解锁</string>
+    <string name="today">今天</string>
+    <string name="login">登录</string>
+    <string name="biometric_authentication">生物认证</string>
+    <string name="biometric_auth_description">使用你的指纹进行生物认证</string>
+    <string name="authentication_failed">认证失败</string>
+    <string name="authentication_not_set">未设置认证</string>
+    <string name="authentication_success">认证成功</string>
+    <string name="feature_unavailable">功能不可用</string>
+    <string name="hardware_unavailable">硬件不可用</string>
+    <string name="protection_enabled_success">已启用软件保护。</string>
+    <string name="protection_disabled_success">已禁用软件保护。</string>
 </resources>
