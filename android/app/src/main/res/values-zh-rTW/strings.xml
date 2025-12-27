@@ -91,4 +91,22 @@
     <string name="theme_light">淺色</string>
     <string name="theme_dark">深色</string>
     <string name="theme_follow_system">跟隨系統</string>
+    <string name="translate">翻譯</string>
+    <string name="enter_password">輸入密碼</string>
+    <string name="clear_password">清除密碼</string>
+    <string name="confirm_password">確認密碼</string>
+    <string name="password_did_not_match">密碼不一致</string>
+    <string name="set_password">設定密碼</string>
+    <string name="tap_to_unlock">點擊解鎖</string>
+    <string name="today">今天</string>
+    <string name="login">登入</string>
+    <string name="biometric_authentication">生物認證</string>
+    <string name="biometric_auth_description">使用你的指紋進行生物認證</string>
+    <string name="authentication_failed">認證失敗</string>
+    <string name="authentication_not_set">未設定認證</string>
+    <string name="authentication_success">認證成功</string>
+    <string name="feature_unavailable">功能不可用</string>
+    <string name="hardware_unavailable">硬體不可用</string>
+    <string name="protection_enabled_success">已啟用軟體保護。</string>
+    <string name="protection_disabled_success">已停用軟體保護。</string>
 </resources>
