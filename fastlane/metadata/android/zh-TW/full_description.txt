@@ -1,5 +1,5 @@
 有事幹一下，沒事幹一下，要幹的大小事，用「有事幹」通通給你記下來，兼有自動黑/白模式，智能手錶皆可用！
 
 網站：<a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
-幫忙翻譯：<a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
-GitHub源始碼：<a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
+翻譯：<a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
+GitHub原始碼：<a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
