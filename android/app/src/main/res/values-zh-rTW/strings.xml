@@ -109,4 +109,6 @@
     <string name="hardware_unavailable">硬體不可用</string>
     <string name="protection_enabled_success">已啟用軟體保護。</string>
     <string name="protection_disabled_success">已停用軟體保護。</string>
+    <string name="widget_locked">小部件已鎖定</string>
+    <string name="biometric_auth_btn_label">指紋認證</string>
 </resources>
