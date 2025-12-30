@@ -111,4 +111,6 @@
     <string name="hardware_unavailable">硬件不可用</string>
     <string name="protection_enabled_success">已启用软件保护。</string>
     <string name="protection_disabled_success">已禁用软件保护。</string>
+    <string name="widget_locked">小部件已锁定</string>
+    <string name="biometric_auth_btn_label">指纹认证</string>
 </resources>
