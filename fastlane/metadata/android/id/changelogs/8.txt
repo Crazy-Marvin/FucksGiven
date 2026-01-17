@@ -1,0 +1,7 @@
+- 🐛 Perbaikan Bug
+- ⚙️ Pembaruan Dependensi
+- 🗺️ Pembaruan Terjemahan
+
+Muuuakasih banyak pada semua kontributor dan penerjemah. 😘
+
+Lapor masalah dan kirim perbaikan dengan https://github.com/Crazy-Marvin/FucksGiven/, dan terjemahkan di https://hosted.weblate.org/engage/fucks-given/. Gapapa kok! 🚀
