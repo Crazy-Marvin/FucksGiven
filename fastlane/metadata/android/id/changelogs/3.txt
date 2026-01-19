@@ -1,0 +1,3 @@
+- 🐛 Perbaikan Bug
+- ⚙️ Pembaruan Dependensi
+- 🗺️ Pembaruan Terjemahan
