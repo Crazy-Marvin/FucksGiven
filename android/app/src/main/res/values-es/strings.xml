@@ -94,4 +94,23 @@
     <string name="theme_dark">Oscuro</string>
     <string name="theme_follow_system">Predeterminado del Sistema</string>
     <string name="translate">Traducir</string>
+    <string name="enter_password">Introducir Contraseña</string>
+    <string name="clear_password">Limpiar Contraseña</string>
+    <string name="confirm_password">Confirmar Contraseña</string>
+    <string name="password_did_not_match">La contraseña no coincide</string>
+    <string name="set_password">Establecer Contraseña</string>
+    <string name="widget_locked">Widget Bloqueado</string>
+    <string name="tap_to_unlock">Pulse para desbloquear</string>
+    <string name="today">Hoy</string>
+    <string name="login">Iniciar Sesion</string>
+    <string name="biometric_authentication">Autenticación Biometrica</string>
+    <string name="biometric_auth_description">Autenticar con su huella digital</string>
+    <string name="biometric_auth_btn_label">Autenticar con huella digital</string>
+    <string name="authentication_failed">Autenticación fallida</string>
+    <string name="authentication_not_set">Autenticación no establecida</string>
+    <string name="authentication_success">Autenticación exitosa</string>
+    <string name="feature_unavailable">Característica no disponible</string>
+    <string name="hardware_unavailable">Hardware no disponible</string>
+    <string name="protection_enabled_success">Protección de app habilitada.</string>
+    <string name="protection_disabled_success">Protección de app deshabilitada.</string>
 </resources>
