@@ -50,7 +50,7 @@ import rocks.poopjournal.fucksgiven.presentation.component.BottomBar
 import rocks.poopjournal.fucksgiven.presentation.component.BottomNavBar
 import rocks.poopjournal.fucksgiven.presentation.component.DeleteDialog
 import rocks.poopjournal.fucksgiven.presentation.component.UpdateDialog
-import rocks.poopjournal.fucksgiven.presentation.ui.utils.getFormattedDate
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.formatDate
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.isToday
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.HomeViewModel
 
@@ -152,10 +152,14 @@ fun FucksList(
     var selectedFuck by remember { mutableStateOf<FuckData?>(null) }
     var longSelectedFuck by remember { mutableStateOf<FuckData?>(null) }
     val sortedFucks =
-        fuckList.sortedWith(compareBy({ !isToday(getFormattedDate(it.date)) }, { -it.date }))
-
+        fuckList.sortedWith(
+            compareBy<FuckData>(
+                { !isToday(it.date) },   // today first
+                { it.date }              // date ascending
+            ).reversed()                 // make date descending
+        )
     // Group the sorted list by date
-    val groupedFucks = sortedFucks.groupBy { getFormattedDate(it.date) }
+    val groupedFucks = sortedFucks.groupBy { it.date }
 
     LazyColumn {
         groupedFucks.forEach { (date, fucks) ->
@@ -171,7 +175,7 @@ fun FucksList(
                     val headerText = if (isToday(date)) {
                         "Today"
                     } else {
-                        date
+                        formatDate(date)
                     }
                     Text(
                         text = headerText,

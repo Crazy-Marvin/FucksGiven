@@ -11,6 +11,7 @@ import dagger.hilt.components.SingletonComponent
 import rocks.poopjournal.fucksgiven.data.DatabaseBackupManager
 import rocks.poopjournal.fucksgiven.data.FuckDao
 import rocks.poopjournal.fucksgiven.data.FuckDatabase
+import rocks.poopjournal.fucksgiven.data.MIGRATION_1_2
 import rocks.poopjournal.fucksgiven.data.ThemeSettingImpl
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.THEDATABASE_DATABASE_NAME
 import javax.inject.Singleton
@@ -20,22 +21,19 @@ import javax.inject.Singleton
 object FuckAppModule {
     @Singleton
     @Provides
-    fun provideFuckDao(fuckDatabase: FuckDatabase ): FuckDao = fuckDatabase.fuckDao()
+    fun provideFuckDao(fuckDatabase: FuckDatabase): FuckDao = fuckDatabase.fuckDao()
 
     @Singleton
     @Provides
     fun provideFuckDatabase(@ApplicationContext context: Context): FuckDatabase =
         Room.databaseBuilder(
-            context,
-            FuckDatabase::class.java,
-            THEDATABASE_DATABASE_NAME
-        ).build()
+            context, FuckDatabase::class.java, THEDATABASE_DATABASE_NAME
+        ).addMigrations(MIGRATION_1_2).build()
 
     @Singleton
     @Provides
     fun provideDatabaseBackupManager(
-        @ApplicationContext context: Context,
-        fuckDatabase: FuckDatabase
+        @ApplicationContext context: Context, fuckDatabase: FuckDatabase
     ): DatabaseBackupManager = DatabaseBackupManager(context, fuckDatabase)
 
 }

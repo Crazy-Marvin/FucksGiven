@@ -54,7 +54,7 @@ class HomeViewModel @Inject constructor(
     }
 
     fun addFuck(fuck: FuckData, context: Context) {
-        if (fuck.description.isEmpty() && fuck.date == 0L) {
+        if (fuck.description.isEmpty() || fuck.date == null) {
             Toast.makeText(context, "Fill all information", Toast.LENGTH_SHORT).show()
             return
         }

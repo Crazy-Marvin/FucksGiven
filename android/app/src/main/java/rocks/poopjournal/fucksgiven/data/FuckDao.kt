@@ -9,6 +9,7 @@ import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.THETABLE_TABLENAME
+import java.time.LocalDate
 
 @Dao
 interface FuckDao {
@@ -28,6 +29,6 @@ interface FuckDao {
     suspend fun delete(data: FuckData)
 
     @Query("SELECT * FROM $THETABLE_TABLENAME WHERE date BETWEEN :startDate AND :endDate")
-    fun getDataBetweenDates(startDate: Long, endDate: Long): LiveData<List<FuckData>>
+    fun getDataBetweenDates(startDate: LocalDate, endDate: LocalDate): LiveData<List<FuckData>>
 
 }
