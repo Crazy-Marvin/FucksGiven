@@ -44,7 +44,7 @@ import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.data.FuckData
 import rocks.poopjournal.fucksgiven.data.FuckRepository
 import rocks.poopjournal.fucksgiven.data.SecureStorage
-import rocks.poopjournal.fucksgiven.presentation.ui.utils.getFormattedDate
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.formatDate
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.isToday
 
 class MyAppWidget : GlanceAppWidget() {
@@ -159,10 +159,10 @@ fun UnlockedWidgetContent(context: Context, list: List<FuckData>) {
         }
         if (list.isNotEmpty()) {
             val sortedFucks =
-                list.sortedWith(compareBy({ !isToday(getFormattedDate(it.date)) }, { -it.date }))
+                list.sortedWith(compareBy({ !isToday(it.date) }, { it.date }))
 
             // Group the sorted list by date
-            val groupedFucks = sortedFucks.groupBy { getFormattedDate(it.date) }
+            val groupedFucks = sortedFucks.groupBy { it.date }
             LazyColumn(modifier = GlanceModifier.padding(top = 8.dp)) {
                 groupedFucks.forEach { (date, fucks) ->
                     item {
@@ -175,7 +175,7 @@ fun UnlockedWidgetContent(context: Context, list: List<FuckData>) {
                             val headerText = if (isToday(date)) {
                                 stringResource(R.string.today)
                             } else {
-                                date
+                                formatDate(date)
                             }
                             Text(
                                 text = headerText,

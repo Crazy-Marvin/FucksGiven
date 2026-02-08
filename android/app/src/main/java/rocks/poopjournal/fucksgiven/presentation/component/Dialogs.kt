@@ -29,7 +29,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -41,7 +40,12 @@ import androidx.compose.ui.unit.dp
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.data.FuckData
 import rocks.poopjournal.fucksgiven.presentation.ui.theme.FuckRed
-import rocks.poopjournal.fucksgiven.presentation.ui.utils.getFormattedDate
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.formatDate
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.millisToLocalDate
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.toEpochMillis
+import java.time.LocalDate
+import java.util.TimeZone
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -53,19 +57,22 @@ fun AddDialog(
     var dateDialogOpen by remember {
         mutableStateOf(false)
     }
-    var date by remember {
-        mutableLongStateOf(0)
-    }
+    var selectedDate by remember { mutableStateOf<LocalDate?>(null) }
+
 
     val datePickerState =
         rememberDatePickerState(initialSelectedDateMillis = System.currentTimeMillis())
-    val selectedDate = if (date == 0L) System.currentTimeMillis() else date
 
-    AlertDialog(onDismissRequest = onDismiss, confirmButton = {
+    AlertDialog(
+        onDismissRequest = onDismiss, confirmButton = {
         Button(
             onClick = {
+                val date = selectedDate ?: return@Button // ✅ guard
                 onAdd(
-                    FuckData(description = description, date = selectedDate)
+                    FuckData(
+                        description = description,
+                        date = date
+                    )
                 )
                 onDismiss()
             }, colors = ButtonDefaults.buttonColors(
@@ -86,88 +93,90 @@ fun AddDialog(
     },
         containerColor = MaterialTheme.colorScheme.background,
         text = {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-        ) {
-            OutlinedTextField(
-                value = description, onValueChange = {
-                    description = it
-                }, colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = MaterialTheme.colorScheme.primary,
-                    unfocusedBorderColor = MaterialTheme.colorScheme.primary
-                ),
-                placeholder = {
-                    Text(
-                        text = stringResource(id = R.string.description),
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                }
-            )
-            Spacer(modifier = Modifier.height(10.dp))
-
-            Row(
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .border(
-                        1.dp,
-                        shape = RoundedCornerShape(5.dp),
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    .padding(5.dp)
-                    .clickable { dateDialogOpen = true }
-                    .height(50.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                    .padding(10.dp)
             ) {
-                Text(
-                    text = if (date == 0L) getFormattedDate(selectedDate) else getFormattedDate(
-                        date
+                OutlinedTextField(
+                    value = description, onValueChange = {
+                        description = it
+                    }, colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = MaterialTheme.colorScheme.primary,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.primary
                     ),
-                    modifier = Modifier.padding(start = 8.dp),
-                    style = MaterialTheme.typography.bodyLarge
-                )
-                Icon(
-                    imageVector = Icons.Filled.DateRange, contentDescription = stringResource(
-                        id = R.string.select_date
-                    )
-                )
-            }
-
-
-            if (dateDialogOpen) {
-                DatePickerDialog(onDismissRequest = { dateDialogOpen = false },
-                    confirmButton = {
-                        TextButton(
-                            onClick = {
-                                date = datePickerState.selectedDateMillis ?: 0L
-                                dateDialogOpen = false
-                            }) {
-                            Text(text = stringResource(id = R.string.ok))
-                        }
-                    },
-                    dismissButton = {
-                        TextButton(
-                            onClick = { dateDialogOpen = false }) {
-                            Text(text = stringResource(id = R.string.cancel))
-                        }
+                    placeholder = {
+                        Text(
+                            text = stringResource(id = R.string.description),
+                            style = MaterialTheme.typography.bodyLarge
+                        )
                     }
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .border(
+                            1.dp,
+                            shape = RoundedCornerShape(5.dp),
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        .padding(5.dp)
+                        .clickable { dateDialogOpen = true }
+                        .height(50.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    DatePicker(
-                        state = datePickerState, colors = DatePickerDefaults.colors(
-                            containerColor = MaterialTheme.colorScheme.background,
-                            headlineContentColor = MaterialTheme.colorScheme.primary,
-                            dayContentColor = MaterialTheme.colorScheme.primary,
-                            yearContentColor = MaterialTheme.colorScheme.primary,
-                            todayContentColor = MaterialTheme.colorScheme.primary,
-                            selectedDayContainerColor = MaterialTheme.colorScheme.primary,
+                    Text(
+                        selectedDate?.let { formatDate(it) }
+                            ?: stringResource(id = R.string.select_date),
+                        modifier = Modifier.padding(start = 8.dp),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                    Icon(
+                        imageVector = Icons.Filled.DateRange, contentDescription = stringResource(
+                            id = R.string.select_date
                         )
                     )
                 }
+
+
+                if (dateDialogOpen) {
+                    DatePickerDialog(
+                        onDismissRequest = { dateDialogOpen = false },
+                        confirmButton = {
+                            TextButton(
+                                onClick = {
+                                    val millis =
+                                        datePickerState.selectedDateMillis ?: return@TextButton
+                                    selectedDate = millisToLocalDate(millis)
+                                    dateDialogOpen = false
+                                }) {
+                                Text(text = stringResource(id = R.string.ok))
+                            }
+                        },
+                        dismissButton = {
+                            TextButton(
+                                onClick = { dateDialogOpen = false }) {
+                                Text(text = stringResource(id = R.string.cancel))
+                            }
+                        }
+                    ) {
+                        DatePicker(
+                            state = datePickerState, colors = DatePickerDefaults.colors(
+                                containerColor = MaterialTheme.colorScheme.background,
+                                headlineContentColor = MaterialTheme.colorScheme.primary,
+                                dayContentColor = MaterialTheme.colorScheme.primary,
+                                yearContentColor = MaterialTheme.colorScheme.primary,
+                                todayContentColor = MaterialTheme.colorScheme.primary,
+                                selectedDayContainerColor = MaterialTheme.colorScheme.primary,
+                            )
+                        )
+                    }
+                }
             }
-        }
-    })
+        })
 }
 
 
@@ -180,16 +189,18 @@ fun UpdateDialog(
 ) {
     var description by remember { mutableStateOf(fuckData.description) }
     var dateDialogOpen by remember { mutableStateOf(false) }
-    var date by remember { mutableLongStateOf(fuckData.date) }
-
-    val datePickerState = rememberDatePickerState(initialSelectedDateMillis = fuckData.date)
-
+    var selectedDate by remember {
+        mutableStateOf(fuckData.date)
+    }
+    val datePickerState = rememberDatePickerState(
+        initialSelectedDateMillis = selectedDate.toEpochMillis()
+    )
     AlertDialog(
         onDismissRequest = onDismiss,
         confirmButton = {
             Button(
                 onClick = {
-                    onUpdate(FuckData(description = description, date = date, id = fuckData.id))
+                    onUpdate(FuckData(description = description, date = selectedDate, id = fuckData.id))
                     onDismiss()
                 },
                 colors = ButtonDefaults.buttonColors(
@@ -248,9 +259,7 @@ fun UpdateDialog(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
-                        text = if (date == 0L) stringResource(id = R.string.select_date) else getFormattedDate(
-                            date
-                        ),
+                        text = formatDate(selectedDate),
                         modifier = Modifier.padding(start = 8.dp),
                         style = MaterialTheme.typography.bodyLarge
                     )
@@ -261,11 +270,13 @@ fun UpdateDialog(
                 }
 
                 if (dateDialogOpen) {
-                    DatePickerDialog(onDismissRequest = { dateDialogOpen = false },
+                    DatePickerDialog(
+                        onDismissRequest = { dateDialogOpen = false },
                         confirmButton = {
                             TextButton(
                                 onClick = {
-                                    date = datePickerState.selectedDateMillis ?: 0L
+                                    val millis = datePickerState.selectedDateMillis ?: return@TextButton
+                                    selectedDate = millisToLocalDate(millis)
                                     dateDialogOpen = false
                                 }) {
                                 Text(text = stringResource(id = R.string.ok))
@@ -303,12 +314,14 @@ fun DeleteDialog(
     onDelete: (FuckData) -> Unit
 ) {
     val description by remember { mutableStateOf(fuckData.description) }
-    val date by remember { mutableLongStateOf(fuckData.date) }
+    var selectedDate by remember {
+        mutableStateOf(fuckData.date) // already LocalDate
+    }
     AlertDialog(
         onDismissRequest = onDismiss, confirmButton = {
             Button(
                 onClick = {
-                    onDelete(FuckData(description = description, date = date, id = fuckData.id))
+                    onDelete(FuckData(description = description, date = selectedDate, id = fuckData.id))
                     onDismiss()
                 },
                 colors = ButtonDefaults.buttonColors(

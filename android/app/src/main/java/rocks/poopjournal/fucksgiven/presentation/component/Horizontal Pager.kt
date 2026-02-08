@@ -53,11 +53,9 @@ fun HorizontalPagerView(
     // Create a list of LineDataPoint objects
     val weeklyLineDataPoints = weeklyXValues.map { day ->
         try {
-            val dayOfWeek = getDayOfWeek(day, context)
+            val dayOfWeek = getDayOfWeek(day, context) // should return 1..7 matching DayOfWeek.value
             val count = weeklyData.count { data ->
-                val calendar = Calendar.getInstance()
-                calendar.timeInMillis = data.date
-                calendar.get(Calendar.DAY_OF_WEEK) == dayOfWeek
+                data.date.dayOfWeek.value == dayOfWeek
             }
             LineDataPoint(day, count)
         } catch (e: Exception) {
@@ -125,9 +123,7 @@ fun HorizontalPagerView(
     val monthlyLineDataPoints = monthlyXValues.map { day ->
         val dayOfMonth = day.toInt()
         val count = monthlyData.count { data ->
-            val calendar = Calendar.getInstance()
-            calendar.timeInMillis = data.date
-            calendar.get(Calendar.DAY_OF_MONTH) == dayOfMonth
+            data.date.dayOfMonth == dayOfMonth
         }
         LineDataPoint(day, count)
     }
@@ -155,11 +151,9 @@ fun HorizontalPagerView(
         stringResource(id = R.string.dec)
     )
     val yearlyLineDataPoints = yearlyXValues.mapIndexed { index, month ->
-        val monthOfYear = index + 1
+        val monthOfYear = index + 1 // LocalDate month is 1-based
         val count = yearlyData.count { data ->
-            val calendar = Calendar.getInstance()
-            calendar.timeInMillis = data.date
-            calendar.get(Calendar.MONTH) == monthOfYear - 1 // Calendar.MONTH is zero-based
+            data.date.monthValue == monthOfYear // LocalDate.monthNumber is 1-12
         }
         LineDataPoint(month, count)
     }
@@ -284,7 +278,7 @@ fun HorizontalPagerView(
     }
 }
 
-fun getDayOfWeek(day: String,context: Context): Int {
+fun getDayOfWeek(day: String, context: Context): Int {
     val monday = context.getString(R.string.m)
     val tuesday = context.getString(R.string.t)
     val wednesday = context.getString(R.string.w)
@@ -292,16 +286,18 @@ fun getDayOfWeek(day: String,context: Context): Int {
     val friday = context.getString(R.string.f)
     val saturday = context.getString(R.string.s)
     val sunday = context.getString(R.string.su)
+
     return when (day) {
-        monday -> Calendar.MONDAY
-        tuesday -> Calendar.TUESDAY
-        wednesday -> Calendar.WEDNESDAY
-        thursday -> Calendar.THURSDAY
-        friday -> Calendar.FRIDAY
-        saturday -> Calendar.SATURDAY
-        sunday -> Calendar.SUNDAY
+        monday -> 1       // Monday
+        tuesday -> 2
+        wednesday -> 3
+        thursday -> 4
+        friday -> 5
+        saturday -> 6
+        sunday -> 7       // Sunday
         else -> throw IllegalArgumentException("Invalid day of the week")
     }
 }
+
 
 

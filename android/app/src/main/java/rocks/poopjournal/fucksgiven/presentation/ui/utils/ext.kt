@@ -1,31 +1,27 @@
 package rocks.poopjournal.fucksgiven.presentation.ui.utils
 
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.atStartOfDayIn
-import kotlinx.datetime.format
-import kotlinx.datetime.format.DateTimeComponents
-import kotlinx.datetime.format.MonthNames
-import kotlinx.datetime.format.Padding
-import kotlinx.datetime.format.char
-import kotlinx.datetime.toLocalDateTime
-import kotlin.time.ExperimentalTime
-import kotlin.time.Instant
+import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
-val dateComponentFormatter = DateTimeComponents.Format {
-    monthName(MonthNames.ENGLISH_FULL)
-    char(' ')
-    day(Padding.ZERO)
+
+fun millisToLocalDate(millis: Long): LocalDate {
+    return ZonedDateTime.ofInstant(
+        Instant.ofEpochMilli(millis),
+        ZoneId.systemDefault()
+    ).toLocalDate()
 }
 
-@OptIn(ExperimentalTime::class)
-fun getFormattedDate(timestamp: Long): String {
-    // DatePicker gives date in milliseconds since epoch UTC)
-    val localDate = Instant.fromEpochMilliseconds(timestamp).toLocalDateTime(TimeZone.UTC).date
-
-    return localDate.atStartOfDayIn(TimeZone.currentSystemDefault()).format(dateComponentFormatter)
+fun LocalDate.toEpochMillis(): Long {
+    return this.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
 }
 
-fun isToday(dateString: String): Boolean {
-    val todayString = getFormattedDate(System.currentTimeMillis())
-    return dateString == todayString
+fun formatDate(date: LocalDate): String {
+    return date.format(DateTimeFormatter.ofPattern("MMMM d"))
+}
+
+fun isToday(date: LocalDate): Boolean {
+    return date == LocalDate.now()
 }
