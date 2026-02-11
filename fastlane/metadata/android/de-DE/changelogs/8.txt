@@ -2,6 +2,6 @@
 - ⚙️ Abhängigkeitsaktualisierungen
 - 🗺️ Übersetzungsaktualisierungen
 
-Ein riesiges Dankeschön an alle Beitragenden und Übersetzer*innen. 😘
+Ein riesen Dankeschön an alle Mitwirkenden und Übersetzer. 😘
 
-Fehlerberichte und Einreichung von Lösungen unter https://github.com/Crazy-Marvin/FucksGiven/ sind herzlich willkommen oder Übersetzungen unter https://hosted.weblate.org/engage/fucks-given/. 🚀
+Bitte gebt über Fehler und mögliche Lösungen auf https://github.com/Crazy-Marvin/FucksGiven/ Bescheid und teilt Übersetzungen auf https://hosted.weblate.org/engage/fucks-given/ mit. 🚀

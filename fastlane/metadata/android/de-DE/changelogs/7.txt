@@ -2,8 +2,6 @@
 - ⚙️ Abhängigkeitsaktualisierungen
 - 🗺️ Übersetzungsaktualisierungen
 
-Ein riesiges Dankeschön an alle Beitragenden und Übersetzer*innen. 😘
-
-Manche Nutzende haben Abstürze erlebt (#99 und #100). Bitte berichtet, ob sie durch das Update gelöst wurden. 🙏
-
-Fehlerberichte und Einreichung von Lösungen unter https://github.com/Crazy-Marvin/FucksGiven/ sind herzlich willkommen oder Übersetzungen unter https://hosted.weblate.org/engage/fucks-given/. 🚀
+Ein riesen Dankeschön an alle Mitwirkenden und Übersetzer. 😘
+Manche Nutzer erhielten den Fehler (#99 und #100). Bitte antwortet, ob das Update es beheben konnte oder nicht. 🙏
+Bitte gebt über Fehler und mögliche Lösungen auf https://github.com/Crazy-Marvin/FucksGiven/ Bescheid und teilt Übersetzungen auf https://hosted.weblate.org/engage/fucks-given/ mit. 🚀
