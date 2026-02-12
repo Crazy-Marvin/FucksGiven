@@ -108,7 +108,7 @@
     <string name="widget_locked">Widget gesperrt</string>
     <string name="tap_to_unlock">Zum Entsperren tippen</string>
     <string name="today">Heute</string>
-    <string name="login">Einloggen</string>
+    <string name="login">Anmelden</string>
     <string name="biometric_authentication">Biometrische Authentifizierung</string>
     <string name="biometric_auth_description">Authentifiziere Dich mit deinem Fingerabdruck</string>
     <string name="biometric_auth_btn_label">Entsperrung per Fingerabdruck</string>
