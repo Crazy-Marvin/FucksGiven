@@ -1,15 +1,7 @@
-- 🖋️ Es ist jetzt möglich, bestehende Einträge zu ändern (#98)
-
-- 📅 Das heutige Datum ist jetzt Standard für neue Einträge (#97)
-
-- 🚨 QUERY_ALL_PACKAGES Berechtigung entfernt, da sie nicht (mehr) benötigt wird (#94)
-
-- 🕶️ Der dunkle Modus sieht endlich gut aus (#95)
+- 🖋️ Es ist jetzt möglich schon bestehende Einträge zu ändern (#98)
+- 📅 Das heutige Datum ist der Standard für neue Einträge (#97)
+- 🚨 QUERY_ALL_PACKAGES Erlaubnis entfernt, da es nicht (mehr) nötig ist (#94)
+- Dunkler Modus ist endlich hübsch (#95)
 - 🐛 Fehlerbehebungen
 - ⚙️ Abhängigkeitsaktualisierungen
 - 🗺️ Übersetzungsaktualisierungen
-Ein riesiges Dankeschön an alle Beitragenden und Übersetzer*innen. 😘
-
-Manche Nutzende haben Abstürze erlebt (#99 and #100). Bitte berichtet, ob sie durch das Update gelöst wurden. 🙏
-
-Fehlerberichte und Einreichung von Lösungen unter https://github.com/Crazy-Marvin/FucksGiven/ sind herzlich willkommen oder Übersetzungen unter https://hosted.weblate.org/engage/fucks-given/. 🚀
