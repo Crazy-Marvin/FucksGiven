@@ -104,4 +104,19 @@
     <string name="login">Se connecter</string>
     <string name="biometric_authentication">Authentification biométrique</string>
     <string name="authentication_failed">L\'authentification a échoué</string>
+    <string name="enter_password">Entrez le mot de passe</string>
+    <string name="clear_password">Effacer le mot de passe</string>
+    <string name="confirm_password">Confirmer le mot de passe</string>
+    <string name="password_did_not_match">Le mot de passe ne correspondait pas</string>
+    <string name="set_password">Définir le mot de passe</string>
+    <string name="widget_locked">Widget verrouillé</string>
+    <string name="tap_to_unlock">Appuyez pour déverrouiller</string>
+    <string name="biometric_auth_description">Authentifiez-vous en utilisant votre empreinte digitale</string>
+    <string name="biometric_auth_btn_label">Authentification par empreinte digitale</string>
+    <string name="authentication_not_set">Authentification non définie</string>
+    <string name="authentication_success">Réussite de l\'authentification</string>
+    <string name="feature_unavailable">Fonctionnalité indisponible</string>
+    <string name="hardware_unavailable">Appareil indisponible</string>
+    <string name="protection_enabled_success">Protection de l\'appli activée.</string>
+    <string name="protection_disabled_success">Protection de l\'appli désactivée.</string>
 </resources>
