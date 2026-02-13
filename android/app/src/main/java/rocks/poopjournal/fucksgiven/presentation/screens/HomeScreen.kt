@@ -20,6 +20,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Divider
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -53,6 +54,7 @@ import rocks.poopjournal.fucksgiven.presentation.component.UpdateDialog
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.formatDate
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.isToday
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.HomeViewModel
+import java.time.LocalDate
 
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
@@ -151,15 +153,15 @@ fun FucksList(
     var deleteTaskDialogOpen by remember { mutableStateOf(false) }
     var selectedFuck by remember { mutableStateOf<FuckData?>(null) }
     var longSelectedFuck by remember { mutableStateOf<FuckData?>(null) }
-    val sortedFucks =
-        fuckList.sortedWith(
-            compareBy<FuckData>(
-                { !isToday(it.date) },   // today first
-                { it.date }              // date ascending
-            ).reversed()                 // make date descending
-        )
-    // Group the sorted list by date
-    val groupedFucks = sortedFucks.groupBy { it.date }
+
+
+    val (todayFucks, nonToday) = fuckList.partition { isToday(it.date) }
+
+    val sortedNonToday = nonToday.sortedByDescending { it.date }
+
+    val finalList = todayFucks + sortedNonToday
+    val groupedFucks = finalList.groupBy { it.date }
+
 
     LazyColumn {
         groupedFucks.forEach { (date, fucks) ->
@@ -173,7 +175,7 @@ fun FucksList(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     val headerText = if (isToday(date)) {
-                        "Today"
+                        stringResource(R.string.today)
                     } else {
                         formatDate(date)
                     }
@@ -214,7 +216,7 @@ fun FucksList(
                             style = MaterialTheme.typography.bodyLarge
                         )
                     }
-                    Divider(
+                    HorizontalDivider(
                         color = Color.LightGray,
                         thickness = 0.5.dp,
                         modifier = Modifier.padding(start = 8.dp)
