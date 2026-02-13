@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 9,
-      "versionName": "1.0.8",
-      "outputFile": "FucksGiven-1.0.8-release.apk"
+      "versionCode": 10,
+      "versionName": "1.0.9",
+      "outputFile": "FucksGiven-1.0.9-release.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/FucksGiven-1.0.8-release.dm"
+        "baselineProfiles/1/FucksGiven-1.0.9-release.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/FucksGiven-1.0.8-release.dm"
+        "baselineProfiles/0/FucksGiven-1.0.9-release.dm"
       ]
     }
   ],

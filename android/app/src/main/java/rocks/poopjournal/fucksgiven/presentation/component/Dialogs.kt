@@ -41,10 +41,10 @@ import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.data.FuckData
 import rocks.poopjournal.fucksgiven.presentation.ui.theme.FuckRed
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.formatDate
-import rocks.poopjournal.fucksgiven.presentation.ui.utils.millisToLocalDate
-import rocks.poopjournal.fucksgiven.presentation.ui.utils.toEpochMillis
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.isToday
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.toUtcEpochMillis
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.utcMillisToLocalDate
 import java.time.LocalDate
-import java.util.TimeZone
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -57,17 +57,25 @@ fun AddDialog(
     var dateDialogOpen by remember {
         mutableStateOf(false)
     }
-    var selectedDate by remember { mutableStateOf<LocalDate?>(null) }
+    val today = remember { LocalDate.now() }
 
+    var selectedDate by remember { mutableStateOf(today) }
 
-    val datePickerState =
-        rememberDatePickerState(initialSelectedDateMillis = System.currentTimeMillis())
+    val datePickerState = rememberDatePickerState(
+        initialSelectedDateMillis = today.toUtcEpochMillis()
+    )
+
+    val dateText = if (isToday(selectedDate)) {
+        stringResource(R.string.today)
+    } else {
+        formatDate(selectedDate)
+    }
 
     AlertDialog(
         onDismissRequest = onDismiss, confirmButton = {
         Button(
             onClick = {
-                val date = selectedDate ?: return@Button // ✅ guard
+                val date = selectedDate
                 onAdd(
                     FuckData(
                         description = description,
@@ -129,8 +137,7 @@ fun AddDialog(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
-                        selectedDate?.let { formatDate(it) }
-                            ?: stringResource(id = R.string.select_date),
+                        dateText,
                         modifier = Modifier.padding(start = 8.dp),
                         style = MaterialTheme.typography.bodyLarge
                     )
@@ -148,10 +155,10 @@ fun AddDialog(
                         confirmButton = {
                             TextButton(
                                 onClick = {
-                                    val millis =
-                                        datePickerState.selectedDateMillis ?: return@TextButton
-                                    selectedDate = millisToLocalDate(millis)
-                                    dateDialogOpen = false
+                                        val millis = datePickerState.selectedDateMillis ?: return@TextButton
+                                        selectedDate = utcMillisToLocalDate(millis)
+                                        dateDialogOpen = false
+
                                 }) {
                                 Text(text = stringResource(id = R.string.ok))
                             }
@@ -193,7 +200,7 @@ fun UpdateDialog(
         mutableStateOf(fuckData.date)
     }
     val datePickerState = rememberDatePickerState(
-        initialSelectedDateMillis = selectedDate.toEpochMillis()
+        initialSelectedDateMillis = selectedDate.toUtcEpochMillis()
     )
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -276,7 +283,7 @@ fun UpdateDialog(
                             TextButton(
                                 onClick = {
                                     val millis = datePickerState.selectedDateMillis ?: return@TextButton
-                                    selectedDate = millisToLocalDate(millis)
+                                    selectedDate = utcMillisToLocalDate(millis)
                                     dateDialogOpen = false
                                 }) {
                                 Text(text = stringResource(id = R.string.ok))
