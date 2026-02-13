@@ -42,13 +42,9 @@ import rocks.poopjournal.fucksgiven.data.FuckData
 import rocks.poopjournal.fucksgiven.presentation.ui.theme.FuckRed
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.formatDate
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.isToday
-import rocks.poopjournal.fucksgiven.presentation.ui.utils.millisToLocalDate
-import rocks.poopjournal.fucksgiven.presentation.ui.utils.toEpochMillis
-import rocks.poopjournal.fucksgiven.util.DateUtils
-import rocks.poopjournal.fucksgiven.util.DateUtils.toUtcEpochMillis
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.toUtcEpochMillis
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.utcMillisToLocalDate
 import java.time.LocalDate
-import java.time.ZoneId
-import java.util.TimeZone
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -160,7 +156,7 @@ fun AddDialog(
                             TextButton(
                                 onClick = {
                                         val millis = datePickerState.selectedDateMillis ?: return@TextButton
-                                        selectedDate = DateUtils.utcMillisToLocalDate(millis)
+                                        selectedDate = utcMillisToLocalDate(millis)
                                         dateDialogOpen = false
 
                                 }) {
@@ -287,7 +283,7 @@ fun UpdateDialog(
                             TextButton(
                                 onClick = {
                                     val millis = datePickerState.selectedDateMillis ?: return@TextButton
-                                    selectedDate = DateUtils.utcMillisToLocalDate(millis)
+                                    selectedDate = utcMillisToLocalDate(millis)
                                     dateDialogOpen = false
                                 }) {
                                 Text(text = stringResource(id = R.string.ok))
