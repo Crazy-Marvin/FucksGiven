@@ -1,0 +1,7 @@
+- 🐛 Correction de bugs
+- ⚙️ Mise à jour des dépendances
+- 🗺 Mise à jour des traductions
+
+Un immense merci à tous les contributeurs et traducteurs. 😘
+Certains utilisateurs connaissent des crashes (#99 and #100). Merci de prévenir en commentaire si cette mise à jour résout ces crashes pour vous ou pas. 🙏
+N'hésitez pas à signaler les problèmes et proposer des correctifs sur https://github.com/Crazy-Marvin/FucksGiven/ ou des traductions sur https://hosted.weblate.org/engage/fucks-given/ 🚀

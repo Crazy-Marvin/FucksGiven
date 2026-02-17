@@ -1,0 +1,7 @@
+Fucks Given vous permet de garder une trace des moments chiants qui vous contrarient. Chaque fois qu'il vous arrive quelque chose qui vous agace, notez-le simplement. L'appli génère une courbe qui représente le nombre de contrariétés auxquelles vous avez dû faire face, pour vous permettre d'essayer de les réduire à néant au fur-et-à-mesure du temps. 
+
+Fucks Given vous permet de sauvegarder vos données et possède un agréable thème sombre qui peut s'activer de manière spontanée, en suivant le thème du système. Cela fonctionne même sur votre montre connectée.
+
+Page web : <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
+Traduisez Fucks Given : <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a>
+Source sur GitHub : <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
