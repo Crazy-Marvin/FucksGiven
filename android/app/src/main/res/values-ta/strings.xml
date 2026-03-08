@@ -94,4 +94,23 @@
     <string name="theme_dark">இருள்</string>
     <string name="theme_follow_system">அமைப்பைப் பின்தொடரவும்</string>
     <string name="translate">மொழிபெயர்த்திடு</string>
+    <string name="enter_password">கடவுச்சொல்லை உள்ளிடு</string>
+    <string name="clear_password">கடவுச்சொல்லை அழி</string>
+    <string name="confirm_password">கடவுச்சொல்லை உறுதிப்படுத்து</string>
+    <string name="password_did_not_match">கடவுச்சொல் பொருந்தவில்லை</string>
+    <string name="set_password">கடவுச்சொல்லை அமை</string>
+    <string name="widget_locked">நிரல்பலகை பூட்டப்பட்டது</string>
+    <string name="tap_to_unlock">திறக்கத் தட்டவும்</string>
+    <string name="today">இன்று</string>
+    <string name="login">புகுபதிகை</string>
+    <string name="biometric_authentication">கைரேகை அங்கீகாரம்</string>
+    <string name="biometric_auth_description">உங்கள் கைரேகையைப் பயன்படுத்தி அங்கீகரிக்கவும்</string>
+    <string name="biometric_auth_btn_label">கைரேகை மூலம் அங்கீகரிக்கவும்</string>
+    <string name="authentication_failed">ஏற்பு தோல்வியடைந்தது</string>
+    <string name="authentication_not_set">ஏற்பு அமைக்கப்படவில்லை</string>
+    <string name="authentication_success">ஏற்பு செய்</string>
+    <string name="feature_unavailable">நற்பொருத்தம் கிடைக்கவில்லை</string>
+    <string name="hardware_unavailable">வன்பொருள் கிடைக்கவில்லை</string>
+    <string name="protection_enabled_success">பயன்பாட்டு பாதுகாப்பு இயக்கப்பட்டது.</string>
+    <string name="protection_disabled_success">ஆப்ச் பாதுகாப்பு முடக்கப்பட்டுள்ளது.</string>
 </resources>
