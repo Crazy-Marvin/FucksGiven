@@ -107,7 +107,7 @@
     <string name="enter_password">Entrez le mot de passe</string>
     <string name="clear_password">Effacer le mot de passe</string>
     <string name="confirm_password">Confirmer le mot de passe</string>
-    <string name="password_did_not_match">Le mot de passe ne correspondait pas</string>
+    <string name="password_did_not_match">Le mot de passe ne correspond pas</string>
     <string name="set_password">Définir le mot de passe</string>
     <string name="widget_locked">Widget verrouillé</string>
     <string name="tap_to_unlock">Appuyez pour déverrouiller</string>
