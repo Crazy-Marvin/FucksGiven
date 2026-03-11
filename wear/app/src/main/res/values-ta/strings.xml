@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">ஃபக்சுகிவன்வாட்ச்</string>
+    <string name="hello_world">சதுர உலகில் இருந்து, \nவணக்கம், %1$s!</string>
+</resources>
