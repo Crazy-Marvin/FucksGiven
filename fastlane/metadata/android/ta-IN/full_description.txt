@@ -1,0 +1,7 @@
+Fucks Given, நீங்கள் அக்கறை கொண்ட விசயங்களைக் கண்காணிக்க உதவுகிறது. நீங்கள் தேவையில்லாமல் உங்களைப் பற்றி கவலைப்படும் ஏதாவது நடந்தால், அதை ஒரு தட்டினால் எழுதுங்கள். ஆப்ச் நீங்கள் எத்தனை ஃபக்ச் கொடுத்தீர்கள் என்பதற்கான விளக்கப்படத்தை உருவாக்குகிறது, எனவே நீங்கள் எதையும் கொடுக்காமல் இருக்க முடியும். 
+
+Fucks Given ஆனது உங்கள் தரவை காப்புப் பிரதி எடுக்க உங்களை அனுமதிக்கிறது மற்றும் கணினி தீமினைப் பின்பற்றி தானாக இயக்கக்கூடிய அழகான இருண்ட பயன்முறையைக் கொண்டுள்ளது. இது உங்கள் ச்மார்ட்வாட்சிலும் கூட வேலை செய்கிறது. 
+
+இணையப்பக்கம்: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a> 
+கொடுக்கப்பட்ட ஃபக்ச்களை மொழிபெயர்: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
+GitHub இல் உள்ள ஆதாரம்: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
