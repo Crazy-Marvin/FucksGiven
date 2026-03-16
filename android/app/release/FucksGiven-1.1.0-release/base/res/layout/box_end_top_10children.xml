@@ -1,0 +1,29 @@
+
+ì
+<
+android*http://schemas.android.com/apk/res/android¶FrameLayout"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0þÿÿÿÿÿÿÿÿ"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0þÿÿÿÿÿÿÿÿ"Rstyle@style/Glance.AppWidget.Box"2(
+&±Äøstyle/Glance.AppWidget.Box0ÿÿ*r
+jinclude"_layout!@layout/box_child_end_top_group_0"2.
+,ò€´ø layout/box_child_end_top_group_00ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_1"2.
+,ó€´ø layout/box_child_end_top_group_10ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_2"2.
+,ô€´ø layout/box_child_end_top_group_20ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_3"2.
+,õ€´ø layout/box_child_end_top_group_30ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_4"2.
+,ö€´ø layout/box_child_end_top_group_40ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_5"2.
+,÷€´ø layout/box_child_end_top_group_50ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_6"	2.
+,ø€´ø layout/box_child_end_top_group_60ÿÿ	:*r
+jinclude"_layout!@layout/box_child_end_top_group_7"
+2.
+,ù€´ø layout/box_child_end_top_group_70ÿÿ
+:*r
+jinclude"_layout!@layout/box_child_end_top_group_8"2.
+,ú€´ø layout/box_child_end_top_group_80ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_9"2.
+,û€´ø layout/box_child_end_top_group_90ÿÿ:¶

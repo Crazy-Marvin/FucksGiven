@@ -1,0 +1,16 @@
+
+³
+;
+android*http://schemas.android.com/apk/res/android)RelativeLayout"_
+*http://schemas.android.com/apk/res/androidlayout_widthfill_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"`
+*http://schemas.android.com/apk/res/androidlayout_heightfill_parent"(õ„2:0ÿÿÿÿÿÿÿÿÿ* 
+—Button"R
+*http://schemas.android.com/apk/res/androidlayout_width100px"(ô„2:h€È"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0şÿÿÿÿÿÿÿÿ"U
+*http://schemas.android.com/apk/res/androidlayout_marginRight5dp"(ù„2:h
+"S
+*http://schemas.android.com/apk/res/androidlayout_marginTop5dp"(ø„2:h
+"k
+*http://schemas.android.com/apk/res/androidid@+id/dialog_button"(Ğ„2
+®¨øid/dialog_button0"=
+*http://schemas.android.com/apk/res/androidtext Ok (Ï‚„)

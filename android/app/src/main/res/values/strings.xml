@@ -118,4 +118,9 @@
     <string name="mit_license" translatable="false">MIT License</string>
     <string name="android_jetpack" translatable="false">Android Jetpack</string>
     <string name="apache_license" translatable="false">Apache License 2.0</string>
+    <string name="fuck_deleted">Fuck deleted</string>
+    <string name="fuck_dupplicated">Fuck duplicated</string>
+    <string name="duplicate">Duplicate Fuck</string>
+    <string name="remove_item">Remove Fuck</string>
+    <string name="undo">Undo</string>
 </resources>

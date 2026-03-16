@@ -1,0 +1,21 @@
+
+ê	
+<
+android*http://schemas.android.com/apk/res/android∂FrameLayout"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(ıÅÑ2:0˛ˇˇˇˇˇˇˇˇ"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ÙÅÑ2:0˛ˇˇˇˇˇˇˇˇ"Rstyle@style/Glance.AppWidget.Box"2(
+&±Åƒ¯style/Glance.AppWidget.Box0ˇˇ*r
+jinclude"_layout!@layout/box_child_end_top_group_0"2.
+,ÚÄ¥¯ layout/box_child_end_top_group_00ˇˇ:*r
+jinclude"_layout!@layout/box_child_end_top_group_1"2.
+,ÛÄ¥¯ layout/box_child_end_top_group_10ˇˇ:*r
+jinclude"_layout!@layout/box_child_end_top_group_2"2.
+,ÙÄ¥¯ layout/box_child_end_top_group_20ˇˇ:*r
+jinclude"_layout!@layout/box_child_end_top_group_3"2.
+,ıÄ¥¯ layout/box_child_end_top_group_30ˇˇ:*r
+jinclude"_layout!@layout/box_child_end_top_group_4"2.
+,ˆÄ¥¯ layout/box_child_end_top_group_40ˇˇ:*r
+jinclude"_layout!@layout/box_child_end_top_group_5"2.
+,˜Ä¥¯ layout/box_child_end_top_group_50ˇˇ:*r
+jinclude"_layout!@layout/box_child_end_top_group_6"	2.
+,¯Ä¥¯ layout/box_child_end_top_group_60ˇˇ	:∂

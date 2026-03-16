@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -53,17 +54,12 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun addFuck(fuck: FuckData, context: Context) {
-        if (fuck.description.isEmpty() || fuck.date == null) {
-            Toast.makeText(context, "Fill all information", Toast.LENGTH_SHORT).show()
-            return
-        }
-        viewModelScope.launch {
+    fun addFuck(fuck: FuckData) =
+        viewModelScope.async {
             fuckRepository.insertFuck(fuck)
         }
-    }
 
-    fun updateFuck(fuck: FuckData, context: Context) {
+    fun updateFuck(fuck: FuckData) {
         viewModelScope.launch {
             fuckRepository.updateFuck(fuck)
         }

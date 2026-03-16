@@ -1,0 +1,15 @@
+
+ç
+<
+android*http://schemas.android.com/apk/res/androidÍ
+5
+app'http://schemas.android.com/apk/res-autoÍ	ImageView"R
+*http://schemas.android.com/apk/res/android	scaleType
+centerCrop"(ùÇÑ2:0"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(ıÅÑ2:0˛ˇˇˇˇˇˇˇˇ"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ÙÅÑ2:0˛ˇˇˇˇˇˇˇˇ"X
+'http://schemas.android.com/apk/res-autoglance_isTopLevelLayouttrue"(ôÅê¯2:@"d
+*http://schemas.android.com/apk/res/androidid@id/glanceView"(–ÅÑ2
+ºÅ®¯id/glanceView0"T
+*http://schemas.android.com/apk/res/androidlayoutDirectionlocale"(≤áÑ2:0"\
+*http://schemas.android.com/apk/res/androidlayout_gravitystart|bottom"(≥ÅÑ2:8”ÄÄÍ

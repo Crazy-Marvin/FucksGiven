@@ -1,0 +1,23 @@
+
+±
+
+<
+android*http://schemas.android.com/apk/res/android‘
+5
+app'http://schemas.android.com/apk/res-auto‘FrameLayout"R
+*http://schemas.android.com/apk/res/androidtextDirectionlocale"(°‡„2:0"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0þÿÿÿÿÿÿÿÿ"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0þÿÿÿÿÿÿÿÿ"X
+'http://schemas.android.com/apk/res-autoglance_isTopLevelLayouttrue"(™ø2:@"\style @style/Glance.AppWidget.CheckBox"2-
++³Äøstyle/Glance.AppWidget.CheckBox0ÿÿ"d
+*http://schemas.android.com/apk/res/androidid@id/glanceView"(Ð„2
+¼¨øid/glanceView0"T
+*http://schemas.android.com/apk/res/androidlayoutDirectionlocale"(²‡„2:0"Y
+*http://schemas.android.com/apk/res/androidlayout_gravity	start|top"(³„2:8³€€*Ä
+ºViewStub"†
+*http://schemas.android.com/apk/res/androidlayout@layout/glance_check_box_view"(ò„2(
+&å‚´ølayout/glance_check_box_view0"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0þÿÿÿÿÿÿÿÿ"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0þÿÿÿÿÿÿÿÿ"`
+*http://schemas.android.com/apk/res/androidid@id/checkBox"(Ð„2
+Ä€¨øid/checkBox0¢‘

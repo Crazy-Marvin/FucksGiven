@@ -1,0 +1,39 @@
+
+Â
+;
+android*http://schemas.android.com/apk/res/android.LinearLayout"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0şÿÿÿÿÿÿÿÿ"R
+*http://schemas.android.com/apk/res/androidorientationvertical"(Ä„2:0*Û
+ÒTextView"”
+*http://schemas.android.com/apk/res/androidpaddingRight!@dimen/tooltip_horizontal_padding"((Ø„2,
+*ü€œø dimen/tooltip_horizontal_padding0@"K
+*http://schemas.android.com/apk/res/android	ellipsizeend"((«„2:0"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"((ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"((õ„2:0şÿÿÿÿÿÿÿÿ"‰
+*http://schemas.android.com/apk/res/android	textColor?attr/tooltipForegroundColor"((˜„2)
+'ª‚øattr/tooltipForegroundColor0"”
+*http://schemas.android.com/apk/res/androidpaddingStart!@dimen/tooltip_horizontal_padding"((³‡„2,
+*ü€œø dimen/tooltip_horizontal_padding0@"’
+*http://schemas.android.com/apk/res/android
+paddingEnd!@dimen/tooltip_horizontal_padding"((´‡„2,
+*ü€œø dimen/tooltip_horizontal_padding0@"Š
+*http://schemas.android.com/apk/res/android
+background?attr/tooltipFrameBackground"((Ô„2)
+'«‚øattr/tooltipFrameBackground0"¢
+*http://schemas.android.com/apk/res/androidtextAppearance'@style/TextAppearance.AppCompat.Tooltip"((´€„22
+0„‚Äø&style/TextAppearance.AppCompat.Tooltip0"}
+*http://schemas.android.com/apk/res/androidlayout_margin@dimen/tooltip_margin"((ö„2 
+ı€œødimen/tooltip_margin0@"‘
+*http://schemas.android.com/apk/res/androidpaddingBottom@dimen/tooltip_vertical_padding"((Ù„2*
+(€œødimen/tooltip_vertical_padding0@"“
+*http://schemas.android.com/apk/res/androidpaddingLeft!@dimen/tooltip_horizontal_padding"((Ö„2,
+*ü€œø dimen/tooltip_horizontal_padding0@"N
+*http://schemas.android.com/apk/res/androidmaxWidth256dp"((Ÿ‚„2:h€"H
+*http://schemas.android.com/apk/res/androidmaxLines3"((Ó‚„2:0"_
+*http://schemas.android.com/apk/res/androidid@+id/message"((Ğ„2
+Ğ¨ø
+id/message0"
+*http://schemas.android.com/apk/res/android
+paddingTop@dimen/tooltip_vertical_padding"((×„2*
+(€œødimen/tooltip_vertical_padding0@(.

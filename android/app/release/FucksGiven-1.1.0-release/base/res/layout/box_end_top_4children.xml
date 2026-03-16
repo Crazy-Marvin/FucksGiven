@@ -1,0 +1,15 @@
+
+´
+<
+android*http://schemas.android.com/apk/res/android¶FrameLayout"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0þÿÿÿÿÿÿÿÿ"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0þÿÿÿÿÿÿÿÿ"Rstyle@style/Glance.AppWidget.Box"2(
+&±Äøstyle/Glance.AppWidget.Box0ÿÿ*r
+jinclude"_layout!@layout/box_child_end_top_group_0"2.
+,ò€´ø layout/box_child_end_top_group_00ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_1"2.
+,ó€´ø layout/box_child_end_top_group_10ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_2"2.
+,ô€´ø layout/box_child_end_top_group_20ÿÿ:*r
+jinclude"_layout!@layout/box_child_end_top_group_3"2.
+,õ€´ø layout/box_child_end_top_group_30ÿÿ:¶

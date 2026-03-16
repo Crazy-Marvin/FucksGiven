@@ -19,7 +19,8 @@ val DarkColorScheme = darkColorScheme(
     background = Color.Black,
     onBackground = Color.White,
     onPrimary = WatchGrey,
-    onTertiary = PurpleGrey40
+    onTertiary = PurpleGrey40,
+    onErrorContainer = LightRed
 )
 
 val LightColorScheme = lightColorScheme(
@@ -29,7 +30,8 @@ val LightColorScheme = lightColorScheme(
     tertiary = Pink40,
     background = Color.White,
     onPrimary = WatchGrey,
-    onTertiary = PurpleGrey40
+    onTertiary = PurpleGrey40,
+    onErrorContainer = FuckRed
 
 
     /* Other default colors to override
