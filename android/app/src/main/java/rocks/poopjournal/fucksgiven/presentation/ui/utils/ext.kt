@@ -37,6 +37,14 @@ fun formatDate(date: LocalDate): String {
     return date.format(DateTimeFormatter.ofPattern("MMMM d"))
 }
 
+fun formateDateWithYear(date : LocalDate) : String {
+    val now = LocalDate.now()
+    return when {
+        date.year == now.year -> date.format(DateTimeFormatter.ofPattern("MMMM d"))
+        else -> date.format(DateTimeFormatter.ofPattern("MMMM d, yyyy"))
+    }
+}
+
 fun isToday(date: LocalDate): Boolean {
     return date == LocalDate.now()
 }

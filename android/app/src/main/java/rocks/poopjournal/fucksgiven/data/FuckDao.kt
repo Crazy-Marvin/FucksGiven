@@ -20,8 +20,7 @@ interface FuckDao {
     fun getData(id: Int): Flow<FuckData>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(data: FuckData)
-
+    suspend fun insert(fuck: FuckData): Long
     @Update
     suspend fun update(data: FuckData)
 

@@ -1,0 +1,38 @@
+
+÷
+;
+android*http://schemas.android.com/apk/res/androidFrameLayout"œ
+*http://schemas.android.com/apk/res/androidlayout_width$@dimen/notification_large_icon_width"(ô„21
+/ê€œø#dimen/notification_large_icon_width0À€"Ÿ
+*http://schemas.android.com/apk/res/androidlayout_height%@dimen/notification_large_icon_height"(õ„22
+0é€œø$dimen/notification_large_icon_height0À€"e
+*http://schemas.android.com/apk/res/androidid@+id/icon_group"(Ğ„2
+Å¨øid/icon_group0*›
+’	ImageView"£
+*http://schemas.android.com/apk/res/androidlayout_marginBottom%@dimen/notification_big_circle_margin" (ú„20
+.ç€œø$dimen/notification_big_circle_margin0@" 
+*http://schemas.android.com/apk/res/androidlayout_marginEnd%@dimen/notification_big_circle_margin" (¶‡„20
+.ç€œø$dimen/notification_big_circle_margin0@"T
+*http://schemas.android.com/apk/res/android	scaleTypecenterInside" (‚„2:0"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent" (ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent" (õ„2:0ÿÿÿÿÿÿÿÿÿ" 
+*http://schemas.android.com/apk/res/androidlayout_marginTop%@dimen/notification_big_circle_margin" (ø„20
+.ç€œø$dimen/notification_big_circle_margin0@"¢
+*http://schemas.android.com/apk/res/androidlayout_marginStart%@dimen/notification_big_circle_margin" (µ‡„20
+.ç€œø$dimen/notification_big_circle_margin0@"Y
+*http://schemas.android.com/apk/res/androidid	@+id/icon" (Ğ„2
+Ä¨øid/icon0 *ä
+Û	ImageView"M
+*http://schemas.android.com/apk/res/android
+visibilitygone")(Ü„2:0"V
+*http://schemas.android.com/apk/res/androidlayout_marginBottom8dp")(ú„2:h"T
+*http://schemas.android.com/apk/res/android	scaleTypecenterInside")(‚„2:0"S
+*http://schemas.android.com/apk/res/androidlayout_marginEnd8dp")(¶‡„2:h"š
+*http://schemas.android.com/apk/res/androidlayout_width#@dimen/notification_right_icon_size")(ô„20
+.í€œø"dimen/notification_right_icon_size0À€"›
+*http://schemas.android.com/apk/res/androidlayout_height#@dimen/notification_right_icon_size")(õ„20
+.í€œø"dimen/notification_right_icon_size0À€"e
+*http://schemas.android.com/apk/res/androidid@+id/right_icon")(Ğ„2
+å¨øid/right_icon0"Z
+*http://schemas.android.com/apk/res/androidlayout_gravity
+end|bottom")(³„2:8Õ€€)

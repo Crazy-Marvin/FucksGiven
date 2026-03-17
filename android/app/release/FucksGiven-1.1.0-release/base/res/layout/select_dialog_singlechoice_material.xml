@@ -1,0 +1,30 @@
+
+‘
+;
+android*http://schemas.android.com/apk/res/android!0CheckedTextView"S
+*http://schemas.android.com/apk/res/androiddrawablePadding20dp"!(ñ‚„2:h("Œ
+*http://schemas.android.com/apk/res/androidpaddingRight?attr/dialogPreferredPadding"!(Ø„2)
+'ï€øattr/dialogPreferredPadding0@"O
+*http://schemas.android.com/apk/res/android	ellipsizemarquee"!(«„2:0"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"!(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"!(õ„2:0şÿÿÿÿÿÿÿÿ"•
+*http://schemas.android.com/apk/res/android	textColor"?attr/textColorAlertDialogListItem"!(˜„2/
+-‘‚ø!attr/textColorAlertDialogListItem0"°
+*http://schemas.android.com/apk/res/androidpaddingStart/@dimen/abc_select_dialog_padding_start_material"!(³‡„2:
+8º€œø.dimen/abc_select_dialog_padding_start_material0@"Š
+*http://schemas.android.com/apk/res/android
+paddingEnd?attr/dialogPreferredPadding"!(´‡„2)
+'ï€øattr/dialogPreferredPadding0@"U
+*http://schemas.android.com/apk/res/androidgravitycenter_vertical"!(¯„2:8"¡
+*http://schemas.android.com/apk/res/androiddrawableLeft'?android:attr/listChoiceIndicatorSingle"!(ï‚„23
+1™„„&android:attr/listChoiceIndicatorSingle0"•
+*http://schemas.android.com/apk/res/android	minHeight"?attr/listPreferredItemHeightSmall"!(À‚„2/
+-¸ø!attr/listPreferredItemHeightSmall0@"™
+*http://schemas.android.com/apk/res/androidtextAppearance"?android:attr/textAppearanceMedium"!(´€„2.
+,Á€„!android:attr/textAppearanceMedium0"¯
+*http://schemas.android.com/apk/res/androidpaddingLeft/@dimen/abc_select_dialog_padding_start_material"!(Ö„2:
+8º€œø.dimen/abc_select_dialog_padding_start_material0@"¢
+*http://schemas.android.com/apk/res/androiddrawableStart'?android:attr/listChoiceIndicatorSingle"!(’‡„23
+1™„„&android:attr/listChoiceIndicatorSingle0"i
+*http://schemas.android.com/apk/res/androidid@android:id/text1"!(Ğ„2
+”€ˆandroid:id/text10!0

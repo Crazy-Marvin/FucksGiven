@@ -1,19 +1,25 @@
 package rocks.poopjournal.fucksgiven.presentation.component
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.BasicAlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.DatePicker
@@ -34,12 +40,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.DialogProperties
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.data.FuckData
-import rocks.poopjournal.fucksgiven.presentation.ui.theme.FuckRed
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.formatDate
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.isToday
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.toUtcEpochMillis
@@ -71,119 +79,137 @@ fun AddDialog(
         formatDate(selectedDate)
     }
 
-    AlertDialog(
-        onDismissRequest = onDismiss, confirmButton = {
-        Button(
-            onClick = {
-                val date = selectedDate
-                onAdd(
-                    FuckData(
-                        description = description,
-                        date = date
-                    )
-                )
-                onDismiss()
-            }, colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.primary,
-                contentColor = MaterialTheme.colorScheme.background
-            )
-        ) {
-            Text(text = stringResource(id = R.string.add))
-        }
-    }, dismissButton = {
-        TextButton(
-            onClick = onDismiss, colors = ButtonDefaults.textButtonColors(
-                contentColor = MaterialTheme.colorScheme.primary
-            )
-        ) {
-            Text(text = stringResource(id = R.string.cancel))
-        }
-    },
-        containerColor = MaterialTheme.colorScheme.background,
-        text = {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp)
-            ) {
-                OutlinedTextField(
-                    value = description, onValueChange = {
-                        description = it
-                    }, colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = MaterialTheme.colorScheme.primary,
-                        unfocusedBorderColor = MaterialTheme.colorScheme.primary
-                    ),
-                    placeholder = {
-                        Text(
-                            text = stringResource(id = R.string.description),
-                            style = MaterialTheme.typography.bodyLarge
-                        )
-                    }
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+    val isValid = description.isNotBlank()
 
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .border(
-                            1.dp,
-                            shape = RoundedCornerShape(5.dp),
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                        .padding(5.dp)
-                        .clickable { dateDialogOpen = true }
-                        .height(50.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
+    BasicAlertDialog(
+        onDismissRequest = onDismiss,
+        modifier = Modifier
+            .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+            .background(MaterialTheme.colorScheme.background)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+        ) {
+            OutlinedTextField(
+                value = description, onValueChange = {
+                    description = it
+                }, colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = MaterialTheme.colorScheme.background,
+                    unfocusedBorderColor = MaterialTheme.colorScheme.background,
+                    focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    focusedPlaceholderColor = MaterialTheme.colorScheme.onBackground,
+                    unfocusedPlaceholderColor = Color.LightGray,
+                ),
+                placeholder = {
                     Text(
-                        dateText,
-                        modifier = Modifier.padding(start = 8.dp),
+                        text = stringResource(id = R.string.description),
                         style = MaterialTheme.typography.bodyLarge
                     )
-                    Icon(
-                        imageVector = Icons.Filled.DateRange, contentDescription = stringResource(
-                            id = R.string.select_date
-                        )
-                    )
                 }
+            )
+            Spacer(modifier = Modifier.height(10.dp))
 
-
-                if (dateDialogOpen) {
-                    DatePickerDialog(
-                        onDismissRequest = { dateDialogOpen = false },
-                        confirmButton = {
-                            TextButton(
-                                onClick = {
-                                        val millis = datePickerState.selectedDateMillis ?: return@TextButton
-                                        selectedDate = utcMillisToLocalDate(millis)
-                                        dateDialogOpen = false
-
-                                }) {
-                                Text(text = stringResource(id = R.string.ok))
-                            }
-                        },
-                        dismissButton = {
-                            TextButton(
-                                onClick = { dateDialogOpen = false }) {
-                                Text(text = stringResource(id = R.string.cancel))
-                            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .clickable {
+                            dateDialogOpen = true
                         }
+                        .border(
+                            1.dp,
+                            color = MaterialTheme.colorScheme.onBackground,
+                            shape = RoundedCornerShape(8.dp)
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Row(
+                        modifier = Modifier.padding(5.dp),
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        DatePicker(
-                            state = datePickerState, colors = DatePickerDefaults.colors(
-                                containerColor = MaterialTheme.colorScheme.background,
-                                headlineContentColor = MaterialTheme.colorScheme.primary,
-                                dayContentColor = MaterialTheme.colorScheme.primary,
-                                yearContentColor = MaterialTheme.colorScheme.primary,
-                                todayContentColor = MaterialTheme.colorScheme.primary,
-                                selectedDayContainerColor = MaterialTheme.colorScheme.primary,
-                            )
+                        Icon(
+                            imageVector = Icons.Filled.DateRange,
+                            contentDescription = stringResource(
+                                id = R.string.select_date
+                            ),
+                            tint = MaterialTheme.colorScheme.onBackground
+                        )
+                        Spacer(Modifier.width(5.dp))
+                        Text(
+                            dateText,
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onBackground
                         )
                     }
                 }
+                Box(
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .background(if (isValid) MaterialTheme.colorScheme.primary else Color.LightGray)
+                        .size(40.dp)
+                        .clickable(enabled = isValid) {
+                            val date = selectedDate
+                            onAdd(
+                                FuckData(
+                                    description = description,
+                                    date = date
+                                )
+                            )
+                            onDismiss()
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        Icons.Filled.Check,
+                        contentDescription = stringResource(R.string.add),
+                        tint = MaterialTheme.colorScheme.background
+                    )
+                }
             }
-        })
+            if (dateDialogOpen) {
+                DatePickerDialog(
+                    onDismissRequest = { dateDialogOpen = false },
+                    confirmButton = {
+                        TextButton(
+                            onClick = {
+                                val millis =
+                                    datePickerState.selectedDateMillis ?: return@TextButton
+                                selectedDate = utcMillisToLocalDate(millis)
+                                dateDialogOpen = false
+
+                            }) {
+                            Text(text = stringResource(id = R.string.ok))
+                        }
+                    },
+                    dismissButton = {
+                        TextButton(
+                            onClick = { dateDialogOpen = false }) {
+                            Text(text = stringResource(id = R.string.cancel))
+                        }
+                    }
+                ) {
+                    DatePicker(
+                        state = datePickerState, colors = DatePickerDefaults.colors(
+                            containerColor = MaterialTheme.colorScheme.background,
+                            headlineContentColor = MaterialTheme.colorScheme.primary,
+                            dayContentColor = MaterialTheme.colorScheme.primary,
+                            yearContentColor = MaterialTheme.colorScheme.primary,
+                            todayContentColor = MaterialTheme.colorScheme.primary,
+                            selectedDayContainerColor = MaterialTheme.colorScheme.primary,
+                        )
+                    )
+                }
+            }
+        }
+    }
 }
 
 
@@ -202,45 +228,32 @@ fun UpdateDialog(
     val datePickerState = rememberDatePickerState(
         initialSelectedDateMillis = selectedDate.toUtcEpochMillis()
     )
-    AlertDialog(
+    BasicAlertDialog(
         onDismissRequest = onDismiss,
-        confirmButton = {
-            Button(
-                onClick = {
-                    onUpdate(FuckData(description = description, date = selectedDate, id = fuckData.id))
-                    onDismiss()
-                },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = MaterialTheme.colorScheme.background
-                )
-            ) {
-                Text(text = stringResource(id = R.string.update))
-            }
-        },
-        dismissButton = {
-            TextButton(
-                onClick = onDismiss,
-                colors = ButtonDefaults.textButtonColors(
-                    contentColor = MaterialTheme.colorScheme.primary
-                )
-            ) {
-                Text(text = stringResource(id = R.string.cancel))
-            }
-        },
-        containerColor = MaterialTheme.colorScheme.background,
-        text = {
+        modifier = Modifier
+            .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+            .background(MaterialTheme.colorScheme.background)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+        ) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(10.dp)
             ) {
                 OutlinedTextField(
-                    value = description,
-                    onValueChange = { description = it },
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = MaterialTheme.colorScheme.primary,
-                        unfocusedBorderColor = MaterialTheme.colorScheme.primary
+                    value = description, onValueChange = {
+                        description = it
+                    }, colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = MaterialTheme.colorScheme.background,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.background,
+                        focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
+                        focusedPlaceholderColor = MaterialTheme.colorScheme.onBackground,
+                        unfocusedPlaceholderColor = Color.LightGray,
                     ),
                     placeholder = {
                         Text(
@@ -250,30 +263,68 @@ fun UpdateDialog(
                     }
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .border(
-                            1.dp,
-                            shape = RoundedCornerShape(5.dp),
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                        .padding(5.dp)
-                        .clickable { dateDialogOpen = true }
-                        .height(50.dp),
+                        .fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Text(
-                        text = formatDate(selectedDate),
-                        modifier = Modifier.padding(start = 8.dp),
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                    Icon(
-                        imageVector = Icons.Filled.DateRange,
-                        contentDescription = stringResource(id = R.string.select_date)
-                    )
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .clickable {
+                                dateDialogOpen = true
+                            }
+                            .border(
+                                1.dp,
+                                color = MaterialTheme.colorScheme.onBackground,
+                                shape = RoundedCornerShape(8.dp)
+                            ),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(5.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.DateRange,
+                                contentDescription = stringResource(
+                                    id = R.string.select_date
+                                ),
+                                tint = MaterialTheme.colorScheme.onBackground
+                            )
+                            Spacer(Modifier.width(5.dp))
+                            Text(
+                                text = formatDate(selectedDate),
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onBackground
+                            )
+
+                        }
+                    }
+                    Box(
+                        modifier = Modifier
+                            .clip(CircleShape)
+                            .background(MaterialTheme.colorScheme.primary)
+                            .size(40.dp)
+                            .clickable {
+                                onUpdate(
+                                    FuckData(
+                                        description = description,
+                                        date = selectedDate,
+                                        id = fuckData.id
+                                    )
+                                )
+                                onDismiss()
+                            },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            Icons.Filled.Check,
+                            contentDescription = stringResource(R.string.add),
+                            tint = MaterialTheme.colorScheme.background
+                        )
+                    }
                 }
 
                 if (dateDialogOpen) {
@@ -282,7 +333,8 @@ fun UpdateDialog(
                         confirmButton = {
                             TextButton(
                                 onClick = {
-                                    val millis = datePickerState.selectedDateMillis ?: return@TextButton
+                                    val millis =
+                                        datePickerState.selectedDateMillis ?: return@TextButton
                                     selectedDate = utcMillisToLocalDate(millis)
                                     dateDialogOpen = false
                                 }) {
@@ -311,61 +363,7 @@ fun UpdateDialog(
                 }
             }
         }
-    )
+    }
 }
 
-@Composable
-fun DeleteDialog(
-    fuckData: FuckData,
-    onDismiss: () -> Unit,
-    onDelete: (FuckData) -> Unit
-) {
-    val description by remember { mutableStateOf(fuckData.description) }
-    var selectedDate by remember {
-        mutableStateOf(fuckData.date) // already LocalDate
-    }
-    AlertDialog(
-        onDismissRequest = onDismiss, confirmButton = {
-            Button(
-                onClick = {
-                    onDelete(FuckData(description = description, date = selectedDate, id = fuckData.id))
-                    onDismiss()
-                },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = FuckRed,
-                    contentColor = MaterialTheme.colorScheme.background
-                )
-            ) {
-                Text(text = stringResource(id = R.string.delete))
-            }
-        },
-        dismissButton = {
-            TextButton(
-                onClick = onDismiss,
-                colors = ButtonDefaults.textButtonColors(
-                    contentColor = MaterialTheme.colorScheme.primary
-                )
-            ) {
-                Text(text = stringResource(id = R.string.cancel))
-            }
-        },
-        containerColor = MaterialTheme.colorScheme.background,
-        text = {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(text = stringResource(id = R.string.delete_dialog))
-                Spacer(modifier = Modifier.height(8.dp))
-                Row {
-                    Text(text = "Title:", fontWeight = FontWeight.Bold)
-                    Spacer(modifier = Modifier.width(5.dp))
-                    Text(text = fuckData.description, fontWeight = FontWeight.Bold)
-                }
-            }
-        }
-    )
-}
+

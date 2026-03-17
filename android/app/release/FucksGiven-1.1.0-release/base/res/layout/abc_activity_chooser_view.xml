@@ -1,0 +1,59 @@
+
+£
+;
+android*http://schemas.android.com/apk/res/android,view"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"(õ„2:0ÿÿÿÿÿÿÿÿÿ"Zstyle?attr/activityChooserViewStyle"2-
++¤€øattr/activityChooserViewStyle0ÿÿ"Bclass9androidx.appcompat.widget.ActivityChooserView$InnerLayout"‹
+*http://schemas.android.com/apk/res/androidid"@+id/activity_chooser_view_content"(Ğ„2,
+*¹€¨ø id/activity_chooser_view_content0"S
+*http://schemas.android.com/apk/res/androidlayout_gravitycenter"(³„2:8*Ë
+ÂFrameLayout"X
+*http://schemas.android.com/apk/res/androidaddStatesFromChildrentrue"&(ğ„2:@"Œ
+*http://schemas.android.com/apk/res/android
+background?attr/actionBarItemBackground"&(Ô„2*
+(‚€øattr/actionBarItemBackground0"Q
+*http://schemas.android.com/apk/res/androidpaddingRight12dip"&(Ø„2:h"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"&(ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"&(õ„2:0ÿÿÿÿÿÿÿÿÿ"Q
+*http://schemas.android.com/apk/res/androidpaddingBottom2dip"&(Ù„2:h"P
+*http://schemas.android.com/apk/res/androidpaddingLeft12dip"&(Ö„2:h"L
+*http://schemas.android.com/apk/res/android	focusabletrue"&(Ú„2:@"
+*http://schemas.android.com/apk/res/androidid@+id/expand_activities_button"&(Ğ„2'
+%´¨øid/expand_activities_button0"S
+*http://schemas.android.com/apk/res/androidlayout_gravitycenter"&(³„2:8"N
+*http://schemas.android.com/apk/res/android
+paddingTop2dip"&(×„2:h*•
+Œ	ImageView"Q
+*http://schemas.android.com/apk/res/android	scaleType	fitCenter"-(‚„2:0"S
+*http://schemas.android.com/apk/res/androidadjustViewBoundstrue"-(‚„2:@"Q
+*http://schemas.android.com/apk/res/androidlayout_width32dip"-(ô„2:h@"R
+*http://schemas.android.com/apk/res/androidlayout_height32dip"-(õ„2:h@"[
+*http://schemas.android.com/apk/res/androidid
+@+id/image"-(Ğ„2
+Ç¨øid/image0"S
+*http://schemas.android.com/apk/res/androidlayout_gravitycenter"-(³„2:8-/&&*Ç
+¾FrameLayout"X
+*http://schemas.android.com/apk/res/androidaddStatesFromChildrentrue"<(ğ„2:@"Œ
+*http://schemas.android.com/apk/res/android
+background?attr/actionBarItemBackground"<(Ô„2*
+(‚€øattr/actionBarItemBackground0"Q
+*http://schemas.android.com/apk/res/androidpaddingRight12dip"<(Ø„2:h"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"<(ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"<(õ„2:0ÿÿÿÿÿÿÿÿÿ"Q
+*http://schemas.android.com/apk/res/androidpaddingBottom2dip"<(Ù„2:h"P
+*http://schemas.android.com/apk/res/androidpaddingLeft12dip"<(Ö„2:h"L
+*http://schemas.android.com/apk/res/android	focusabletrue"<(Ú„2:@"
+*http://schemas.android.com/apk/res/androidid@+id/default_activity_button"<(Ğ„2&
+$¬¨øid/default_activity_button0"S
+*http://schemas.android.com/apk/res/androidlayout_gravitycenter"<(³„2:8"N
+*http://schemas.android.com/apk/res/android
+paddingTop2dip"<(×„2:h*”
+‹	ImageView"Q
+*http://schemas.android.com/apk/res/android	scaleType	fitCenter"C(‚„2:0"S
+*http://schemas.android.com/apk/res/androidadjustViewBoundstrue"C(‚„2:@"Q
+*http://schemas.android.com/apk/res/androidlayout_width32dip"C(ô„2:h@"R
+*http://schemas.android.com/apk/res/androidlayout_height32dip"C(õ„2:h@"Z
+*http://schemas.android.com/apk/res/androidid	@id/image"C(Ğ„2
+Ç¨øid/image0"S
+*http://schemas.android.com/apk/res/androidlayout_gravitycenter"C(³„2:8C/<&,

@@ -1,0 +1,27 @@
+
+
+<
+android*http://schemas.android.com/apk/res/android×
+RadioGroup"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0þÿÿÿÿÿÿÿÿ"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0þÿÿÿÿÿÿÿÿ"R
+*http://schemas.android.com/apk/res/androidorientationvertical"(Ä„2:0"Xstyle@style/Glance.AppWidget.Column"2+
+)¸Äøstyle/Glance.AppWidget.Column0ÿÿ*z
+rinclude"glayout%@layout/column_child_end_null_group_0"22
+0ü´ø$layout/column_child_end_null_group_00ÿÿ>*z
+rinclude"glayout%@layout/column_child_end_null_group_1"22
+0ý´ø$layout/column_child_end_null_group_10ÿÿ>*z
+rinclude"glayout%@layout/column_child_end_null_group_2"22
+0þ´ø$layout/column_child_end_null_group_20ÿÿ>*z
+rinclude"glayout%@layout/column_child_end_null_group_3"22
+0ÿ´ø$layout/column_child_end_null_group_30ÿÿ>*z
+rinclude"glayout%@layout/column_child_end_null_group_4"22
+0€‚´ø$layout/column_child_end_null_group_40ÿÿ>*z
+rinclude"glayout%@layout/column_child_end_null_group_5"22
+0‚´ø$layout/column_child_end_null_group_50ÿÿ>*z
+rinclude"glayout%@layout/column_child_end_null_group_6"	22
+0‚‚´ø$layout/column_child_end_null_group_60ÿÿ	>*z
+rinclude"glayout%@layout/column_child_end_null_group_7"
+22
+0ƒ‚´ø$layout/column_child_end_null_group_70ÿÿ
+>×

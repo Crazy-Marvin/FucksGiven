@@ -5,8 +5,8 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.combinedClickable
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,24 +18,33 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.Divider
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarResult
+import androidx.compose.material3.SwipeToDismissBox
+import androidx.compose.material3.SwipeToDismissBoxValue
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -43,18 +52,18 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
 import com.google.accompanist.permissions.shouldShowRationale
+import kotlinx.coroutines.launch
 import rocks.poopjournal.fucksgiven.R
 import rocks.poopjournal.fucksgiven.data.FuckData
 import rocks.poopjournal.fucksgiven.presentation.component.AddDialog
 import rocks.poopjournal.fucksgiven.presentation.component.AppBar
+import rocks.poopjournal.fucksgiven.presentation.component.AppSnackbar
 import rocks.poopjournal.fucksgiven.presentation.component.BottomBar
 import rocks.poopjournal.fucksgiven.presentation.component.BottomNavBar
-import rocks.poopjournal.fucksgiven.presentation.component.DeleteDialog
 import rocks.poopjournal.fucksgiven.presentation.component.UpdateDialog
-import rocks.poopjournal.fucksgiven.presentation.ui.utils.formatDate
+import rocks.poopjournal.fucksgiven.presentation.ui.utils.formateDateWithYear
 import rocks.poopjournal.fucksgiven.presentation.ui.utils.isToday
 import rocks.poopjournal.fucksgiven.presentation.viewmodel.HomeViewModel
-import java.time.LocalDate
 
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
@@ -63,7 +72,6 @@ fun HomeScreen(
     viewModel: HomeViewModel,
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    val context = LocalContext.current
     var addTaskDialogOpen by remember {
         mutableStateOf(false)
     }
@@ -71,6 +79,11 @@ fun HomeScreen(
     val storagePermission = rememberPermissionState(
         permission = Manifest.permission.WRITE_EXTERNAL_STORAGE
     )
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+    val itemDuplicateString = stringResource(R.string.fuck_dupplicated)
+    val itemRemoveString = stringResource(R.string.fuck_deleted)
+    val undoString = stringResource(R.string.undo)
 
     val requestPermissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -92,12 +105,20 @@ fun HomeScreen(
     }
 
 
-    Scaffold(topBar = {
-        AppBar(
-            title = stringResource(id = R.string.app_name),
-            navigate = navController
-        )
-    },
+    Scaffold(
+        topBar = {
+            AppBar(
+                title = stringResource(id = R.string.app_name),
+                navigate = navController
+            )
+        },
+        snackbarHost = {
+            SnackbarHost(
+                hostState = snackbarHostState
+            ) { snackbarData ->
+                AppSnackbar(snackbarData)
+            }
+        },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { addTaskDialogOpen = true },
@@ -122,16 +143,47 @@ fun HomeScreen(
         ) {
             if (addTaskDialogOpen) {
                 AddDialog(onDismiss = { addTaskDialogOpen = false }) { data ->
-                    viewModel.addFuck(data, context)
+                    viewModel.addFuck(data)
                 }
             }
             if (uiState.fuckList.isNotEmpty()) {
-                FucksList(fuckList = uiState.fuckList, onUpdate = { data ->
-                    viewModel.updateFuck(data, context)
-                },
+                FucksList(
+                    fuckList = uiState.fuckList,
+                    onUpdate = { data -> viewModel.updateFuck(data) },
                     onDelete = { data ->
+
                         viewModel.deleteFuck(data)
-                    })
+
+                        scope.launch {
+                            snackbarHostState.currentSnackbarData?.dismiss()
+                            val result = snackbarHostState.showSnackbar(
+                                message = itemRemoveString,
+                                actionLabel = undoString,
+                                duration = SnackbarDuration.Short
+                            )
+
+                            if (result == SnackbarResult.ActionPerformed) {
+                                viewModel.addFuck(data)
+                            }
+                        }
+                    },
+                    onDuplicate = { data ->
+                        scope.launch {
+                            snackbarHostState.currentSnackbarData?.dismiss()
+                            val copied = data.copy(id = 0)
+                            val newId = viewModel.addFuck(copied).await()
+                            val result = snackbarHostState.showSnackbar(
+                                message = itemDuplicateString,
+                                actionLabel = undoString,
+                                duration = SnackbarDuration.Short
+                            )
+
+                            if (result == SnackbarResult.ActionPerformed) {
+                                viewModel.deleteFuck(data.copy(id = newId.toInt()))
+                            }
+                        }
+                    }
+                )
             } else {
                 Text(
                     text = stringResource(id = R.string.no_fucks),
@@ -147,25 +199,17 @@ fun HomeScreen(
 fun FucksList(
     fuckList: List<FuckData>,
     onUpdate: (FuckData) -> Unit,
+    onDuplicate: (FuckData) -> Unit,
     onDelete: (FuckData) -> Unit
 ) {
-    var updateTaskDialogOpen by remember { mutableStateOf(false) }
-    var deleteTaskDialogOpen by remember { mutableStateOf(false) }
-    var selectedFuck by remember { mutableStateOf<FuckData?>(null) }
-    var longSelectedFuck by remember { mutableStateOf<FuckData?>(null) }
-
+    var selectedFuckId by remember { mutableStateOf<Int?>(null) }
 
     val (todayFucks, nonToday) = fuckList.partition { isToday(it.date) }
-
-    val sortedNonToday = nonToday.sortedByDescending { it.date }
-
-    val finalList = todayFucks + sortedNonToday
-    val groupedFucks = finalList.groupBy { it.date }
-
+    val groupedFucks = (todayFucks + nonToday.sortedByDescending { it.date }).groupBy { it.date }
+    val selectedFuck = selectedFuckId?.let { id -> fuckList.find { it.id == id } }
 
     LazyColumn {
         groupedFucks.forEach { (date, fucks) ->
-            // Header for each date
             item {
                 Row(
                     modifier = Modifier
@@ -174,80 +218,113 @@ fun FucksList(
                         .background(MaterialTheme.colorScheme.secondary),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    val headerText = if (isToday(date)) {
-                        stringResource(R.string.today)
-                    } else {
-                        formatDate(date)
-                    }
                     Text(
-                        text = headerText,
+                        text = if (isToday(date)) stringResource(R.string.today) else formateDateWithYear(date),
                         modifier = Modifier.padding(start = 8.dp),
                         color = MaterialTheme.colorScheme.primary,
                         style = MaterialTheme.typography.labelSmall
                     )
                 }
             }
-            // Items under each date
-            items(fucks) { fuck ->
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(50.dp)
-                            .combinedClickable(
-                                onClick = {
-                                    selectedFuck = fuck
-                                    updateTaskDialogOpen = true
-                                },
-                                onLongClick = {
-                                    longSelectedFuck = fuck
-                                    deleteTaskDialogOpen = true
+
+            items(items = fucks, key = { it.id }) { fuck ->
+                val currentFuck by rememberUpdatedState(fuckList.find { it.id == fuck.id } ?: fuck)
+                val onDuplicateCurrent by rememberUpdatedState(onDuplicate)
+                val onDeleteCurrent by rememberUpdatedState(onDelete)
+
+                val swipeToDismissBoxState = rememberSwipeToDismissBoxState(
+                    confirmValueChange = { value ->
+                        when (value) {
+                            SwipeToDismissBoxValue.StartToEnd -> {
+                                onDuplicateCurrent(currentFuck)
+                                false
+                            }
+                            SwipeToDismissBoxValue.EndToStart -> {
+                                onDeleteCurrent(currentFuck)
+                                true
+                            }
+                            else -> false
+                        }
+                    },
+                    positionalThreshold = { totalDistance -> totalDistance * 0.4f }
+                )
+
+                SwipeToDismissBox(
+                    state = swipeToDismissBoxState,
+                    modifier = Modifier.fillMaxSize(),
+                    backgroundContent = {
+                        when (swipeToDismissBoxState.dismissDirection) {
+                            SwipeToDismissBoxValue.StartToEnd -> {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(MaterialTheme.colorScheme.primary),
+                                    contentAlignment = Alignment.CenterStart
+                                ) {
+                                    Icon(
+                                        painter = painterResource(R.drawable.ic_plus_one),
+                                        contentDescription = stringResource(R.string.duplicate),
+                                        modifier = Modifier.padding(start = 16.dp),
+                                        tint = MaterialTheme.colorScheme.background
+                                    )
                                 }
-                            ),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(
-                            text = fuck.description,
-                            modifier = Modifier.padding(start = 8.dp),
-                            style = MaterialTheme.typography.bodyLarge
+                            }
+                            SwipeToDismissBoxValue.EndToStart -> {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(MaterialTheme.colorScheme.errorContainer),
+                                    contentAlignment = Alignment.CenterEnd
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Delete,
+                                        contentDescription = stringResource(R.string.remove_item),
+                                        modifier = Modifier.padding(end = 16.dp),
+                                        tint = MaterialTheme.colorScheme.onErrorContainer
+                                    )
+                                }
+                            }
+                            SwipeToDismissBoxValue.Settled -> {}
+                        }
+                    }
+                ) {
+                    Column(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.background)) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(50.dp)
+                                .clickable {
+                                    selectedFuckId = fuck.id
+                                },
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = currentFuck.description,
+                                modifier = Modifier.padding(start = 8.dp),
+                                style = MaterialTheme.typography.bodyLarge
+                            )
+                        }
+                        HorizontalDivider(
+                            color = Color.LightGray,
+                            thickness = 0.5.dp,
+                            modifier = Modifier.padding(start = 8.dp)
                         )
                     }
-                    HorizontalDivider(
-                        color = Color.LightGray,
-                        thickness = 0.5.dp,
-                        modifier = Modifier.padding(start = 8.dp)
-                    )
                 }
             }
         }
     }
-    selectedFuck?.let { fuckData ->
-        if (updateTaskDialogOpen) {
-            UpdateDialog(
-                fuckData = fuckData,
-                onDismiss = { updateTaskDialogOpen = false },
-                onUpdate = { updatedFuck ->
-                    onUpdate(updatedFuck)
-                    updateTaskDialogOpen = false
-                }
-            )
-        }
-    }
 
-    longSelectedFuck?.let { fuckData ->
-        if (deleteTaskDialogOpen) {
-            DeleteDialog(
-                fuckData = fuckData,
-                onDismiss = { deleteTaskDialogOpen = false },
-                onDelete = { deleteFuck ->
-                    onDelete(deleteFuck)
-                    deleteTaskDialogOpen = false
-                })
-        }
+    // selectedFuck is always live-derived above — never a stale snapshot
+    selectedFuck?.let { fuckData ->
+        UpdateDialog(
+            fuckData = fuckData,
+            onDismiss = { selectedFuckId = null },
+            onUpdate = { updatedFuck ->
+                onUpdate(updatedFuck)
+                selectedFuckId = null
+            }
+        )
     }
 }
 

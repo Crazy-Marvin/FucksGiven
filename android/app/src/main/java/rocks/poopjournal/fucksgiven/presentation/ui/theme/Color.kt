@@ -15,4 +15,6 @@ val FuckSecondary = Color(0xFFEEF8EF)
 val WatchGrey = Color(0xFFC8C8D0)
 val FuckSecondaryDark = Color(0xFF50CE58).copy(alpha = 0.4f)
 val FuckGreenDark = Color(0xFF50CE58)
-val FuckRed = Color(0xFFD22B2B)
+val FuckRed = Color(0xFFCA2216)
+
+val LightRed = Color(0xFFF86C62)

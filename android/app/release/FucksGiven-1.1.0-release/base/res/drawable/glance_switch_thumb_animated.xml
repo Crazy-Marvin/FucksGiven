@@ -1,0 +1,32 @@
+
+ô
+
+;
+android*http://schemas.android.com/apk/res/androidOanimated-selector*É
+Àitem"
+*http://schemas.android.com/apk/res/androiddrawable @drawable/glance_switch_thumb_on"(™ƒ„2+
+)„ ødrawable/glance_switch_thumb_on0"U
+*http://schemas.android.com/apk/res/androidid@+id/on"(Ğ„2
+Û¨øid/on0"P
+*http://schemas.android.com/apk/res/androidstate_enabledtrue"(„2:@(*û
+òitem"
+*http://schemas.android.com/apk/res/androiddrawable!@drawable/glance_switch_thumb_off"	(™ƒ„2,
+*‚ ø drawable/glance_switch_thumb_off0"W
+*http://schemas.android.com/apk/res/androidid@+id/off"	(Ğ„2
+Ú¨øid/off0	@*ê
+á
+transition"W
+*http://schemas.android.com/apk/res/androidtoId@+id/on"(Éˆ„2
+Û¨øid/on0"œ
+*http://schemas.android.com/apk/res/androiddrawable'@drawable/glance_switch_thumb_off_to_on"(™ƒ„22
+0ƒ ø&drawable/glance_switch_thumb_off_to_on0"[
+*http://schemas.android.com/apk/res/androidfromId@+id/off"(Êˆ„2
+Ú¨øid/off0"*ê
+á
+transition"Y
+*http://schemas.android.com/apk/res/androidtoId@+id/off"(Éˆ„2
+Ú¨øid/off0"œ
+*http://schemas.android.com/apk/res/androiddrawable'@drawable/glance_switch_thumb_on_to_off"(™ƒ„22
+0… ø&drawable/glance_switch_thumb_on_to_off0"Y
+*http://schemas.android.com/apk/res/androidfromId@+id/on"(Êˆ„2
+Û¨øid/on0#O

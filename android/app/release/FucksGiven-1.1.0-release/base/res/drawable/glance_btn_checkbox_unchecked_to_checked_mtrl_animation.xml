@@ -1,0 +1,18 @@
+
+ï
+;
+android*http://schemas.android.com/apk/res/androidanimated-vector"¦
+*http://schemas.android.com/apk/res/androiddrawable,@drawable/glance_btn_checkbox_unchecked_mtrl"(™ƒ„27
+5í€ ø+drawable/glance_btn_checkbox_unchecked_mtrl0*—
+Žtarget"¿
+*http://schemas.android.com/apk/res/android	animation8@anim/glance_btn_checkbox_to_checked_icon_null_animation"(Íƒ„2C
+A›€„ø7anim/glance_btn_checkbox_to_checked_icon_null_animation0"B
+*http://schemas.android.com/apk/res/androidname	icon_null(ƒ€„\*¬
+£target"Í
+*http://schemas.android.com/apk/res/android	animation?@anim/glance_btn_checkbox_to_checked_box_outer_merged_animation"(Íƒ„2J
+Hš€„ø>anim/glance_btn_checkbox_to_checked_box_outer_merged_animation0"I
+*http://schemas.android.com/apk/res/androidnamebox_outer_merged(ƒ€„c*¬
+£target"Í
+*http://schemas.android.com/apk/res/android	animation?@anim/glance_btn_checkbox_to_checked_box_inner_merged_animation"(Íƒ„2J
+H™€„ø>anim/glance_btn_checkbox_to_checked_box_inner_merged_animation0"I
+*http://schemas.android.com/apk/res/androidnamebox_inner_merged(ƒ€„c

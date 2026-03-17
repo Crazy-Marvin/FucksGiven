@@ -1,0 +1,34 @@
+
+
+;
+android*http://schemas.android.com/apk/res/androidanimated-selector*Ù
+Ğitem"P
+*http://schemas.android.com/apk/res/androidstate_checkedtrue"( „2:@"”
+*http://schemas.android.com/apk/res/androiddrawable#@drawable/btn_checkbox_checked_mtrl"(™ƒ„2.
+,Ù€ ø"drawable/btn_checkbox_checked_mtrl0"_
+*http://schemas.android.com/apk/res/androidid@+id/checked"(Ğ„2
+È€¨ø
+id/checked0F*
+†item"˜
+*http://schemas.android.com/apk/res/androiddrawable%@drawable/btn_checkbox_unchecked_mtrl"(™ƒ„20
+.Û€ ø$drawable/btn_checkbox_unchecked_mtrl0"c
+*http://schemas.android.com/apk/res/androidid@+id/unchecked"(Ğ„2
+¤‚¨øid/unchecked0H*¦
+
+transition"a
+*http://schemas.android.com/apk/res/androidtoId@+id/checked" (Éˆ„2
+È€¨ø
+id/checked0"Â
+*http://schemas.android.com/apk/res/androiddrawable:@drawable/btn_checkbox_unchecked_to_checked_mtrl_animation" (™ƒ„2E
+CÜ€ ø9drawable/btn_checkbox_unchecked_to_checked_mtrl_animation0"g
+*http://schemas.android.com/apk/res/androidfromId@+id/unchecked" (Êˆ„2
+¤‚¨øid/unchecked0 ]*¦
+
+transition"e
+*http://schemas.android.com/apk/res/androidtoId@+id/unchecked"$(Éˆ„2
+¤‚¨øid/unchecked0"Â
+*http://schemas.android.com/apk/res/androiddrawable:@drawable/btn_checkbox_checked_to_unchecked_mtrl_animation"$(™ƒ„2E
+CÚ€ ø9drawable/btn_checkbox_checked_to_unchecked_mtrl_animation0"c
+*http://schemas.android.com/apk/res/androidfromId@+id/checked"$(Êˆ„2
+È€¨ø
+id/checked0$]

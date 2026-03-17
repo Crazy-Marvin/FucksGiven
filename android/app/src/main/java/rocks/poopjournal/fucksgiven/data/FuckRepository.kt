@@ -14,7 +14,10 @@ class FuckRepository @Inject constructor(
 ) {
     fun getAllFucks(): Flow<List<FuckData>> = fuckDao.getAllData().flowOn(Dispatchers.IO)
     fun getFuck(id: Int): Flow<FuckData> = fuckDao.getData(id).flowOn(Dispatchers.IO).conflate()
-    suspend fun insertFuck(fuckData: FuckData) = fuckDao.insert(fuckData)
+    suspend fun insertFuck(fuckData: FuckData) : Long  {
+        return fuckDao.insert(fuckData)
+    }
+
     suspend fun updateFuck(fuckData: FuckData) = fuckDao.update(fuckData)
     suspend fun deleteFuck(fuckData: FuckData) = fuckDao.delete(fuckData)
 
