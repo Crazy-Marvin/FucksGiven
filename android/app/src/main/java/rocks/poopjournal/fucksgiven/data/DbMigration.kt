@@ -11,12 +11,12 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
 
         // 1️⃣ Rename old table
         database.execSQL("""
-            ALTER TABLE FuckData RENAME TO FuckData_old
+            ALTER TABLE fucksTable RENAME TO fucksTable_old
         """)
 
         // 2️⃣ Create new table with TEXT date
         database.execSQL("""
-            CREATE TABLE FuckData (
+            CREATE TABLE fucksTable (
                 id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 description TEXT NOT NULL,
                 date TEXT NOT NULL
@@ -24,7 +24,7 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
         """)
 
         // 3️⃣ Convert millis → LocalDate (UTC safe)
-        val cursor = database.query("SELECT id, description, date FROM FuckData_old")
+        val cursor = database.query("SELECT id, description, date FROM fucksTable_old")
 
         val zone = ZoneId.systemDefault()
 
@@ -44,13 +44,13 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
             }
 
             database.execSQL(
-                "INSERT INTO FuckData (id, description, date) VALUES (?, ?, ?)",
+                "INSERT INTO fucksTable (id, description, date) VALUES (?, ?, ?)",
                 arrayOf(id, description, localDate)
             )
         }
         cursor.close()
 
         // 4️⃣ Drop old table
-        database.execSQL("DROP TABLE FuckData_old")
+        database.execSQL("DROP TABLE fucksTable_old")
     }
 }
