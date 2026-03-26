@@ -28,6 +28,19 @@ android {
         }
         setProperty("archivesBaseName", "FucksGiven-$versionName")
         aaptOptions.cruncherEnabled = false
+
+    }
+
+    kapt {
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
+    }
+
+    sourceSets {
+        getByName("androidTest") {
+            assets.srcDirs("$projectDir/schemas")
+        }
     }
 
     buildTypes {
@@ -109,6 +122,10 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.9.1")
     implementation("androidx.security:security-crypto:1.1.0-beta01")
     implementation("androidx.biometric:biometric:1.4.0-alpha04")
+    androidTestImplementation ("androidx.room:room-testing:2.7.2")
+    androidTestImplementation ("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+
 }
 
 kapt{
