@@ -6,7 +6,6 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
@@ -104,11 +103,11 @@ private fun LockedWidgetContent(context: Context) {
     ) {
         Image(
             provider = ImageProvider(R.drawable.ic_lock), // Your new lock icon
-            contentDescription = stringResource(R.string.widget_locked),
+            contentDescription = context.getString(R.string.widget_locked),
             modifier = GlanceModifier.size(48.dp)
         )
         Text(
-            text = stringResource(R.string.tap_to_unlock),
+            text = context.getString(R.string.tap_to_unlock),
             modifier = GlanceModifier.padding(top = 8.dp),
             style = TextStyle(color = GlanceTheme.colors.onBackground)
         )
@@ -132,7 +131,7 @@ fun UnlockedWidgetContent(context: Context, list: List<FuckData>) {
             horizontalAlignment = Alignment.End
         ) {
             Text(
-                text = stringResource(R.string.app_name), // Replace with a plain string
+                text = context.getString(R.string.app_name), // Replace with a plain string
                 modifier = GlanceModifier.defaultWeight(),
                 style = TextStyle(
                     fontFamily = FontFamily.SansSerif,
@@ -173,7 +172,7 @@ fun UnlockedWidgetContent(context: Context, list: List<FuckData>) {
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             val headerText = if (isToday(date)) {
-                                stringResource(R.string.today)
+                                context.getString(R.string.today)
                             } else {
                                 formatDate(date)
                             }
@@ -210,7 +209,7 @@ fun UnlockedWidgetContent(context: Context, list: List<FuckData>) {
             }
         } else {
             Text(
-                text = stringResource(R.string.no_fucks), // Replace with a plain string
+                text = context.getString(R.string.no_fucks), // Replace with a plain string
                 modifier = GlanceModifier.padding(12.dp)
             )
         }
