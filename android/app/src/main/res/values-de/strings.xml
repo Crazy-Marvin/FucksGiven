@@ -119,4 +119,9 @@
     <string name="hardware_unavailable">Vom Gerät nicht unterstützt</string>
     <string name="protection_enabled_success">App-Sperre aktiv.</string>
     <string name="protection_disabled_success">App-Sperre inaktiv.</string>
+    <string name="fuck_deleted">Fick entfernt</string>
+    <string name="fuck_dupplicated">Fick dupliziert</string>
+    <string name="duplicate">Fick verdoppeln</string>
+    <string name="remove_item">Fick entfernen</string>
+    <string name="undo">Rückgängig</string>
 </resources>
