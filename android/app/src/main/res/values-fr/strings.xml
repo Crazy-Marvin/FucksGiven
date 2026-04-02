@@ -119,4 +119,5 @@
     <string name="hardware_unavailable">Appareil indisponible</string>
     <string name="protection_enabled_success">Protection de l\'appli activée.</string>
     <string name="protection_disabled_success">Protection de l\'appli désactivée.</string>
+    <string name="undo">Défaire</string>
 </resources>
