@@ -13,8 +13,8 @@ android {
         applicationId = "rocks.poopjournal.fucksgivenwatch"
         minSdk = 30
         targetSdk = 34
-        versionCode = 4
-        versionName = "1.0.4"
+        versionCode = 15
+        versionName = "1.5.0"
         vectorDrawables {
             useSupportLibrary = true
         }
