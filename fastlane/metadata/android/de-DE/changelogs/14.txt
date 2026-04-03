@@ -1,0 +1,6 @@
+- 🐛 Fehlerbehebung bei leerem Widget
+- ⚙️ Aktualisierungen der Abhängigkeiten
+- 🗺️ Aktualisierungen der Übersetzungen
+
+Ein großes Dankeschön an alle Mitwirkenden und Übersetzer. 😘
+Ihr seid herzlich eingeladen, Probleme zu melden und Korrekturen unter https://github.com/Crazy-Marvin/FucksGiven/ oder Übersetzungen unter https://hosted.weblate.org/engage/fucks-given/ einzureichen. 🚀
