@@ -1,0 +1,8 @@
+- 🖕 Añadida la función de deslizar para duplicar o eliminar el gesto
+- 🎨 Mejoras UX
+- 🐛 Arreglado los errores
+- ⚙️ Actualizaciones de dependencia
+- 🗺️ Actualizaciones de traducción
+
+Muchas gracias a todos los colaboradores y traductores. 😘
+No dudes en informar de problemas y enviar correcciones en https://github.com/Crazy-Marvin/FucksGiven/ o traducciones en https://hosted.weblate.org/engage/fucks-given/. 🚀
