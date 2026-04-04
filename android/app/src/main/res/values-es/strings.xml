@@ -113,4 +113,9 @@
     <string name="hardware_unavailable">Hardware no disponible</string>
     <string name="protection_enabled_success">Protección de app habilitada.</string>
     <string name="protection_disabled_success">Protección de app deshabilitada.</string>
+    <string name="fuck_deleted">Carajo eliminado</string>
+    <string name="fuck_dupplicated">Carajo duplicado</string>
+    <string name="duplicate">Duplicar carajo</string>
+    <string name="remove_item">Eliminar carajo</string>
+    <string name="undo">Deshacer</string>
 </resources>
