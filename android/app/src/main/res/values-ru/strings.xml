@@ -113,4 +113,9 @@
     <string name="hardware_unavailable">Оборудование недоступно</string>
     <string name="protection_enabled_success">Защита приложения включена.</string>
     <string name="protection_disabled_success">Защита приложения выключена.</string>
+    <string name="fuck_deleted">Фак удалён</string>
+    <string name="fuck_dupplicated">Фак продублирован</string>
+    <string name="duplicate">Дублировать Фак</string>
+    <string name="remove_item">Удалить Фак</string>
+    <string name="undo">Отменить</string>
 </resources>
