@@ -1,0 +1,8 @@
+'Fucks Given' ले तपाईंलाई ती कुराहरूको ट्र्याक राख्न मद्दत गर्दछ जसले तपाईंलाई सोच्न वा चासो दिन बाध्य बनायो। जब-जब कुनै यस्तो घटना घट्छ जसमा तपाईंले नचाहिँदो चासो दिनुहुन्छ, केवल एक ट्यापमै त्यसलाई टिपोट गर्नुहोस्। यो एपले तपाईंले कति कुराहरूमा चासो दिनुभयो भनेर एउटा चार्ट बनाउँछ, ताकि तपाईं बिस्तारै कुनै पनि कुरामा चासो नदिने बन्न सक्नुहोस्।
+
+'Fucks Given' ले तपाईंलाई आफ्नो डेटा ब्याकअप गर्ने सुविधा दिन्छ र यसमा एउटा सुन्दर 'डार्क मोड' (dark mode) पनि छ, जुन सिस्टम थिम अनुसार स्वतः अन हुन सक्छ। यो एप तपाईंको स्मार्टवाचमा पनि चल्छ।
+
+वेबपेज: <a href="https://www.crazymarvin.com/fucks-given">https://www.crazymarvin.com/fucks-given</a>
+Fucks Given को अनुवाद गर्नुहोस्: <a href="https://hosted.weblate.org/engage/fucksgiven/">https://hosted.weblate.org/engage/fucks-given/</a> 
+
+गिटहबमा सोर्स कोड: <a href="https://github.com/Crazy-Marvin/FucksGiven">https://github.com/Crazy-Marvin/FucksGiven</a>
