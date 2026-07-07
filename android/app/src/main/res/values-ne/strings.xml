@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">फक्स गिभन</string>
+    <string name="about">जानकरी</string>
+    <string name="apache">अपाचे लाइसेन्स २.०</string>
+    <string name="no_fucks">नो फक्स गिभन</string>
+    <string name="add">थप्नुहोस्</string>
+    <string name="cancel">रद्द गर्नुहोस्</string>
+    <string name="description">विवरण</string>
+    <string name="select_date">मिति चयन गर्नुहोस्</string>
+    <string name="ok">ठिक छ</string>
+    <string name="settings">सेटिङहरू</string>
+    <string name="general">सामान्य</string>
+    <string name="apperance">रूप</string>
+    <string name="enable_app_protection">एप सुरक्षा सक्षम गर्नुहोस्</string>
+    <string name="security">सुरक्षा</string>
+    <string name="data">तथ्याङ्क</string>
+    <string name="backup">ब्याकअप</string>
+    <string name="backup_success">डाटाबेस ब्याकअप सफलतापूर्वक गरियो</string>
+    <string name="restore">पुनर्स्थापना गर्नुहोस्</string>
+    <string name="select_theme">थीम चयन गर्नुहोस्</string>
+    <string name="theme_light">उज्यालो</string>
+    <string name="theme_dark">अँध्यारो</string>
+    <string name="theme_follow_system">प्रणाली पछ्याउनुहोस्</string>
+    <string name="stats">तथ्याङ्क</string>
+    <string name="weekly">साप्ताहिक</string>
+    <string name="monthly">मासिक</string>
+    <string name="yearly">वार्षिक</string>
+    <string name="average_fucks">औसत</string>
+    <string name="january_december">जनवरी-डिसेम्बर</string>
+</resources>
