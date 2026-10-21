@@ -53,9 +53,9 @@
     <string name="nineteen">19</string>
     <string name="twentyfive">25</string>
     <string name="twentyseven">27</string>
-    <string name="app_name">מעניק זיונים</string>
-    <string name="no_fucks">אין זיונים שהוענקו</string>
-    <string name="average_fucks">ממוצע הענקת זיונים</string>
+    <string name="app_name">שם פס</string>
+    <string name="no_fucks">לא שמת פס</string>
+    <string name="average_fucks">ממוצע פעמים שבהן שמת פס</string>
     <string name="thirtyone">31</string>
     <string name="jan">ינ</string>
     <string name="Feb">פב</string>
@@ -84,4 +84,11 @@
     <string name="delete_dialog">אתה בוודאות שברצונך למחוק?</string>
     <string name="delete">מחיקה</string>
     <string name="update">עדכון</string>
+    <string name="enable_app_protection">הפעלת הגנה על היישום</string>
+    <string name="security">אבטחה</string>
+    <string name="theme_light">בהירה</string>
+    <string name="theme_dark">כהה</string>
+    <string name="theme_follow_system">כמו המערכת</string>
+    <string name="translate">תרגום</string>
+    <string name="today">היום</string>
 </resources>
